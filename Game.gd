@@ -22,7 +22,5 @@ func refresh_cable_position():
 	$CableJackB.add_point(point)
 
 
-
-
 func test(jack_type, input):
 	print(str(jack_type) + " connected to " + str(Global.Inputs.keys()[input]))
