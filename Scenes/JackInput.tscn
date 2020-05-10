@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Sprites/grey_boxTick.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/JackInput.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 18.6864
+
+[node name="JackInput" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 210.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 55.6634
+margin_top = -4.0
+margin_right = 162.663
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 3 )
+text = "Entrée A"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputArea" type="Area2D" parent="." groups=[
+"inputs",
+]]
+position = Vector2( 26.7827, 20.0261 )
+input_pickable = false
+monitoring = false
+
+[node name="Sprite" type="Sprite" parent="InputArea"]
+scale = Vector2( 0.8, 0.8 )
+skew = 4.37114e-08
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea"]
+shape = SubResource( 2 )

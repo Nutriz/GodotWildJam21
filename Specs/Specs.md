@@ -67,7 +67,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 * 👌Affichage du board
 * 👌Affichage des entreés jack
 * 👌Afficher les jacks
-* Pouvoir connecter un jack avec un autre
+* 👌Pouvoir connecter un jack avec un autre
 * Dessiner le cable (utiliser une droite temporairement)
 * Affichage des dialogues
 

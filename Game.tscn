@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Specs/sketch.jpeg" type="Texture" id=2]
+[ext_resource path="res://Scenes/JackInput.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sprites/yellow_boxTick.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/blue_boxTick.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Jack.tscn" type="PackedScene" id=6]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,3 +26,86 @@ centered = false
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="blue_boxTick" type="Sprite" parent="."]
+position = Vector2( 566.354, 682.004 )
+skew = 4.37114e-08
+texture = ExtResource( 5 )
+
+[node name="yellow_boxTick" type="Sprite" parent="."]
+position = Vector2( 694.229, 686.085 )
+skew = 4.37114e-08
+texture = ExtResource( 4 )
+
+[node name="InputsA" type="Node2D" parent="."]
+position = Vector2( 346.343, 214.487 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="A1" parent="InputsA" instance=ExtResource( 3 )]
+skew = 4.37114e-08
+
+[node name="A2" parent="InputsA" instance=ExtResource( 3 )]
+position = Vector2( 0, 71.65 )
+skew = 4.37114e-08
+input = 1
+
+[node name="A3" parent="InputsA" instance=ExtResource( 3 )]
+position = Vector2( 0, 144.608 )
+skew = 4.37114e-08
+input = 2
+
+[node name="A4" parent="InputsA" instance=ExtResource( 3 )]
+position = Vector2( 0, 216.707 )
+skew = 4.37114e-08
+input = 3
+
+[node name="A5" parent="InputsA" instance=ExtResource( 3 )]
+position = Vector2( 0, 298.33 )
+skew = 4.37114e-08
+input = 4
+
+[node name="InputsB" type="Node2D" parent="."]
+position = Vector2( 659.283, 209.212 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="B1" parent="InputsB" instance=ExtResource( 3 )]
+skew = 4.37114e-08
+input = 5
+
+[node name="B2" parent="InputsB" instance=ExtResource( 3 )]
+position = Vector2( 0, 71.65 )
+skew = 4.37114e-08
+input = 6
+
+[node name="B3" parent="InputsB" instance=ExtResource( 3 )]
+position = Vector2( 0, 144.608 )
+skew = 4.37114e-08
+input = 7
+
+[node name="B4" parent="InputsB" instance=ExtResource( 3 )]
+position = Vector2( 0, 216.707 )
+skew = 4.37114e-08
+input = 8
+
+[node name="B5" parent="InputsB" instance=ExtResource( 3 )]
+position = Vector2( 0, 298.33 )
+skew = 4.37114e-08
+input = 9
+
+[node name="JackA" parent="." instance=ExtResource( 6 )]
+position = Vector2( 567.276, 650.259 )
+
+[node name="JackB" parent="." instance=ExtResource( 6 )]
+position = Vector2( 693.242, 646.76 )
+
+[node name="PositionJackA" type="Position2D" parent="."]
+position = Vector2( 567.862, 650.492 )
+
+[node name="PositionJackB" type="Position2D" parent="."]
+position = Vector2( 694.444, 648.734 )
