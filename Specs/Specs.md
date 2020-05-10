@@ -64,8 +64,9 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 ### Etape 1: Proto
 
-* Affichage du board
-* Affichage des entreés jack
+* 👌Affichage du board
+* 👌Affichage des entreés jack
+* 👌Afficher les jacks
 * Pouvoir connecter un jack avec un autre
 * Dessiner le cable (utiliser une droite temporairement)
 * Affichage des dialogues
@@ -89,7 +90,9 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 * Afficher une led rouge à côté du jack pour dire "en ligne"
 * Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
-
+* Ajouter mini mouvement de caméra quand on manipule les jacks
+* Ajouter du parallax
+* Faire un effet de light2D pour ajouter de la dynamique aux mouvements
 
 ### publication
 * screenshots
