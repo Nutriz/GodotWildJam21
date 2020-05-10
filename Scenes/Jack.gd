@@ -2,7 +2,7 @@ extends Node2D
 
 onready var jack_type = name
 var picked
-var initial_position
+onready var initial_position = position
 
 func _process(delta):
 	if picked:

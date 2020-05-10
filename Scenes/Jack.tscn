@@ -23,4 +23,8 @@ position = Vector2( 0.90374, -16.7192 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
 position = Vector2( -0.585083, 18.6246 )
 shape = SubResource( 1 )
+
+[node name="Cable" type="Position2D" parent="."]
+position = Vector2( 0.698334, 35.6152 )
+skew = 4.37114e-08
 [connection signal="input_event" from="Area" to="." method="_on_PickArea_input_event"]
