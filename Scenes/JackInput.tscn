@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/grey_boxTick.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/JackInput.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sprites/grey_circle.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sounds/click2.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -34,6 +35,7 @@ script = ExtResource( 3 )
 [node name="Panel" type="Panel" parent="."]
 margin_right = 210.0
 margin_bottom = 40.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,7 +56,6 @@ __meta__ = {
 [node name="InputArea" type="Area2D" parent="."]
 position = Vector2( 26.7827, 20.0261 )
 input_pickable = false
-monitoring = false
 
 [node name="Sprite" type="Sprite" parent="InputArea"]
 scale = Vector2( 0.8, 0.8 )
@@ -72,3 +73,8 @@ texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Red indicator" = SubResource( 3 )
+
+[node name="OnOverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="area_entered" from="InputArea" to="." method="_on_jack_area_entered"]
+[connection signal="input_event" from="InputArea" to="." method="_on_InputArea_input_event"]

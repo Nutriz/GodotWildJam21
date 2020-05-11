@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Specs/sketch.jpeg" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Sprites/blue_boxTick.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Jack.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/DialogSystem.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sounds/noise1.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/click2.ogg" type="AudioStream" id=9]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -159,5 +161,11 @@ __meta__ = {
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="Noise1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="JackOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 [connection signal="toggled" from="CheckButton" to="." method="_on_holding_toggled"]
-[connection signal="timeout" from="CallTimer" to="." method="_on_CallTimer_timeout"]
+[connection signal="timeout" from="CallTimer" to="." method="_on_call_timer_timeout"]

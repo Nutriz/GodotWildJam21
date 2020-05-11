@@ -1,13 +1,18 @@
 extends Control
 
 onready var dials = load_dialogue("res://Assets/Dialogues/dialogues.json.gd")
+onready var main_story = dials["main_story"]
+onready var secondary_stories = dials["secondary_stories"]
+
+var story_index = 0
 
 var chapter_idx = 1
 var curr_dial = null
 var msg_index = 0
 
 func _ready():
-	Events.connect("jack_connected", self, "on_jack_connected")
+	Events.connect("start_dialogue", self, "on_start_dialogue")
+	Events.connect("start_answer", self, "on_start_answer")
 	Events.connect("holding_input", self, "on_holding")
 
 func _process(delta):
@@ -46,16 +51,33 @@ func load_dialogue(file_path):
 	assert(dialogues.size() > 0, "dialogue is empty")
 	return dialogues
 
-func on_jack_connected(jack_type, input):
+func on_start_dialogue():
 	msg_index = 0
+	start_new_dialog()
+	display_next_message()
 
-	if jack_type.ends_with("A"):
-		curr_dial = dials["chapter" + str(chapter_idx)]["dial1"]
+func on_start_answer(input):
+	msg_index = 0
+	var dial_length = curr_dial.size() - 1
+	if curr_dial[dial_length].has("B" + str(input + 1 - 5)):
+		curr_dial = curr_dial[dial_length]["B" + str(input + 1 - 5)]
 	else:
-		var dial_length = dials["chapter" + str(chapter_idx)]["dial1"].size() - 1
-		curr_dial = dials["chapter" + str(chapter_idx)]["dial1"][dial_length]["B" + str(input + 1 - 5)]
+		print("no entry, default answer")
 
 	display_next_message()
+
+func start_new_dialog():
+	randomize()
+	if randi() % 2 == 0:
+		story_index += 1
+		print("start new story dialogue, index: " + str(story_index))
+		curr_dial = main_story["dial" + str(story_index)]
+	else:
+		var max_index = secondary_stories.size()
+		var index = (randi() % max_index) + 1
+		assert(index > 0)
+		print("start new secondary story dialogue, index: " + str(index))
+		curr_dial = secondary_stories["dial" + str(index)]
 
 func on_holding():
 
