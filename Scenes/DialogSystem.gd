@@ -1,31 +1,40 @@
 extends Control
 
-var index = 0
-onready var dials = load_dialogue("res://Assets/Dialogues/test.json")
+onready var dials = load_dialogue("res://Assets/Dialogues/dialogues.json.gd")
+
+var chapter_idx = 1
+var curr_dial = null
+var msg_index = 0
 
 func _ready():
 	Events.connect("jack_connected", self, "on_jack_connected")
+	Events.connect("holding_input", self, "on_holding")
 
 func _process(delta):
-	if Input.is_action_just_pressed("skip"):
-		var dial = dials["00" + str(index)]
-		if ($LeftDialog/Text.visible_characters < dial.name.length() + dial.text.length() - 1):
-			$LeftDialog/Text.visible_characters = dial.name.length() + dial.text.length()
-		else:
-			index += 1
-			dial = dials["00" + str(index)]
-			if dial.pos == "left":
-				$LeftDialog.visible = true
-				$RightDialog.visible = false
-				$LeftDialog/Text.text = dial.name + ": " + dial.text
-				$LeftDialog/Text.visible_characters = dial.name.length() + 1
-				$Timer.start()
+	if Input.is_action_just_pressed("skip") and curr_dial != null:
+
+		if get_curr_message().has("end"):
+			print("emit end")
+			Events.emit_signal("dialogue_finished")
+			curr_dial = null
+			$CallerDialog.hide()
+			$CalledDialog.hide()
+		elif get_curr_message().pos == "caller":
+			if not $CallerDialog.is_at_end_of_text():
+				$CallerDialog.skip_to_end_of_text()
+			elif get_curr_message().has("holding"):
+				return
 			else:
-				$LeftDialog.visible = false
-				$RightDialog.visible = true
-				$RightDialog/Text.text = dial.name + ": " + dial.text
-				$RightDialog/Text.visible_characters = dial.name.length() + 1
-				$Timer.start()
+				msg_index += 1
+				display_next_message()
+		else:
+			if not $CalledDialog.is_at_end_of_text():
+				$CalledDialog.skip_to_end_of_text()
+			elif get_curr_message().has("holding"):
+				return
+			else:
+				msg_index += 1
+				display_next_message()
 
 func load_dialogue(file_path):
 	var file = File.new()
@@ -37,27 +46,29 @@ func load_dialogue(file_path):
 	return dialogues
 
 func on_jack_connected(jack_type, input):
-	start_dialog()
+	msg_index = 0
 
-func start_dialog():
-	index += 1
-	var dial = dials["00" + str(index)]
-	if dial.pos == "left":
-		$LeftDialog.visible = true
-		$RightDialog.visible = false
-		$LeftDialog/Text.text = dial.name + ": " + dial.text
-		$LeftDialog/Text.visible_characters = dial.name.length() + 1
-		$Timer.start()
+	if jack_type.ends_with("A"):
+		curr_dial = dials["chapter" + str(chapter_idx)]["dial1"]
 	else:
-		$LeftDialog.visible = false
-		$RightDialog.visible = true
-		$RightDialog/Text.text = dial.name + ": " + dial.text
-		$RightDialog/Text.visible_characters = dial.name.length() + 1
-		$Timer.start()
+		var dial_length = dials["chapter" + str(chapter_idx)]["dial1"].size() - 1
+		curr_dial = dials["chapter" + str(chapter_idx)]["dial1"][dial_length]["B" + str(input + 1 - 5)]
 
-func _on_Timer_timeout():
-	var dial = dials["00" + str(index)]
-	if dial.pos == "left":
-		$LeftDialog/Text.visible_characters += 1
+	display_next_message()
+
+func on_holding():
+	print("received")
+	$CallerDialog.hide()
+	$CalledDialog.hide()
+
+func display_next_message():
+	var msg = get_curr_message()
+	if msg.pos == "caller":
+		$CallerDialog.display_msg(msg)
+		$CalledDialog.hide()
 	else:
-		$RightDialog/Text.visible_characters += 1
+		$CallerDialog.hide()
+		$CalledDialog.display_msg(msg)
+
+func get_curr_message():
+	return curr_dial[msg_index]

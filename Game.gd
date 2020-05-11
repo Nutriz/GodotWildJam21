@@ -1,7 +1,11 @@
 extends Node2D
 
+var connectionA
+var connectionB
+
 func _ready():
-	Events.connect("jack_connected", self, "test")
+	Events.connect("jack_connected", self, "on_jack_connected")
+	Events.connect("dialogue_finished", self, "on_dialogue_finished")
 
 func _process(delta):
 
@@ -21,6 +25,20 @@ func refresh_cable_position():
 	point = $JackB/Cable.global_position - $PositionJackB.global_position
 	$CableJackB.add_point(point)
 
-
-func test(jack_type, input):
+func on_jack_connected(jack_type, input):
 	print(str(jack_type) + " connected to " + str(Global.Inputs.keys()[input]))
+	if jack_type.ends_with("A"):
+		connectionA = input
+	else:
+		connectionB = input
+
+func on_dialogue_finished():
+	print("reset")
+	$JackA.reset_position()
+	$JackB.reset_position()
+	$CheckButton.pressed = false
+
+func _on_holding_toggled(button_pressed):
+	if button_pressed and connectionA != null:
+		print("emit " + str(connectionA))
+		Events.emit_signal("holding_input")

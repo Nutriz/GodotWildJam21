@@ -125,7 +125,7 @@ position = Vector2( 568.493, 687.347 )
 skew = 4.37114e-08
 points = PoolVector2Array( 0, 0, 0, 0 )
 width = 6.0
-default_color = Color( 0.137255, 0.141176, 0.160784, 1 )
+default_color = Color( 0.635294, 0.117647, 0.105882, 1 )
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -136,7 +136,7 @@ position = Vector2( 695.939, 687.347 )
 skew = 4.37114e-08
 points = PoolVector2Array( 0, 0, 0, 0 )
 width = 6.0
-default_color = Color( 0.137255, 0.141176, 0.160784, 1 )
+default_color = Color( 0.0745098, 0.160784, 0.572549, 1 )
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -149,3 +149,16 @@ position = Vector2( 569.294, 686.291 )
 position = Vector2( 694.444, 684.533 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 400.058
+margin_top = 654.322
+margin_right = 545.058
+margin_bottom = 694.322
+focus_mode = 0
+enabled_focus_mode = 0
+text = "En attente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="CheckButton" to="." method="_on_holding_toggled"]

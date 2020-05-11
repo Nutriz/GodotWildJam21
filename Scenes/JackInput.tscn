@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/grey_boxTick.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/JackInput.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 font_data = ExtResource( 1 )
 
@@ -26,7 +26,7 @@ margin_left = 55.6634
 margin_top = -4.0
 margin_right = 162.663
 margin_bottom = 44.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "Entrée A"
 align = 1
 valign = 1

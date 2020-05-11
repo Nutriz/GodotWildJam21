@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Sprites/grey_arrowDownGrey.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Dialog.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Indicator"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NextIndicator:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 3.13834, 0.125 ),
+"update": 0,
+"values": [ Vector2( 339.392, 101.259 ), Vector2( 339.392, 108 ) ]
+}
+
+[node name="Dialog" type="Panel"]
+modulate = Color( 1, 1, 1, 0.854902 )
+margin_right = 369.0
+margin_bottom = 131.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 354.0
+margin_bottom = 99.0
+custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextIndicator" type="TextureRect" parent="."]
+visible = false
+margin_left = 339.392
+margin_top = 101.259
+margin_right = 354.392
+margin_bottom = 111.259
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Indicator"
+anims/Indicator = SubResource( 2 )
+
+[node name="NextCharacter" type="Timer" parent="."]
+wait_time = 0.04
+[connection signal="timeout" from="NextCharacter" to="." method="_on_next_character_timeout"]

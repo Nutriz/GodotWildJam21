@@ -74,17 +74,21 @@ Le système de jeu, tables de loi qui régissent le jeu
 ### Etape 2: Production du jeu
 
 * Définir tous les interlocuteurs
-* Faire un jolie standard téléphonique
-* Faire les jack et que ce soit jolie visuellement
-* Gérer la progression
-* Format des dialogues pour importation dans le jeu
+* Faire un joli standard téléphonique
+* Faire les jack et que ce soit jolie visuellement. A tester, avoir 10 points sur chaque câble, qui sont tous en (0, 0) et que j'étale entre le point de départ et d'arrivé avec une genre d'equation pour faire une courbe 🤷.
+* ✔️Gérer la progression de l'histoire, faire des sections dans le JSON des dialogues.
+* ✔️Format des dialogues pour importation dans le jeu
 * Gérer la progression de l'histoire
-* Enregistrer quelques sons de base, indispensable au gameplay
+* Intégrer quelques sons de base, indispensable au gameplay
 * Définir les interlocuteurs de remplissage (autre que les 2 héros)
 	* Téléphone rose
 	* Pompier
 	* Standard d'entreprise
 	* Gens au hasard
+
+* (bonus) Pour expliquer que les destinataires soient inconnus, en début de parti il y a un coup de vent qui fait s'envoler les post-it ayant les informations.
+* (bonus) Pour coller des post-it sur les destinations.
+* (bonus) Ajouter un technicien qui recable certaines sorties, message du genre "euh, désolé Bernadette, mais il y a eu un problème, j'ai du changer l'entrée B3 en B1 et l'entrée B5 en B2.
 
 ### Etape 3: Polish
 
@@ -98,8 +102,3 @@ Le système de jeu, tables de loi qui régissent le jeu
 * screenshots
 * textes
 * community manager stuff
-
-
-
-
-
