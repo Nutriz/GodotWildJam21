@@ -30,7 +30,10 @@ func display_indicator(must_display):
 func _on_next_character_timeout():
 	if msg.pos == "caller":
 		if ($Text.visible_characters == msg.name.length() + msg.text.length() + 8):
-			display_indicator(true)
+			if msg.has("holding"):
+				Events.emit_signal("can_be_holded", self)
+			else:
+				display_indicator(true)
 		else:
 			$Text.visible_characters += 1
 	else:

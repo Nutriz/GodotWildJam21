@@ -12,29 +12,30 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("skip") and curr_dial != null:
-
-		if get_curr_message().has("end"):
-			print("emit end")
-			Events.emit_signal("dialogue_finished")
-			curr_dial = null
-			$CallerDialog.hide()
-			$CalledDialog.hide()
-		elif get_curr_message().pos == "caller":
+		if get_curr_message().pos == "caller":
 			if not $CallerDialog.is_at_end_of_text():
 				$CallerDialog.skip_to_end_of_text()
 			elif get_curr_message().has("holding"):
 				return
+			elif is_last_message():
+				finish_and_close()
 			else:
 				msg_index += 1
 				display_next_message()
 		else:
 			if not $CalledDialog.is_at_end_of_text():
 				$CalledDialog.skip_to_end_of_text()
-			elif get_curr_message().has("holding"):
-				return
+			elif is_last_message():
+				finish_and_close()
 			else:
 				msg_index += 1
 				display_next_message()
+
+func finish_and_close():
+	curr_dial = null
+	$CallerDialog.hide()
+	$CalledDialog.hide()
+	Events.emit_signal("dialogue_finished")
 
 func load_dialogue(file_path):
 	var file = File.new()
@@ -57,7 +58,7 @@ func on_jack_connected(jack_type, input):
 	display_next_message()
 
 func on_holding():
-	print("received")
+
 	$CallerDialog.hide()
 	$CalledDialog.hide()
 
@@ -72,3 +73,6 @@ func display_next_message():
 
 func get_curr_message():
 	return curr_dial[msg_index]
+
+func is_last_message():
+	return msg_index == curr_dial.size() - 1

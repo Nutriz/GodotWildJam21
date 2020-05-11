@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/grey_boxTick.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/JackInput.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/grey_circle.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -10,6 +11,22 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 18.6864
+
+[sub_resource type="Animation" id=3]
+resource_name = "Red indicator"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Indicator:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.183011, 3.605 ),
+"update": 0,
+"values": [ Color( 0.529412, 0.203922, 0.203922, 0.439216 ), Color( 0.717647, 0.0117647, 0.0117647, 0.972549 ) ]
+}
 
 [node name="JackInput" type="Node2D"]
 script = ExtResource( 3 )
@@ -23,9 +40,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_left = 55.6634
-margin_top = -4.0
+margin_top = -2.0
 margin_right = 162.663
-margin_bottom = 44.0
+margin_bottom = 46.0
 custom_fonts/font = SubResource( 1 )
 text = "Entrée A"
 align = 1
@@ -34,9 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputArea" type="Area2D" parent="." groups=[
-"inputs",
-]]
+[node name="InputArea" type="Area2D" parent="."]
 position = Vector2( 26.7827, 20.0261 )
 input_pickable = false
 monitoring = false
@@ -48,3 +63,12 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea"]
 shape = SubResource( 2 )
+
+[node name="Indicator" type="Sprite" parent="."]
+modulate = Color( 0.529412, 0.203922, 0.203922, 0.439216 )
+position = Vector2( 189.075, 19.2392 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Red indicator" = SubResource( 3 )

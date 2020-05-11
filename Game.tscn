@@ -28,7 +28,6 @@ drag_margin_left = 0.5
 drag_margin_top = 0.5
 drag_margin_right = 0.55
 drag_margin_bottom = 1.0
-editor_draw_drag_margin = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -53,64 +52,58 @@ position = Vector2( 694.229, 686.085 )
 skew = 4.37114e-08
 texture = ExtResource( 4 )
 
-[node name="InputsA" type="Node2D" parent="."]
+[node name="Inputs" type="Node2D" parent="."]
 position = Vector2( 346.343, 214.487 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="A1" parent="InputsA" instance=ExtResource( 3 )]
+[node name="A1" parent="Inputs" instance=ExtResource( 3 )]
 skew = 4.37114e-08
 
-[node name="A2" parent="InputsA" instance=ExtResource( 3 )]
+[node name="A2" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 0, 71.65 )
 skew = 4.37114e-08
 input = 1
 
-[node name="A3" parent="InputsA" instance=ExtResource( 3 )]
+[node name="A3" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 0, 144.608 )
 skew = 4.37114e-08
 input = 2
 
-[node name="A4" parent="InputsA" instance=ExtResource( 3 )]
+[node name="A4" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 0, 216.707 )
 skew = 4.37114e-08
 input = 3
 
-[node name="A5" parent="InputsA" instance=ExtResource( 3 )]
+[node name="A5" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 0, 298.33 )
 skew = 4.37114e-08
 input = 4
 
-[node name="InputsB" type="Node2D" parent="."]
-position = Vector2( 659.283, 209.212 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="B1" parent="InputsB" instance=ExtResource( 3 )]
+[node name="B1" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 312.94, -5.27499 )
 skew = 4.37114e-08
 input = 5
 
-[node name="B2" parent="InputsB" instance=ExtResource( 3 )]
-position = Vector2( 0, 71.65 )
+[node name="B2" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 312.94, 66.375 )
 skew = 4.37114e-08
 input = 6
 
-[node name="B3" parent="InputsB" instance=ExtResource( 3 )]
-position = Vector2( 0, 144.608 )
+[node name="B3" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 312.94, 139.333 )
 skew = 4.37114e-08
 input = 7
 
-[node name="B4" parent="InputsB" instance=ExtResource( 3 )]
-position = Vector2( 0, 216.707 )
+[node name="B4" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 312.94, 211.432 )
 skew = 4.37114e-08
 input = 8
 
-[node name="B5" parent="InputsB" instance=ExtResource( 3 )]
-position = Vector2( 0, 298.33 )
+[node name="B5" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 312.94, 293.055 )
 skew = 4.37114e-08
 input = 9
 
@@ -151,14 +144,20 @@ position = Vector2( 694.444, 684.533 )
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
 
 [node name="CheckButton" type="CheckButton" parent="."]
-margin_left = 400.058
-margin_top = 654.322
-margin_right = 545.058
-margin_bottom = 694.322
+margin_left = 521.981
+margin_top = 659.333
+margin_right = 666.981
+margin_bottom = 699.333
 focus_mode = 0
+disabled = true
 enabled_focus_mode = 0
-text = "En attente"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CallTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
 [connection signal="toggled" from="CheckButton" to="." method="_on_holding_toggled"]
+[connection signal="timeout" from="CallTimer" to="." method="_on_CallTimer_timeout"]

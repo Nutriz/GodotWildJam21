@@ -6,6 +6,7 @@ var connectionB
 func _ready():
 	Events.connect("jack_connected", self, "on_jack_connected")
 	Events.connect("dialogue_finished", self, "on_dialogue_finished")
+	Events.connect("can_be_holded", self, "on_can_be_holded")
 
 func _process(delta):
 
@@ -25,9 +26,9 @@ func refresh_cable_position():
 	point = $JackB/Cable.global_position - $PositionJackB.global_position
 	$CableJackB.add_point(point)
 
-func on_jack_connected(jack_type, input):
-	print(str(jack_type) + " connected to " + str(Global.Inputs.keys()[input]))
-	if jack_type.ends_with("A"):
+func on_jack_connected(jack_name, input):
+	print(str(jack_name) + " connected to " + str(Global.Inputs.keys()[input]))
+	if jack_name.ends_with("A"):
 		connectionA = input
 	else:
 		connectionB = input
@@ -42,3 +43,10 @@ func _on_holding_toggled(button_pressed):
 	if button_pressed and connectionA != null:
 		print("emit " + str(connectionA))
 		Events.emit_signal("holding_input")
+
+func on_can_be_holded(input):
+	$CheckButton.disabled = false
+
+func _on_CallTimer_timeout():
+	var index = randi() % 5
+	$Inputs.get_children()[index].start_call()

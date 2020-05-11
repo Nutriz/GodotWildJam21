@@ -78,6 +78,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 * Faire les jack et que ce soit jolie visuellement. A tester, avoir 10 points sur chaque câble, qui sont tous en (0, 0) et que j'étale entre le point de départ et d'arrivé avec une genre d'equation pour faire une courbe 🤷.
 * ✔️Gérer la progression de l'histoire, faire des sections dans le JSON des dialogues.
 * ✔️Format des dialogues pour importation dans le jeu
+* Recevoir un appel entrant
 * Gérer la progression de l'histoire
 * Intégrer quelques sons de base, indispensable au gameplay
 * Définir les interlocuteurs de remplissage (autre que les 2 héros)

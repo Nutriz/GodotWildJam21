@@ -27,8 +27,7 @@
 					{
 						"name": "Jérôme",
 						"pos": "called",
-						"text": "euh, t'es sûre que ça va ?!",
-						"end": true
+						"text": "euh, t'es sûre que ça va ?!"
 					}
 				],
 				"B2": [
@@ -45,15 +44,14 @@
 					{
 						"name": "Pompier",
 						"pos": "called",
-						"text": ".... Au revoir madame",
-						"end": true
+						"text": ".... Au revoir madame"
 					}
 				]
 			}
 		],
 		"dial2": {}
 	},
-	"chapter02": {},
-	"chapter03": {},
-	"chapter04": {}
+	"chapter2": {},
+	"chapter3": {},
+	"chapter4": {}
 }
