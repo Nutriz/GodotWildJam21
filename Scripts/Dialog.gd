@@ -10,7 +10,7 @@ func display_msg(msg):
 	visible = true
 	display_indicator(false)
 
-	$Text.text = msg.name + ": " + get_text(msg)
+	$Text.text = msg.name + ": " + Global.get_translated_text(msg)
 	$Text.visible_characters = msg.name.length() + 1
 	$NextCharacter.start()
 
@@ -22,14 +22,14 @@ func is_at_end_of_text():
 	return $NextIndicator.visible
 
 func skip_to_end_of_text():
-	$Text.visible_characters = msg.name.length() +get_text(msg).length() + 8
+	$Text.visible_characters = msg.name.length() + Global.get_translated_text(msg).length() + 8
 
 func display_indicator(must_display):
 	$NextIndicator.visible = must_display
 
 func _on_next_character_timeout():
 	if msg.pos == "caller":
-		if ($Text.visible_characters == msg.name.length() + get_text(msg).length() + 8):
+		if ($Text.visible_characters == msg.name.length() + Global.get_translated_text(msg).length() + 8):
 			if msg.has("holding"):
 				Events.emit_signal("can_be_holded", self)
 			else:
@@ -37,13 +37,7 @@ func _on_next_character_timeout():
 		else:
 			$Text.visible_characters += 1
 	else:
-		if ($Text.visible_characters == msg.name.length() + get_text(msg).length() + 8):
+		if ($Text.visible_characters == msg.name.length() + Global.get_translated_text(msg).length() + 8):
 			display_indicator(true)
 		else:
 			$Text.visible_characters += 1
-
-func get_text(msg):
-	if Global.language == "fr":
-		return msg.text_fr
-	else:
-		return msg.text_en

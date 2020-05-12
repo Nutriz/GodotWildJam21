@@ -21,40 +21,7 @@ func _process(delta):
 
 	if Input.is_action_just_pressed("debug"):
 		$Debug.visible = true
-		$Debug/D.text += "***************************************\n"
-		$Debug/D.text += "*             INTRODUCTION            *\n"
-		$Debug/D.text += "***************************************\n"
-
-		for msg in Global.introduction:
-			$Debug/D.text += "\n" + msg
-
-		$Debug/D.text += "\n\n\n***************************************\n"
-		$Debug/D.text += "*              MAIN STORY             *\n"
-		$Debug/D.text += "***************************************\n"
-
-		debug(Global.main_story)
-
-		$Debug/D.text += "\n\n***************************************\n"
-		$Debug/D.text += "*          SECONDARIES STORY          *\n"
-		$Debug/D.text += "***************************************\n"
-		debug(Global.secondary_stories)
-
-func debug(story):
-	for dial in story:
-		$Debug/D.text += "\n---------- " + dial + " ----------"
-		var curr_dial = story[dial]
-		for msg_index in curr_dial.size():
-			if msg_index < curr_dial.size() - 1:
-				$Debug/D.text += "\n" + curr_dial[msg_index].name + ": " + $DialogSystem/CallerDialog.get_text(curr_dial[msg_index])
-			else:
-				for b in curr_dial[msg_index]:
-					$Debug/D.text += "\n" + b
-					for answer_index in curr_dial[msg_index][b].size():
-						if curr_dial[msg_index][b][answer_index].pos == "called":
-							$Debug/D.text += "\n\t" + curr_dial[msg_index][b][answer_index].name + ": " + $DialogSystem/CallerDialog.get_text(curr_dial[msg_index][b][answer_index])
-						else:
-							$Debug/D.text += "\n\t" + curr_dial[msg_index][b][answer_index].name + ": " + $DialogSystem/CallerDialog.get_text(curr_dial[msg_index][b][answer_index])
-		$Debug/D.text += "\n"
+		Global.display_debug($Debug/Text)
 
 func refresh_cable_position():
 	$CableJackA.remove_point(1)

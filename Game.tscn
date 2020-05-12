@@ -200,7 +200,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="D" type="RichTextLabel" parent="Debug"]
+[node name="Text" type="RichTextLabel" parent="Debug"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 1269.0
