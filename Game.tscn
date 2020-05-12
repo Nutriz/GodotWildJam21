@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Specs/sketch.jpeg" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Assets/Sprites/switch_button_on.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/switch_button_off.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sounds/noise2.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Font/JetBrainsMono-Regular.ttf" type="DynamicFontData" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 14 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -187,5 +191,22 @@ volume_db = -5.0
 stream = ExtResource( 13 )
 volume_db = -24.0
 pitch_scale = 0.81
+
+[node name="Debug" type="Panel" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 718.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D" type="RichTextLabel" parent="Debug"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1269.0
+margin_bottom = 709.0
+focus_mode = 2
+custom_fonts/normal_font = SubResource( 1 )
+selection_enabled = true
 [connection signal="toggled" from="HoldSwitch" to="." method="_on_holding_toggled"]
 [connection signal="timeout" from="CallTimer" to="." method="_on_call_timer_timeout"]

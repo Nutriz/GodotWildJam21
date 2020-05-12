@@ -1,9 +1,5 @@
 extends Control
 
-onready var dials = load_dialogue("res://Assets/Dialogues/dialogues.json.gd")
-onready var main_story = dials["main_story"]
-onready var secondary_stories = dials["secondary_stories"]
-
 var story_index = 0
 
 var chapter_idx = 1
@@ -42,15 +38,6 @@ func finish_and_close():
 	$CalledDialog.hide()
 	Events.emit_signal("dialogue_finished")
 
-func load_dialogue(file_path):
-	var file = File.new()
-	assert(file.file_exists(file_path), "file don't exist")
-
-	file.open(file_path, file.READ)
-	var dialogues = parse_json(file.get_as_text())
-	assert(dialogues.size() > 0, "dialogue is empty")
-	return dialogues
-
 func on_start_dialogue():
 	msg_index = 0
 	start_new_dialog()
@@ -71,13 +58,13 @@ func start_new_dialog():
 	if randi() % 2 == 0:
 		story_index += 1
 		print("start new story dialogue, index: " + str(story_index))
-		curr_dial = main_story["dial" + str(story_index)]
+		curr_dial = Global.main_story["dial" + str(story_index)]
 	else:
-		var max_index = secondary_stories.size()
+		var max_index = Global.secondary_stories.size()
 		var index = (randi() % max_index) + 1
 		assert(index > 0)
 		print("start new secondary story dialogue, index: " + str(index))
-		curr_dial = secondary_stories["dial" + str(index)]
+		curr_dial = Global.secondary_stories["dial" + str(index)]
 
 func on_holding():
 
