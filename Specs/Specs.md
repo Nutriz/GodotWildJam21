@@ -73,13 +73,13 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 ### Etape 2: Production du jeu
 
-* Définir tous les interlocuteurs
-* Faire un joli standard téléphonique
-* Faire les jack et que ce soit jolie visuellement. A tester, avoir 10 points sur chaque câble, qui sont tous en (0, 0) et que j'étale entre le point de départ et d'arrivé avec une genre d'equation pour faire une courbe 🤷.
 * ✔️Gérer la progression de l'histoire, faire des sections dans le JSON des dialogues.
 * ✔️Format des dialogues pour importation dans le jeu
 * ✔️Recevoir un appel entrant
 * ✔️Gérer la progression de l'histoire
+* Définir tous les interlocuteurs
+* Faire un joli standard téléphonique
+* Faire les jack et que ce soit jolie visuellement. A tester, avoir 10 points sur chaque câble, qui sont tous en (0, 0) et que j'étale entre le point de départ et d'arrivé avec une genre d'equation pour faire une courbe 🤷.
 * Intégrer quelques sons de base, indispensable au gameplay
 * Définir les interlocuteurs de remplissage (autre que les 2 héros)
   * Téléphone rose
@@ -98,6 +98,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 * Ajouter mini mouvement de caméra quand on manipule les jacks
 * Ajouter du parallax
 * Faire un effet de light2D pour ajouter de la dynamique aux mouvements
+* Faire des voix "yaourt" pour les voix à la celeste/animal crossing
 
 ### publication
 

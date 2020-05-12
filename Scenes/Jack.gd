@@ -14,7 +14,7 @@ func _on_PickArea_input_event(viewport, event, shape_idx):
 			picked = event.pressed
 			if not event.pressed and not $Area.get_overlapping_areas().empty():
 				var input_overlapped = $Area.get_overlapping_areas().front()
-				if (name == "JackA" and input_overlapped.is_in_group("inputsA")) or (name == "JackB" and input_overlapped.is_in_group("inputsB")):
+				if (name == "JackA" and input_overlapped.is_in_group("inputsA")) or (name == "JackB" and input_overlapped.is_in_group("inputsB") and Global.switch_button.pressed):
 					var input = $Area.get_overlapping_areas().front().get_parent()
 					self.connected_input = input
 				else:

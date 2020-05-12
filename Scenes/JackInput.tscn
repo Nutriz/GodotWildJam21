@@ -11,7 +11,7 @@ size = 30
 font_data = ExtResource( 1 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 18.6864
+radius = 15.6582
 
 [sub_resource type="Animation" id=3]
 resource_name = "Red indicator"

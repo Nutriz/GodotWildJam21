@@ -4,18 +4,20 @@
 [ext_resource path="res://Scenes/Jack.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 4.86356
-height = 49.213
+radius = 10.3836
+height = 39.0493
 
 [node name="Jack" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.49041, 15.3198 )
-rotation = 0.236714
+position = Vector2( 3.24145, 8.31014 )
+rotation = 0.251327
 scale = Vector2( 0.520002, 0.48 )
 skew = 4.37114e-08
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 50, 120 )
 
 [node name="Area" type="Area2D" parent="."]
 position = Vector2( 1.14157, -0.546944 )
@@ -26,6 +28,6 @@ position = Vector2( -1.06074, 10.5385 )
 shape = SubResource( 1 )
 
 [node name="Cable" type="Position2D" parent="."]
-position = Vector2( 0.698334, 51.7875 )
+position = Vector2( 0.197647, 37.5178 )
 skew = 4.37114e-08
 [connection signal="input_event" from="Area" to="." method="_on_PickArea_input_event"]

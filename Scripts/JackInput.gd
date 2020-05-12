@@ -12,7 +12,7 @@ func _ready():
 	else:
 		$InputArea.add_to_group("inputsB")
 
-func start_call():
+func start_ringing():
 	is_ringing = true
 	$AnimationPlayer.play("Red indicator")
 

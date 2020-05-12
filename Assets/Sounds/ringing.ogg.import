@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ringing.ogg-5cc3f8a9b75c533e4b0bfa902123374d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/ringing.ogg"
+dest_files=[ "res://.import/ringing.ogg-5cc3f8a9b75c533e4b0bfa902123374d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

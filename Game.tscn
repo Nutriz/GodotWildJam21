@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Specs/sketch.jpeg" type="Texture" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://Scenes/DialogSystem.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sounds/noise1.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Sounds/click2.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sounds/ringing.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Sprites/switch_button_on.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/switch_button_off.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sounds/noise2.ogg" type="AudioStream" id=13]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -145,14 +149,19 @@ position = Vector2( 694.444, 684.533 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
 
-[node name="CheckButton" type="CheckButton" parent="."]
-margin_left = 521.981
-margin_top = 659.333
-margin_right = 666.981
-margin_bottom = 699.333
+[node name="HoldSwitch" type="TextureButton" parent="."]
+margin_left = 600.321
+margin_top = 656.849
+margin_right = 676.321
+margin_bottom = 696.849
 focus_mode = 0
 disabled = true
+toggle_mode = true
 enabled_focus_mode = 0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+texture_disabled = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,10 +171,21 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="Noise1" type="AudioStreamPlayer" parent="."]
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="Noise1" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 8 )
 
-[node name="JackOver" type="AudioStreamPlayer" parent="."]
+[node name="JackOver" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 9 )
-[connection signal="toggled" from="CheckButton" to="." method="_on_holding_toggled"]
+
+[node name="Ringing" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 10 )
+volume_db = -5.0
+
+[node name="HoldingNoise" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 13 )
+volume_db = -24.0
+pitch_scale = 0.81
+[connection signal="toggled" from="HoldSwitch" to="." method="_on_holding_toggled"]
 [connection signal="timeout" from="CallTimer" to="." method="_on_call_timer_timeout"]

@@ -8,6 +8,7 @@ func _ready():
 	Events.connect("jack_disconnected", self, "on_jack_disconnected")
 	Events.connect("dialogue_finished", self, "on_dialogue_finished")
 	Events.connect("can_be_holded", self, "on_can_be_holded")
+	Global.switch_button = $HoldSwitch
 
 func _process(delta):
 
@@ -30,40 +31,47 @@ func refresh_cable_position():
 func on_jack_connected(jack_name, input):
 	print(str(jack_name) + " connected to " + str(Global.Inputs.keys()[input.input]))
 	input.set_connected()
+	$SFX/Ringing.stop()
 	if jack_name.ends_with("A"):
 		if input.is_ringing:
 			connectionA = input
 			Events.emit_signal("start_dialogue")
 		else:
 			yield(get_tree().create_timer(0.5), "timeout")
-			$Noise1.play()
-	else:
-		# TODO add if "is already in communication
-		Events.emit_signal("start_answer", input.input)
+			$SFX/Noise1.play()
+	elif connectionA != null and not $HoldSwitch.disabled:
 		connectionB = input.input
 
 func on_jack_disconnected(jack_name, connected_input):
 	print(jack_name + " disconnected from " + str(connected_input))
-	$Noise1.stop()
+	$SFX/Noise1.stop()
 	connected_input.set_disconnected()
 
 func on_dialogue_finished():
 	print("reset")
 	$JackA.reset_position()
 	$JackB.reset_position()
-	$CheckButton.pressed = false
-	$CheckButton.disabled = true
+	$HoldSwitch.pressed = false
+	$HoldSwitch.disabled = true
+	randomize()
+	$CallTimer.wait_time = rand_range(2, 10)
 	$CallTimer.start()
+	print("started new call timer with: " + str($CallTimer.wait_time))
 
 func _on_holding_toggled(button_pressed):
 	if button_pressed and connectionA != null:
 		connectionA.hold_call()
+		$SFX/HoldingNoise.play()
 		Events.emit_signal("holding_input")
+	else:
+		Events.emit_signal("start_answer", connectionB)
+		$SFX/HoldingNoise.stop()
 
 func on_can_be_holded(input):
-	$CheckButton.disabled = false
+	$HoldSwitch.disabled = false
 
 func _on_call_timer_timeout():
 	randomize()
 	var index = randi() % 5
-	$Inputs.get_children()[index].start_call()
+	$Inputs.get_children()[index].start_ringing()
+	$SFX/Ringing.play()
