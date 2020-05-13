@@ -14,8 +14,6 @@ func _process(delta):
 
 	$MouseToTrack.position = get_global_mouse_position()
 
-	refresh_cable_position()
-
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
 
@@ -23,14 +21,6 @@ func _process(delta):
 		$Debug.visible = true
 		Global.display_debug($Debug/Text)
 
-func refresh_cable_position():
-	$CableJackA.remove_point(1)
-	var point = $JackA/Cable.global_position - $PositionJackA.global_position
-	$CableJackA.add_point(point)
-
-	$CableJackB.remove_point(1)
-	point = $JackB/Cable.global_position - $PositionJackB.global_position
-	$CableJackB.add_point(point)
 
 func on_jack_connected(jack_name, input):
 	print(str(jack_name) + " connected to " + str(Global.Inputs.keys()[input.input]))

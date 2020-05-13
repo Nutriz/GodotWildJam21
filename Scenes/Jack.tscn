@@ -27,7 +27,9 @@ priority = 2.0
 position = Vector2( -1.06074, 10.5385 )
 shape = SubResource( 1 )
 
-[node name="Cable" type="Position2D" parent="."]
-position = Vector2( 0.197647, 37.5178 )
-skew = 4.37114e-08
+[node name="Cable" type="Line2D" parent="."]
+position = Vector2( 0.291992, 36.7906 )
+width = 8.0
+joint_mode = 2
+antialiased = true
 [connection signal="input_event" from="Area" to="." method="_on_PickArea_input_event"]
