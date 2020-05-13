@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/noise_before_plug.ogg-f86b13e43b6419b27c86f0c0435440fb.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/noise_before_plug.ogg"
+dest_files=[ "res://.import/noise_before_plug.ogg-f86b13e43b6419b27c86f0c0435440fb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

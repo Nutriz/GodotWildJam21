@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Sprites/jack.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Jack.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sounds/jack-in.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sounds/noise_before_plug.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.3836
@@ -32,4 +34,10 @@ position = Vector2( 0.291992, 36.7906 )
 width = 8.0
 joint_mode = 2
 antialiased = true
+
+[node name="JackIn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="JackBeforePlug" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="input_event" from="Area" to="." method="_on_PickArea_input_event"]
