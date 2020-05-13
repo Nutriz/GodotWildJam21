@@ -27,6 +27,7 @@ func on_jack_connected(jack_name, input):
 	input.set_connected()
 	$SFX/Ringing.stop()
 	if jack_name.ends_with("A"):
+		input.set_connected()
 		if input.is_ringing:
 			connectionA = input
 			Events.emit_signal("start_dialogue")
@@ -35,6 +36,7 @@ func on_jack_connected(jack_name, input):
 			$SFX/Noise1.play()
 	elif connectionA != null and not $HoldSwitch.disabled:
 		connectionB = input.input
+		input.hold_call()
 
 func on_jack_disconnected(jack_name, connected_input):
 	print(jack_name + " disconnected from " + str(connected_input))

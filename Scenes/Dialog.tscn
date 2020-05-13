@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/grey_arrowDownGrey.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Dialog.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sounds/voice1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -60,5 +61,8 @@ autoplay = "Indicator"
 anims/Indicator = SubResource( 2 )
 
 [node name="NextCharacter" type="Timer" parent="."]
-wait_time = 0.04
+wait_time = 0.08
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="timeout" from="NextCharacter" to="." method="_on_next_character_timeout"]
