@@ -62,7 +62,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 ## TODO
 
-### Etape 1: Proto
+### ✔️Etape 1: Proto
 
 * ✔️Affichage du board
 * ✔️Affichage des entreés jack
@@ -73,32 +73,48 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 ### Etape 2: Production du jeu
 
+* Ajouter un technicien qui recable certaines sorties
 * ✔️Gérer la progression de l'histoire, faire des sections dans le JSON des dialogues.
 * ✔️Format des dialogues pour importation dans le jeu
 * ✔️Recevoir un appel entrant
 * ✔️Gérer la progression de l'histoire
-* Définir tous les interlocuteurs
-* Faire un joli standard téléphonique
-* Faire les jack et que ce soit jolie visuellement. A tester, avoir 10 points sur chaque câble, qui sont tous en (0, 0) et que j'étale entre le point de départ et d'arrivé avec une genre d'equation pour faire une courbe 🤷.
-* Intégrer quelques sons de base, indispensable au gameplay
-* Définir les interlocuteurs de remplissage (autre que les 2 héros)
-  * Téléphone rose
-  * Pompier
-  * Standard d'entreprise
-  * Gens au hasard
+* ✔️Faire un joli standard téléphonique
+* ✔️Intégrer quelques sons de base, indispensable au gameplay
 
-* (bonus) Pour expliquer que les destinataires soient inconnus, en début de parti il y a un coup de vent qui fait s'envoler les post-it ayant les informations.
-* (bonus) Pour coller des post-it sur les destinations.
-* (bonus) Ajouter un technicien qui recable certaines sorties, message du genre "euh, désolé Bernadette, mais il y a eu un problème, j'ai du changer l'entrée B3 en B1 et l'entrée B5 en B2.
+* Tech
+  * Utilise le nom des nodes pour les inputs jack ?
+
+* Dialogues
+  * Afficher l'introduction en fullscreen
+  * Afficher le dialogue du chef en début de jeu
+  * Pouvoir connecter les sorties à B1, B2
+  * Pour voir afficher dialogue du technicien et recabler
+  * Définir tous les destinataires
+  * Afficher tag de fin à la place du next indicator
+  * TOOLS: debug en jeu affiche si longueur de phrase trop long
+
+* Graphismes
+  * Finir les input B
+  * Nouveau jack (rouge et bleu) en vectoriel
+  * Scale en Y du jack pour simuler l'effet d'angle
+  * Faire le bouton de switch en vectoriel
+  * Faire la lumière pour le bouton de switch
+  * Faire un câble de Jack plus réaliste.
+
+* Sons
+  * Faire la "musique" d'environnement, broua de télécomunication
+  * Refaire les voix "yaourt"
 
 ### Etape 3: Polish
 
-* ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
+* Faire un menu
 * Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
+* ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
+* Faire un contrôleur accessoire (pour faire jolie) qui contrôle le son des voix
 * Ajouter mini mouvement de caméra quand on manipule les jacks
-* Ajouter du parallax
 * Faire un effet de light2D pour ajouter de la dynamique aux mouvements
-* Faire des voix "yaourt" pour les voix à la celeste/animal crossing
+* (bonus) Pour expliquer que les destinataires soient inconnus, en début de parti il y a un coup de vent qui fait s'envoler les post-it ayant les informations.
+* (bonus) Pour coller des post-it sur les destinations.
 
 ### publication
 

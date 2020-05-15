@@ -50,32 +50,17 @@ func _on_next_character_timeout():
 
 func handle_word_sound():
 	if $Text.text[$Text.visible_characters] == " ":
-		var i = 1
-		while $Text.visible_characters + i < $Text.text.length() and $Text.text[$Text.visible_characters + i] != " ":
-			i += 1
-		print("next word len: " + str(i-1))
+		var word_len = 1
+		while $Text.visible_characters + word_len < $Text.text.length() and $Text.text[$Text.visible_characters + word_len] != " ":
+			word_len += 1
 
-		if i <= 3:
-			$Voice.play()
-		elif i <= 6:
-			$Voice.play()
-			yield(get_tree().create_timer(0.1), "timeout")
-			$Voice.play()
+		print("next word len: " + str(word_len-1))
+
+		randomize()
+		var i = (randi() % 2) + 1
+		if word_len <= 3:
+			$VoiceSystem.get_node("ManShort" + str(i)).play()
+		elif word_len <= 7:
+			$VoiceSystem.get_node("ManMid" + str(i)).play()
 		else:
-			$Voice.play()
-			yield(get_tree().create_timer(0.1), "timeout")
-			$Voice.play()
-			yield(get_tree().create_timer(0.1), "timeout")
-			$Voice.play()
-#		else:
-#			if $Text.text[$Text.visible_characters] == " ":
-#				printt("space pos ", $Text.visible_characters + 1)
-#				var i = 1
-#				while $Text.text[$Text.visible_characters + i] != " ":
-#					i += 1
-#					if $Text.visible_characters + i >= $Text.text.length():
-#						print("returnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
-#						$Text.visible_characters += 1
-#						return
-#				print("next word len: " + str(i-1))
-#			$Text.visible_characters += 1
+			$VoiceSystem.get_node("ManLong" + str(i)).play()

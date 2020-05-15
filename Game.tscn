@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Specs/sketch.jpeg" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/board.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/JackInput.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sprites/yellow_boxTick.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/blue_boxTick.png" type="Texture" id=5]
@@ -44,92 +44,166 @@ __meta__ = {
 
 [node name="Sketch" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.792157 )
-position = Vector2( -10.8149, -36.0503 )
-scale = Vector2( 0.688314, 0.574388 )
+position = Vector2( 147.563, -21.6414 )
+scale = Vector2( 0.535995, 0.535995 )
 texture = ExtResource( 2 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="blue_boxTick" type="Sprite" parent="."]
-position = Vector2( 566.354, 682.004 )
+position = Vector2( 566.354, 641.004 )
 skew = 4.37114e-08
 texture = ExtResource( 5 )
 
 [node name="yellow_boxTick" type="Sprite" parent="."]
-position = Vector2( 694.229, 686.085 )
+position = Vector2( 694.229, 645.085 )
 skew = 4.37114e-08
 texture = ExtResource( 4 )
 
 [node name="Inputs" type="Node2D" parent="."]
 position = Vector2( 346.343, 214.487 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="A1" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 51.582, 54.4324 )
 skew = 4.37114e-08
 
 [node name="A2" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 0, 71.65 )
+position = Vector2( 87.8956, 54.1536 )
 skew = 4.37114e-08
 input = 1
 
 [node name="A3" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 0, 144.608 )
+position = Vector2( 124.209, 53.7861 )
 skew = 4.37114e-08
 input = 2
 
 [node name="A4" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 0, 216.707 )
+position = Vector2( 157.729, 54.6546 )
 skew = 4.37114e-08
 input = 3
 
 [node name="A5" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 0, 298.33 )
+position = Vector2( 191.25, 53.8737 )
 skew = 4.37114e-08
 input = 4
 
-[node name="B1" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 312.94, -5.27499 )
+[node name="A6" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 51.582, 117.432 )
 skew = 4.37114e-08
 input = 5
 
-[node name="B2" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 312.94, 66.375 )
+[node name="A7" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 87.8956, 117.154 )
 skew = 4.37114e-08
 input = 6
 
-[node name="B3" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 312.94, 139.333 )
+[node name="A8" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 124.209, 116.786 )
 skew = 4.37114e-08
 input = 7
 
-[node name="B4" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 312.94, 211.432 )
+[node name="A9" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 157.729, 117.655 )
 skew = 4.37114e-08
 input = 8
 
-[node name="B5" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 312.94, 293.055 )
+[node name="A10" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 191.25, 116.874 )
 skew = 4.37114e-08
 input = 9
 
+[node name="A11" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 51.582, 183.432 )
+skew = 4.37114e-08
+input = 10
+
+[node name="A12" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 87.8956, 183.154 )
+skew = 4.37114e-08
+input = 11
+
+[node name="A13" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 124.209, 182.786 )
+skew = 4.37114e-08
+input = 12
+
+[node name="A14" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 157.729, 183.655 )
+skew = 4.37114e-08
+input = 13
+
+[node name="A15" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 191.25, 182.874 )
+skew = 4.37114e-08
+input = 14
+
+[node name="A16" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 51.582, 245.432 )
+skew = 4.37114e-08
+input = 15
+
+[node name="A17" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 87.8956, 245.154 )
+skew = 4.37114e-08
+input = 16
+
+[node name="A18" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 124.209, 244.786 )
+skew = 4.37114e-08
+input = 17
+
+[node name="A19" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 157.729, 245.655 )
+skew = 4.37114e-08
+input = 18
+
+[node name="A20" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 191.25, 244.874 )
+skew = 4.37114e-08
+input = 19
+
+[node name="B1" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 787.179, -23.0035 )
+skew = 4.37114e-08
+input = 20
+
+[node name="B2" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 787.179, 48.6465 )
+skew = 4.37114e-08
+input = 21
+
+[node name="B3" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 787.179, 121.604 )
+skew = 4.37114e-08
+input = 22
+
+[node name="B4" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 787.179, 193.703 )
+skew = 4.37114e-08
+input = 23
+
+[node name="B5" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 787.179, 275.326 )
+skew = 4.37114e-08
+input = 24
+
+[node name="B6" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 787.179, 344.091 )
+skew = 4.37114e-08
+input = 24
+
 [node name="JackA" parent="." instance=ExtResource( 6 )]
-position = Vector2( 567.276, 650.259 )
+position = Vector2( 567.276, 609.259 )
 
 [node name="JackB" parent="." instance=ExtResource( 6 )]
-position = Vector2( 693.242, 646.76 )
+position = Vector2( 693.242, 605.76 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
 
 [node name="HoldSwitch" type="TextureButton" parent="."]
 margin_left = 600.321
-margin_top = 656.849
+margin_top = 615.849
 margin_right = 676.321
-margin_bottom = 696.849
+margin_bottom = 655.849
 focus_mode = 0
 disabled = true
 toggle_mode = true

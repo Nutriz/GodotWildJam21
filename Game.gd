@@ -68,6 +68,6 @@ func on_can_be_holded(input):
 
 func _on_call_timer_timeout():
 	randomize()
-	var index = randi() % 5
+	var index = randi() % 20
 	$Inputs.get_children()[index].start_ringing()
 	$SFX/Ringing.play()

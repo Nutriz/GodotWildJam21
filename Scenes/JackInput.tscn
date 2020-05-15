@@ -1,17 +1,17 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Sprites/grey_boxTick.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/jack_input.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/JackInput.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Sprites/grey_circle.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/indicator_fx.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sounds/click2.ogg" type="AudioStream" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-size = 30
-font_data = ExtResource( 1 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 11.3416
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 15.6582
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Red indicator"
@@ -26,50 +26,44 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 0.183011, 3.605 ),
 "update": 0,
-"values": [ Color( 0.529412, 0.203922, 0.203922, 0.439216 ), Color( 0.717647, 0.0117647, 0.0117647, 0.972549 ) ]
+"values": [ Color( 0.529412, 0.52549, 0.203922, 0.439216 ), Color( 0.733333, 0.74902, 0.258824, 0.972549 ) ]
 }
 
 [node name="JackInput" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_right = 210.0
-margin_bottom = 40.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Indicator" type="Sprite" parent="."]
+modulate = Color( 0.529412, 0.52549, 0.203922, 0.439216 )
+position = Vector2( 11.514, 11.319 )
+scale = Vector2( 0.948157, 0.948157 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 11.4482, 27.2818 )
+scale = Vector2( 0.211082, 0.211082 )
+skew = 4.37114e-08
+texture = ExtResource( 2 )
+
+[node name="InputArea" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea"]
+position = Vector2( 11.2943, 42.7358 )
+shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 55.6634
-margin_top = -2.0
-margin_right = 162.663
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 1 )
-text = "Entrée A"
+margin_left = -4.01152
+margin_top = -11.6499
+margin_right = 27.9885
+margin_bottom = 34.3501
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="InputArea" type="Area2D" parent="."]
-position = Vector2( 26.7827, 20.0261 )
-input_pickable = false
-
-[node name="Sprite" type="Sprite" parent="InputArea"]
-scale = Vector2( 0.8, 0.8 )
-skew = 4.37114e-08
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea"]
-shape = SubResource( 2 )
-
-[node name="Indicator" type="Sprite" parent="."]
-modulate = Color( 0.529412, 0.203922, 0.203922, 0.439216 )
-position = Vector2( 189.075, 19.2392 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Red indicator" = SubResource( 3 )

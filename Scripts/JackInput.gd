@@ -5,9 +5,9 @@ export(Global.Inputs) var input
 var is_ringing = false
 
 func _ready():
-	$Label.text = "Entrée " + str(Global.Inputs.keys()[input])
+	$Label.text = str((input%5)+1)
 
-	if input < 5:
+	if input < 20:
 		$InputArea.add_to_group("inputsA")
 	else:
 		$InputArea.add_to_group("inputsB")

@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/grey_arrowDownGrey.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Dialog.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Sounds/voice1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_short_1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_long_2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_long_1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_mid_2.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_short_2.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -61,8 +65,25 @@ autoplay = "Indicator"
 anims/Indicator = SubResource( 2 )
 
 [node name="NextCharacter" type="Timer" parent="."]
-wait_time = 0.08
+wait_time = 0.04
 
-[node name="Voice" type="AudioStreamPlayer" parent="."]
+[node name="VoiceSystem" type="AudioStreamPlayer" parent="."]
+
+[node name="ManShort1" type="AudioStreamPlayer" parent="VoiceSystem"]
 stream = ExtResource( 4 )
+
+[node name="ManShort2" type="AudioStreamPlayer" parent="VoiceSystem"]
+stream = ExtResource( 8 )
+
+[node name="ManMid1" type="AudioStreamPlayer" parent="VoiceSystem"]
+stream = ExtResource( 7 )
+
+[node name="ManMid2" type="AudioStreamPlayer" parent="VoiceSystem"]
+stream = ExtResource( 7 )
+
+[node name="ManLong1" type="AudioStreamPlayer" parent="VoiceSystem"]
+stream = ExtResource( 6 )
+
+[node name="ManLong2" type="AudioStreamPlayer" parent="VoiceSystem"]
+stream = ExtResource( 5 )
 [connection signal="timeout" from="NextCharacter" to="." method="_on_next_character_timeout"]

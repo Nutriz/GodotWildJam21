@@ -1,6 +1,6 @@
 extends Node
 
-enum Inputs {A1, A2, A3, A4, A5, B1, B2, B3, B4, B5}
+enum Inputs {A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, B1, B2, B3, B4, B5, B6}
 
 var switch_button
 
@@ -13,9 +13,9 @@ onready var secondary_stories = dials["secondary_stories"]
 
 func _ready():
 	if language == "fr":
-		introduction = dials["introduction_fr"]
+		introduction = dials["story_introduction_fr"]
 	else:
-		introduction = dials["introduction_en"]
+		introduction = dials["story_introduction_en"]
 
 func load_dialogue(file_path):
 	var file = File.new()
