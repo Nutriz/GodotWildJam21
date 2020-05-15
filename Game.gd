@@ -22,21 +22,21 @@ func _process(delta):
 		Global.display_debug($Debug/Text)
 
 
-func on_jack_connected(jack_name, input):
-	print(str(jack_name) + " connected to " + str(Global.Inputs.keys()[input.input]))
-	input.set_connected()
+func on_jack_connected(jack_name, jack_input):
+	print(str(jack_name) + " connected to " + str(jack_input.get_index_num()))
+	jack_input.set_connected()
 	$SFX/Ringing.stop()
 	if jack_name.ends_with("A"):
-		input.set_connected()
-		if input.is_ringing:
-			connectionA = input
+		jack_input.set_connected()
+		if jack_input.is_ringing:
+			connectionA = jack_input
 			Events.emit_signal("start_dialogue")
 		else:
 			yield(get_tree().create_timer(0.5), "timeout")
 			$SFX/Noise1.play()
 	elif connectionA != null and not $HoldSwitch.disabled:
-		connectionB = input.input
-		input.hold_call()
+		connectionB = jack_input
+		jack_input.hold_call()
 
 func on_jack_disconnected(jack_name, connected_input):
 	print(jack_name + " disconnected from " + str(connected_input))

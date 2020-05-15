@@ -46,8 +46,8 @@ func on_start_dialogue():
 func on_start_answer(input):
 	msg_index = 0
 	var dial_length = curr_dial.size() - 1
-	if curr_dial[dial_length].has("B" + str(input + 1 - 5)):
-		curr_dial = curr_dial[dial_length]["B" + str(input + 1 - 5)]
+	if curr_dial[dial_length].has("B" + str(input.get_index_num() - 20)):
+		curr_dial = curr_dial[dial_length]["B" + str(input.get_index_num() - 20)]
 	else:
 		print("no entry, default answer")
 

@@ -82,7 +82,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 * ✔️Intégrer quelques sons de base, indispensable au gameplay
 
 * Tech
-  * Utilise le nom des nodes pour les inputs jack ?
+  * ✔️Utilise le nom des nodes pour les inputs jack ?
 
 * Dialogues
   * Afficher l'introduction en fullscreen
@@ -96,6 +96,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 * Graphismes
   * Finir les input B
   * Nouveau jack (rouge et bleu) en vectoriel
+  * Encadré de dialogue en vectoriel
   * Scale en Y du jack pour simuler l'effet d'angle
   * Faire le bouton de switch en vectoriel
   * Faire la lumière pour le bouton de switch

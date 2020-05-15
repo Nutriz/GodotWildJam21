@@ -22,7 +22,7 @@ func is_at_end_of_text():
 	return $NextIndicator.visible
 
 func skip_to_end_of_text():
-	$Text.visible_characters = msg.name.length() + Global.get_translated_text(msg).length() + 8
+	$Text.visible_characters = msg.name.length() + Global.get_translated_text(msg).length()
 
 func display_indicator(must_display):
 	$NextIndicator.visible = must_display
@@ -37,7 +37,7 @@ func _on_next_character_timeout():
 			else:
 				display_indicator(true)
 		else:
-			handle_word_sound()
+#			handle_word_sound()
 			$Text.visible_characters += 1
 	else:
 		if ($Text.visible_characters == msg.name.length() + Global.get_translated_text(msg).length() + 2):
@@ -45,7 +45,7 @@ func _on_next_character_timeout():
 			print("stop timer")
 			display_indicator(true)
 		else:
-			handle_word_sound()
+#			handle_word_sound()
 			$Text.visible_characters += 1
 
 func handle_word_sound():

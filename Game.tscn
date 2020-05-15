@@ -69,127 +69,102 @@ skew = 4.37114e-08
 [node name="A2" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 87.8956, 54.1536 )
 skew = 4.37114e-08
-input = 1
 
 [node name="A3" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 124.209, 53.7861 )
 skew = 4.37114e-08
-input = 2
 
 [node name="A4" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 157.729, 54.6546 )
 skew = 4.37114e-08
-input = 3
 
 [node name="A5" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 191.25, 53.8737 )
 skew = 4.37114e-08
-input = 4
 
 [node name="A6" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 51.582, 117.432 )
 skew = 4.37114e-08
-input = 5
 
 [node name="A7" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 87.8956, 117.154 )
 skew = 4.37114e-08
-input = 6
 
 [node name="A8" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 124.209, 116.786 )
 skew = 4.37114e-08
-input = 7
 
 [node name="A9" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 157.729, 117.655 )
 skew = 4.37114e-08
-input = 8
 
 [node name="A10" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 191.25, 116.874 )
 skew = 4.37114e-08
-input = 9
 
 [node name="A11" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 51.582, 183.432 )
 skew = 4.37114e-08
-input = 10
 
 [node name="A12" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 87.8956, 183.154 )
 skew = 4.37114e-08
-input = 11
 
 [node name="A13" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 124.209, 182.786 )
 skew = 4.37114e-08
-input = 12
 
 [node name="A14" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 157.729, 183.655 )
 skew = 4.37114e-08
-input = 13
 
 [node name="A15" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 191.25, 182.874 )
 skew = 4.37114e-08
-input = 14
 
 [node name="A16" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 51.582, 245.432 )
 skew = 4.37114e-08
-input = 15
 
 [node name="A17" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 87.8956, 245.154 )
 skew = 4.37114e-08
-input = 16
 
 [node name="A18" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 124.209, 244.786 )
 skew = 4.37114e-08
-input = 17
 
 [node name="A19" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 157.729, 245.655 )
 skew = 4.37114e-08
-input = 18
 
 [node name="A20" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 191.25, 244.874 )
 skew = 4.37114e-08
-input = 19
 
-[node name="B1" parent="Inputs" instance=ExtResource( 3 )]
+[node name="B21" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 787.179, -23.0035 )
 skew = 4.37114e-08
-input = 20
 
-[node name="B2" parent="Inputs" instance=ExtResource( 3 )]
+[node name="B22" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 787.179, 48.6465 )
 skew = 4.37114e-08
-input = 21
 
-[node name="B3" parent="Inputs" instance=ExtResource( 3 )]
+[node name="B23" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 787.179, 121.604 )
 skew = 4.37114e-08
-input = 22
 
-[node name="B4" parent="Inputs" instance=ExtResource( 3 )]
+[node name="B24" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 787.179, 193.703 )
 skew = 4.37114e-08
-input = 23
 
-[node name="B5" parent="Inputs" instance=ExtResource( 3 )]
+[node name="B25" parent="Inputs" instance=ExtResource( 3 )]
 position = Vector2( 787.179, 275.326 )
 skew = 4.37114e-08
-input = 24
 
-[node name="B6" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 787.179, 344.091 )
+[node name="B26" parent="Inputs" instance=ExtResource( 3 )]
+position = Vector2( 787.179, 353.326 )
 skew = 4.37114e-08
-input = 24
 
 [node name="JackA" parent="." instance=ExtResource( 6 )]
 position = Vector2( 567.276, 609.259 )

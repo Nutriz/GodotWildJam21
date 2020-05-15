@@ -1,15 +1,15 @@
 extends Node2D
 
-export(Global.Inputs) var input
-
 var is_ringing = false
 
 func _ready():
-	$Label.text = str((input%5)+1)
-
-	if input < 20:
+	if get_index_num() <= 20:
+		$Label.text = str(((get_index_num()-1)%5)+1)
 		$InputArea.add_to_group("inputsA")
 	else:
+		$Label.text = str(((get_index_num()-1)%5)+1)
+		if name == "B26":
+			$Label.text = "6"
 		$InputArea.add_to_group("inputsB")
 
 func start_ringing():
@@ -35,3 +35,6 @@ func _on_jack_area_entered(area):
 
 func _on_InputArea_input_event(viewport, event, shape_idx):
 	print("callback input")
+
+func get_index_num():
+	return int(name.substr(1))
