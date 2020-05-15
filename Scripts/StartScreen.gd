@@ -8,8 +8,6 @@ func _on_Language_item_selected(index):
 	load_language(index)
 
 func load_language(index):
-	Global.load_language()
-
 	if index == 1:
 		$Menu/Start.text = "Démarrer"
 		$Menu/Credits.text = "Crédits"

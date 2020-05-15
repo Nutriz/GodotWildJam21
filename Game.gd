@@ -60,6 +60,10 @@ func on_dialogue_finished():
 	$CallTimer.start()
 	print("started new call timer with: " + str($CallTimer.wait_time))
 
+	if Global.story_index % 3 == 0:
+		randomize()
+		$DialogSystem.start_tech_man_dialog(randi() % 2 + 1)
+
 func _on_holding_toggled(button_pressed):
 	if button_pressed and connectionA != null:
 		connectionA.set_light_blink()

@@ -2,6 +2,8 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("Bg")
+	$Label.text = Global.introduction["text_" + str(Global.language)]
+
 
 func _process(delta):
 	if Input.is_action_just_pressed("skip"):

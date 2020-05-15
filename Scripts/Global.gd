@@ -6,18 +6,14 @@ var switch_button
 
 var language = "fr"
 
-onready var dials = load_dialogue("res://Assets/Dialogues/dialogues.json.gd")
-var introduction
-var boss_dialogue
+var story_index = 0
+
+onready var dials = load_dialogue("res://Assets/Dialogues/dialogues.json")
+onready var introduction = dials["story_introduction"]
+onready var boss_dialogue = dials["boss_dialogue"]
+onready var techman_dialogue = dials["tech_man"]
 onready var main_story = dials["main_story"]
 onready var secondary_stories = dials["secondary_stories"]
-
-func _ready():
-	load_language()
-
-func load_language():
-	introduction = dials["story_introduction_" + language]
-	boss_dialogue = dials["boss_dialogue_" + language]
 
 func start_introduction():
 	get_tree().change_scene("res://Scenes/Introduction.tscn")
@@ -64,13 +60,20 @@ func debug(story, debug_text):
 		var curr_dial = story[dial]
 		for msg_index in curr_dial.size():
 			if msg_index < curr_dial.size() - 1:
-				debug_text.text += "\n" + curr_dial[msg_index].name + ": " + Global.get_translated_text(curr_dial[msg_index])
+				var text =  curr_dial[msg_index].name + ": " + Global.get_translated_text(curr_dial[msg_index])
+				if text.length() > 146:
+					debug_text.text += "\nTEXT TO LONG -> "
+				debug_text.text += "\n" + text
+
+
 			else:
 				for b in curr_dial[msg_index]:
 					debug_text.text += "\n" + b
 					for answer_index in curr_dial[msg_index][b].size():
-						if curr_dial[msg_index][b][answer_index].pos == "called":
-							debug_text.text += "\n\t" + curr_dial[msg_index][b][answer_index].name + ": " + Global.get_translated_text(curr_dial[msg_index][b][answer_index])
+						var text = "\n\t" + curr_dial[msg_index][b][answer_index].name + ": " + Global.get_translated_text(curr_dial[msg_index][b][answer_index])
+						if text.length() > 146:
+							debug_text.text += "\n**** TOO LONG -> " + text
 						else:
-							debug_text.text += "\n\t" + curr_dial[msg_index][b][answer_index].name + ": " + Global.get_translated_text(curr_dial[msg_index][b][answer_index])
+							debug_text.text += "\n" + text
+
 		debug_text.text += "\n"

@@ -1,10 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/DialogSystem.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Dialog.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_long_1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/Dialog.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_short_1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_mid_2.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_short_2.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/voices/voice_man_long_2.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sprites/grey_arrowDownGrey.png" type="Texture" id=10]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Indicator"
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.937255 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.0745098, 0.0705882, 0.0666667, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 6
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -15,9 +41,9 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 3.13834, 0.125 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 339.392, 101.259 ), Vector2( 339.392, 108 ) ]
+"values": [ Vector2( 261.392, 181.259 ), Vector2( 261.392, 186.413 ) ]
 }
 
 [node name="DialogSystem" type="Control"]
@@ -26,6 +52,13 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TechManDialog" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 888.06
+margin_top = 318.921
+margin_right = 1257.06
+margin_bottom = 449.921
 
 [node name="CallerDialog" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -41,25 +74,63 @@ margin_top = 37.6215
 margin_right = 1216.66
 margin_bottom = 168.622
 
-[node name="BossDialog" parent="." instance=ExtResource( 2 )]
+[node name="BossDialog" type="Panel" parent="."]
 margin_left = 14.0
 margin_top = 293.0
 margin_right = 310.0
 margin_bottom = 504.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Text" parent="BossDialog" index="0"]
+[node name="Text" type="RichTextLabel" parent="BossDialog"]
 margin_left = 15.0
 margin_top = 17.0
 margin_right = 282.0
 margin_bottom = 176.0
+custom_fonts/normal_font = SubResource( 2 )
+meta_underlined = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="NextIndicator" parent="BossDialog" index="1"]
-margin_left = 262.014
-margin_top = 181.895
-margin_right = 277.014
-margin_bottom = 191.895
+[node name="NextIndicator" type="TextureRect" parent="BossDialog"]
+modulate = Color( 0.552941, 0.494118, 0.494118, 1 )
+margin_left = 261.392
+margin_top = 181.259
+margin_right = 276.392
+margin_bottom = 191.259
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AnimationPlayer" parent="BossDialog" index="2"]
-anims/Indicator = SubResource( 1 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BossDialog"]
+autoplay = "Indicator"
+anims/Indicator = SubResource( 3 )
 
-[editable path="BossDialog"]
+[node name="NextCharacter" type="Timer" parent="BossDialog"]
+wait_time = 0.04
+
+[node name="VoiceSystem" type="AudioStreamPlayer" parent="BossDialog"]
+
+[node name="ManShort1" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+stream = ExtResource( 6 )
+
+[node name="ManShort2" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+stream = ExtResource( 8 )
+
+[node name="ManMid1" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+stream = ExtResource( 7 )
+
+[node name="ManMid2" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+stream = ExtResource( 7 )
+
+[node name="ManLong1" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+stream = ExtResource( 4 )
+
+[node name="ManLong2" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+stream = ExtResource( 9 )
+[connection signal="timeout" from="BossDialog/NextCharacter" to="BossDialog" method="_on_next_character_timeout"]

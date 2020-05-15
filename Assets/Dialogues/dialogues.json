@@ -7,13 +7,11 @@
 		"B5": "na",
 		"B6": "pompier"
 	},
-	"story_introduction_fr": [
-		"Vous ête Bernadette, une jeune femme de 20 ans qui vient de trouver un emploi dans les telecommunications. Vous allez relier relier les correspondants appellant aux destinataire. Ce qui en 1922 est un assez bon job. Ceci est votre premier jour et vous êtes inexpérimentée, mais après tout, ça ne doit pas être bien compliqué comme job"
-	],
-	"story_introduction_en": [
-		"TODO"
-	],
-	"boss_dialogue_fr": [
+	"story_introduction": {
+		"text_fr": "Vous ête Bernadette, une jeune femme de 20 ans qui vient de trouver un emploi dans les telecommunications. Vous allez relier relier les correspondants appellant aux destinataire. Ce qui en 1922 est un assez bon job. Ceci est votre premier jour et vous êtes inexpérimentée, mais après tout, ça ne doit pas être bien compliqué comme job",
+		"text_en": "TODO"
+	},
+	"boss_dialogue": [
 		{
 			"name": "Boss",
 			"pos": "boss",
@@ -75,28 +73,28 @@
 			"text_en": ""
 		}
 	],
-	"boss_dialogue_en": [
-		"TODO"
-	],
-	"tech_man_fr": [
+	"tech_man": [
 		{
-			"text_fr": "Oula je crois que je me suis encore trompé. Ah non ouf, c'est bon, tout roule !",
+			"name": "Tech man",
+			"pos": "Tech man",
+			"text_fr": "Oulala je crois que je me suis encore trompé. Ah non ouf, c'est bon, tout roule !",
 			"text_en": "TODO",
 			"change_count": 0
 		},
 		{
+			"name": "Tech man",
+			"pos": "Tech man",
 			"text_fr": "euh, désolé Bernadette, mais il y a eu un problème, j'ai du échanger l'entrée $A avec l'entrée $B",
 			"text_en": "TODO",
 			"change_count": 1
 		},
 		{
+			"name": "Tech man",
+			"pos": "Tech man",
 			"text_fr": "Oups, dans ma tête c'était pas claire, l'entrée $A échangé avec l'entrée $B. Et $C échangé avec l'entrée $D",
 			"text_en": "TODO",
 			"change_count": 2
 		}
-	],
-	"tech_man_en": [
-		"TODO"
 	],
 	"main_story": {
 		"dial1": [

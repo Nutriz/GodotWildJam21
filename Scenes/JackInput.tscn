@@ -14,7 +14,7 @@ radius = 11.3416
 size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "InputAnimation"
 loop = true
 tracks/0/type = "value"
@@ -112,7 +112,7 @@ __meta__ = {
 }
 
 [node name="InputPlayer" type="AnimationPlayer" parent="."]
-anims/InputAnimation = SubResource( 5 )
+anims/InputAnimation = SubResource( 3 )
 
 [node name="OutputPlayer" type="AnimationPlayer" parent="."]
 anims/OutputAnimation = SubResource( 4 )

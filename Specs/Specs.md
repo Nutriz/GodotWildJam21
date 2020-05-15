@@ -86,10 +86,9 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 * Dialogues
   * ✔️Afficher le dialogue du chef en début de jeu
-  * Afficher l'introduction en fullscreen
-  * Pouvoir connecter les sorties à B1, B2
-  * Pour voir afficher dialogue du technicien et recabler
-  * Définir tous les destinataires
+  * ✔️Afficher l'introduction en fullscreen
+  * ✔️Pouvoir connecter les sorties et les mélanger
+  * ✔️Pouvoir afficher dialogue du technicien et recâbler
   * Afficher tag de fin à la place du next indicator
   * TOOLS: debug en jeu affiche si longueur de phrase trop long
 
@@ -105,6 +104,9 @@ Le système de jeu, tables de loi qui régissent le jeu
 * Sons
   * Faire la "musique" d'environnement, broua de télécomunication
   * Refaire les voix "yaourt"
+
+* Bugs
+  * ✔️Next indicator du boss au mauvais endroit
 
 ### Etape 3: Polish
 
