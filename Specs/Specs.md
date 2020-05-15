@@ -97,10 +97,10 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Encadré de dialogue en vectoriel
   * ✔️Nouveau jack (rouge et bleu) en vectoriel
   * ✔️Scale en Y du jack pour simuler l'effet d'angle
-  * Faire le bouton de switch en vectoriel
+  * ✔️Shader effect année 20
+  * ✔️Faire le bouton de switch en vectoriel
   * Faire la lumière pour le bouton de switch
   * Faire un câble de Jack plus réaliste.
-  * Shader effect année 20
 
 * Sons
   * Faire la "musique" d'environnement, broua de télécomunication
@@ -108,14 +108,13 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 * Bugs
   * ✔️Next indicator du boss au mauvais endroit
-  * Tester si les actions sont bien verrouillées quand dialogue
+  * Tester si les actions sont bien verrouillées quand dialogue (switch on puis off avant fin de conv)
 
 ### Etape 3: Polish
 
 * ✔️Faire un menu
-* Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
 * ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
-* Faire un contrôleur accessoire (pour faire jolie) qui contrôle le son des voix
+* Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
 * Ajouter mini mouvement de caméra quand on manipule les jacks
 * (bonus) Pour expliquer que les destinataires soient inconnus, en début de parti il y a un coup de vent qui fait s'envoler les post-it ayant les informations.
 * (bonus) Pour coller des post-it sur les destinations.

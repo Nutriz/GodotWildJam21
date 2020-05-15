@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/board.png" type="Texture" id=2]
@@ -10,13 +10,15 @@
 [ext_resource path="res://Assets/Sounds/noise3.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Sounds/click2.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sounds/ringing.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Assets/Sprites/switch_button_on.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/switch_button_off.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/switch_on.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/path863.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sounds/noise2.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Assets/Font/JetBrainsMono-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Sprites/switch_disabled.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/switch_hover.png" type="Texture" id=17]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "StartGame"
 length = 20.0
 tracks/0/type = "value"
@@ -32,7 +34,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.705882 ) ]
 }
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 14 )
 
 [node name="Game" type="Node2D"]
@@ -193,27 +195,30 @@ skew = 4.37114e-08
 
 [node name="JackA" parent="." instance=ExtResource( 6 )]
 pause_mode = 1
-position = Vector2( 567.276, 609.259 )
+position = Vector2( 567.276, 620.259 )
 
 [node name="JackB" parent="." instance=ExtResource( 6 )]
 pause_mode = 1
-position = Vector2( 706.242, 609.259 )
+position = Vector2( 706.242, 620.259 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
 
 [node name="HoldSwitch" type="TextureButton" parent="."]
-margin_left = 606.321
-margin_top = 663.849
-margin_right = 682.321
-margin_bottom = 703.849
+margin_left = 608.0
+margin_top = 600.0
+margin_right = 666.0
+margin_bottom = 648.0
+rect_clip_content = true
 focus_mode = 0
 disabled = true
 toggle_mode = true
 enabled_focus_mode = 0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
-texture_disabled = ExtResource( 12 )
+texture_hover = ExtResource( 17 )
+texture_disabled = ExtResource( 16 )
+expand = true
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -242,6 +247,7 @@ volume_db = -24.0
 pitch_scale = 0.81
 
 [node name="OldFilm" parent="." instance=ExtResource( 15 )]
+visible = false
 modulate = Color( 1, 1, 1, 0.352941 )
 margin_left = 0.0
 margin_right = 1288.0
@@ -251,7 +257,7 @@ mouse_filter = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
 autoplay = "StartGame"
-anims/StartGame = SubResource( 2 )
+anims/StartGame = SubResource( 1 )
 
 [node name="Debug" type="Panel" parent="."]
 visible = false
@@ -267,7 +273,7 @@ margin_top = 10.0
 margin_right = 1269.0
 margin_bottom = 709.0
 focus_mode = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 selection_enabled = true
 [connection signal="toggled" from="HoldSwitch" to="." method="_on_holding_toggled"]
 [connection signal="timeout" from="CallTimer" to="." method="_on_call_timer_timeout"]
