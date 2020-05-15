@@ -4,11 +4,18 @@ var picked setget picked_set
 var connected_input setget connected_set
 onready var initial_position = position
 
+func _ready():
+	if name == "JackA":
+		modulate = Color("#e1635a")
+	else:
+		modulate = Color("#437ec9")
+
+
 func _process(delta):
 	if name.ends_with("A"):
-		$Cable.default_color = Color.darkred
+		$Cable.default_color = Color("#e1635a")
 	else:
-		$Cable.default_color = Color.darkblue
+		$Cable.default_color = Color("#437ec9")
 
 	if picked:
 		position = get_global_mouse_position()
@@ -44,6 +51,7 @@ func reset_position():
 
 func connected_set(new_value):
 	if new_value != null:
+		position = new_value.global_position
 		$JackIn.play()
 		yield(get_tree().create_timer(0.7), "timeout")
 		Events.emit_signal("jack_connected", name, new_value)

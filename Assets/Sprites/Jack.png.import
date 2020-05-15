@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grey_circle.png-661a88dbe97e5a6f40e965d79af65ae1.stex"
+path="res://.import/Jack.png-2828eaf9a24caedcf6ddfe34490cec0e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/grey_circle.png"
-dest_files=[ "res://.import/grey_circle.png-661a88dbe97e5a6f40e965d79af65ae1.stex" ]
+source_file="res://Assets/Sprites/Jack.png"
+dest_files=[ "res://.import/Jack.png-2828eaf9a24caedcf6ddfe34490cec0e.stex" ]
 
 [params]
 

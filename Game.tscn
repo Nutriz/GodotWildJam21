@@ -3,8 +3,8 @@
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/board.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/JackInput.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Sprites/yellow_boxTick.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/blue_boxTick.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/jack_input.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/jack_output.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Jack.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/DialogSystem.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sounds/noise3.ogg" type="AudioStream" id=8]
@@ -49,15 +49,22 @@ scale = Vector2( 0.535995, 0.535995 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="blue_boxTick" type="Sprite" parent="."]
-position = Vector2( 566.354, 641.004 )
-skew = 4.37114e-08
-texture = ExtResource( 5 )
-
-[node name="yellow_boxTick" type="Sprite" parent="."]
-position = Vector2( 694.229, 645.085 )
+[node name="BackgroundJackA" type="Sprite" parent="."]
+position = Vector2( 567.352, 640.24 )
+scale = Vector2( 0.272038, 0.173442 )
 skew = 4.37114e-08
 texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( -12.6784, 130.424, 133.896, 147.844 )
+
+[node name="BackgroundJackB" type="Sprite" parent="."]
+position = Vector2( 705.706, 639.88 )
+rotation = -1.57079
+scale = Vector2( 0.116, 0.202 )
+skew = 4.37114e-08
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( -7.09937, -11.8413, 170.16, 178.529 )
 
 [node name="Inputs" type="Node2D" parent="."]
 pause_mode = 1
@@ -173,15 +180,15 @@ position = Vector2( 567.276, 609.259 )
 
 [node name="JackB" parent="." instance=ExtResource( 6 )]
 pause_mode = 1
-position = Vector2( 693.242, 605.76 )
+position = Vector2( 706.242, 609.259 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
 
 [node name="HoldSwitch" type="TextureButton" parent="."]
-margin_left = 600.321
-margin_top = 615.849
-margin_right = 676.321
-margin_bottom = 655.849
+margin_left = 606.321
+margin_top = 663.849
+margin_right = 682.321
+margin_bottom = 703.849
 focus_mode = 0
 disabled = true
 toggle_mode = true

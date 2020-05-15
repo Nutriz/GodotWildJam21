@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_boxTick.png-ada7e1af8004f9af4c60b710e0e505c0.stex"
+path="res://.import/Jack_2.png-5c973dc8eeb6e52d2d697e62f111dd32.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/blue_boxTick.png"
-dest_files=[ "res://.import/blue_boxTick.png-ada7e1af8004f9af4c60b710e0e505c0.stex" ]
+source_file="res://Assets/Jack_2.png"
+dest_files=[ "res://.import/Jack_2.png-5c973dc8eeb6e52d2d697e62f111dd32.stex" ]
 
 [params]
 

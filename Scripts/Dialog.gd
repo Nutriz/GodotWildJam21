@@ -28,7 +28,6 @@ func _on_next_character_timeout():
 	if msg.pos == "caller":
 		if ($Text.visible_characters == $Text.text.length()):
 			$NextCharacter.stop()
-			print("stop timer")
 			if msg.has("holding"):
 				Events.emit_signal("can_be_holded", self)
 			else:
@@ -39,7 +38,6 @@ func _on_next_character_timeout():
 	else:
 		if ($Text.visible_characters == msg.name.length() + Global.get_translated_text(msg).length() + 2):
 			$NextCharacter.stop()
-			print("stop timer")
 			display_indicator(true)
 		else:
 #			handle_word_sound()

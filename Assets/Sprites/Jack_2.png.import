@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_circle.png-92b8f6c81137951940a70ca5376ccac5.stex"
+path="res://.import/Jack_2.png-962e4d1082bdc77913bb960a35f4e4ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/red_circle.png"
-dest_files=[ "res://.import/red_circle.png-92b8f6c81137951940a70ca5376ccac5.stex" ]
+source_file="res://Assets/Sprites/Jack_2.png"
+dest_files=[ "res://.import/Jack_2.png-962e4d1082bdc77913bb960a35f4e4ea.stex" ]
 
 [params]
 

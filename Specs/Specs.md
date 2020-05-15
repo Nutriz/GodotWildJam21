@@ -89,17 +89,18 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Afficher l'introduction en fullscreen
   * ✔️Pouvoir connecter les sorties et les mélanger
   * ✔️Pouvoir afficher dialogue du technicien et recâbler
+  * ✔️TOOLS: debug en jeu affiche si longueur de phrase trop long
   * Afficher tag de fin à la place du next indicator
-  * TOOLS: debug en jeu affiche si longueur de phrase trop long
 
 * Graphismes
   * ✔️Finir les input B
   * ✔️Encadré de dialogue en vectoriel
-  * Nouveau jack (rouge et bleu) en vectoriel
+  * ✔️Nouveau jack (rouge et bleu) en vectoriel
   * Scale en Y du jack pour simuler l'effet d'angle
   * Faire le bouton de switch en vectoriel
   * Faire la lumière pour le bouton de switch
   * Faire un câble de Jack plus réaliste.
+  * Shader effect année 20
 
 * Sons
   * Faire la "musique" d'environnement, broua de télécomunication
@@ -107,6 +108,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 * Bugs
   * ✔️Next indicator du boss au mauvais endroit
+  * Tester si les actions sont bien verrouillées quand dialogue
 
 ### Etape 3: Polish
 
@@ -115,7 +117,6 @@ Le système de jeu, tables de loi qui régissent le jeu
 * ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
 * Faire un contrôleur accessoire (pour faire jolie) qui contrôle le son des voix
 * Ajouter mini mouvement de caméra quand on manipule les jacks
-* Faire un effet de light2D pour ajouter de la dynamique aux mouvements
 * (bonus) Pour expliquer que les destinataires soient inconnus, en début de parti il y a un coup de vent qui fait s'envoler les post-it ayant les informations.
 * (bonus) Pour coller des post-it sur les destinations.
 
