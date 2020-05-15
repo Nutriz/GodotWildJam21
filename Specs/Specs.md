@@ -1,4 +1,4 @@
-# Connet in People
+# Connect In People
 
 **You will literally connect people between them, but can you do more ?**
 
@@ -85,8 +85,8 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Utilise le nom des nodes pour les inputs jack ?
 
 * Dialogues
+  * ✔️Afficher le dialogue du chef en début de jeu
   * Afficher l'introduction en fullscreen
-  * Afficher le dialogue du chef en début de jeu
   * Pouvoir connecter les sorties à B1, B2
   * Pour voir afficher dialogue du technicien et recabler
   * Définir tous les destinataires
@@ -94,9 +94,9 @@ Le système de jeu, tables de loi qui régissent le jeu
   * TOOLS: debug en jeu affiche si longueur de phrase trop long
 
 * Graphismes
-  * Finir les input B
+  * ✔️Finir les input B
+  * ✔️Encadré de dialogue en vectoriel
   * Nouveau jack (rouge et bleu) en vectoriel
-  * Encadré de dialogue en vectoriel
   * Scale en Y du jack pour simuler l'effet d'angle
   * Faire le bouton de switch en vectoriel
   * Faire la lumière pour le bouton de switch
@@ -108,7 +108,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 ### Etape 3: Polish
 
-* Faire un menu
+* ✔️Faire un menu
 * Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
 * ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
 * Faire un contrôleur accessoire (pour faire jolie) qui contrôle le son des voix

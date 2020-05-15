@@ -14,16 +14,66 @@
 		"TODO"
 	],
 	"boss_dialogue_fr": [
-		"Bonjour Bernadette, heureux de vous avoir dans notre équipe, au sein de La Gaule Connectée",
-		"J'espère que votre premier jour de travail se passera bien",
-		"Votre travail consiste à prendre le jack rouge et le brancher dans une des entrée quand il y a un appel",
-		"Après avoir écoute la personne, il faut la mettre en attente avec le bouton du milieu",
-		"Ensuite vous devez connecter le jack bleu à l'interlocuteur souhaité",
-		"Pour finir, il ne vous reste plus qu'à désactiver la mise en attente",
-		"La conversation défile sous vos yeux, mais vous n'avez pas le droit de la lire, La Gaule Connectée respect les conversations privées",
-		"Oups j'ai une urgence à régler, essayer de faire au mieux en attendant",
-		"Bonne chance",
-		"A oui j'oubliai, parfois le technicien fait des bourdes..."
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "Bonjour Bernadette, heureux de vous avoir dans notre équipe, au sein de La Gaule Connectée.",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "J'espère que votre premier jour de travail se passera bien.",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "Votre travail consiste à prendre le jack rouge et le brancher dans une des entrée quand il y a un appel.",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "Après avoir écoute la personne, il faut la mettre en attente avec le bouton du milieu",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "Ensuite vous devez connecter le jack bleu à l'interlocuteur souhaité",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "Pour finir, il ne vous reste plus qu'à désactiver la mise en attente",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "La conversation défile sous vos yeux, mais vous n'avez pas le droit de la lire, La Gaule Connectée respect les conversations privées",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "Oups j'ai une urgence à régler, essayer de faire au mieux en attendant",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "Bonne chance",
+			"text_en": ""
+		},
+		{
+			"name": "Boss",
+			"pos": "boss",
+			"text_fr": "A oui j'oubliai, parfois le technicien fait des bourdes...",
+			"text_en": ""
+		}
 	],
 	"boss_dialogue_en": [
 		"TODO"
@@ -74,7 +124,7 @@
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Bonjour Josiane, c'est Henri. Nous nous sommes rencontré à montmartre la semaine dernière !",
+						"text_fr": "Bonjour Josiane, c'est Henri. Nous nous sommes rencontrés à montmartre la semaine dernière !",
 						"text_en": ""
 					},
 					{
@@ -86,7 +136,7 @@
 					{
 						"name": "Josiane",
 						"pos": "called",
-						"text_fr": "Attendez il faut que je vous laissez, rappelez moi.",
+						"text_fr": "Attendez il faut que je vous laissez, rappelez-moi.",
 						"text_en": ""
 					}
 				],

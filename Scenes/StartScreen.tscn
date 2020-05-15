@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Sprites/fr.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/uk.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Font/MenuFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/theme.tres" type="Theme" id=5]
+[ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sprites/menu_background.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 1 )
+
+[node name="StartScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_background" type="Sprite" parent="."]
+position = Vector2( 637.48, 394.523 )
+scale = Vector2( 1.69394, 1.69394 )
+skew = 4.37114e-08
+texture = ExtResource( 7 )
+
+[node name="Title" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -312.0
+margin_right = -1.0
+margin_bottom = -258.0
+custom_fonts/font = ExtResource( 4 )
+text = "Connect In People"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 470.0
+margin_top = -161.0
+margin_right = -464.0
+margin_bottom = 161.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="Menu"]
+margin_right = 346.0
+margin_bottom = 62.0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+text = "Start Game"
+
+[node name="Credits" type="Button" parent="Menu"]
+margin_top = 66.0
+margin_right = 346.0
+margin_bottom = 128.0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Menu"]
+margin_top = 132.0
+margin_right = 346.0
+margin_bottom = 194.0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+text = "Quit"
+
+[node name="HSeparator" type="HSeparator" parent="Menu"]
+margin_top = 198.0
+margin_right = 346.0
+margin_bottom = 202.0
+
+[node name="Language" type="ItemList" parent="Menu"]
+margin_top = 206.0
+margin_right = 346.0
+margin_bottom = 322.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 1 )
+items = [ "English", ExtResource( 3 ), false, "French", ExtResource( 2 ), false ]
+auto_height = true
+icon_scale = 0.4
+[connection signal="pressed" from="Menu/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="item_selected" from="Menu/Language" to="." method="_on_Language_item_selected"]

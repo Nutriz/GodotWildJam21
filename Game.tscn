@@ -60,6 +60,7 @@ skew = 4.37114e-08
 texture = ExtResource( 4 )
 
 [node name="Inputs" type="Node2D" parent="."]
+pause_mode = 1
 position = Vector2( 346.343, 214.487 )
 
 [node name="A1" parent="Inputs" instance=ExtResource( 3 )]
@@ -143,33 +144,35 @@ position = Vector2( 191.25, 244.874 )
 skew = 4.37114e-08
 
 [node name="B21" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 787.179, -23.0035 )
+position = Vector2( 372.931, 75.3693 )
 skew = 4.37114e-08
 
 [node name="B22" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 787.179, 48.6465 )
+position = Vector2( 372.931, 106.407 )
 skew = 4.37114e-08
 
 [node name="B23" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 787.179, 121.604 )
+position = Vector2( 372.931, 139.364 )
 skew = 4.37114e-08
 
 [node name="B24" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 787.179, 193.703 )
+position = Vector2( 372.931, 172.463 )
 skew = 4.37114e-08
 
 [node name="B25" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 787.179, 275.326 )
+position = Vector2( 372.931, 204.086 )
 skew = 4.37114e-08
 
 [node name="B26" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 787.179, 353.326 )
+position = Vector2( 372.931, 235.086 )
 skew = 4.37114e-08
 
 [node name="JackA" parent="." instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 567.276, 609.259 )
 
 [node name="JackB" parent="." instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 693.242, 605.76 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
@@ -192,6 +195,7 @@ __meta__ = {
 }
 
 [node name="CallTimer" type="Timer" parent="."]
+pause_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = true

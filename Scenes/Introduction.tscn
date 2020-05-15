@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Introduction.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Font/MenuFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Sprites/menu_background.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Bg"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 6 ),
+"transitions": PoolRealArray( 1, 1.03527, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.597656, 0.597656, 0.597656, 1 ), Color( 0.0901961, 0.0627451, 0.0627451, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Bg"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.2, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Introduction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -131.971, -204.848 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 637.48, 394.523 )
+scale = Vector2( 1.69394, 1.69394 )
+skew = 4.37114e-08
+texture = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -312.0
+margin_right = -1.0
+margin_bottom = -258.0
+custom_fonts/font = ExtResource( 5 )
+text = "Connect In People"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 127.0
+margin_top = 157.0
+margin_right = -93.0
+margin_bottom = -22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Vous ête Bernadette, une jeune femme de 20 ans qui vient de trouver un emploi dans les telecommunications. Vous allez relier relier les correspondants appellant aux destinataire. Ce qui en 1922 est un assez bon job. Ceci est votre premier jour et vous êtes inexpérimentée, mais après tout, ça ne doit pas être bien compliqué comme job"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Bg = SubResource( 1 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/Bg = SubResource( 2 )

@@ -4,30 +4,46 @@ var is_ringing = false
 
 func _ready():
 	if get_index_num() <= 20:
-		$Label.text = str(((get_index_num()-1)%5)+1)
+		$LabelInput.text = str(((get_index_num()-1)%5)+1)
 		$InputArea.add_to_group("inputsA")
 	else:
-		$Label.text = str(((get_index_num()-1)%5)+1)
+		$LabelOutput.text = str(((get_index_num()-1)%5)+1)
 		if name == "B26":
-			$Label.text = "6"
+			$LabelOutput.text = "6"
 		$InputArea.add_to_group("inputsB")
+		$Input.visible = false
+		$InputIndicator.visible = false
+		$LabelInput.visible = false
+		$Output.visible = true
+		$OutputIndicator.visible = true
+		$LabelOutput.visible = true
 
 func start_ringing():
 	is_ringing = true
-	$AnimationPlayer.play("Red indicator")
+	$InputPlayer.play("InputAnimation")
 
-func set_connected():
-	$AnimationPlayer.play("Red indicator")
-	$AnimationPlayer.stop()
-	$AnimationPlayer.seek(0.3, true)
+func set_light_on():
+	$InputPlayer.play("InputAnimation")
+	$InputPlayer.stop()
+	$InputPlayer.seek(0.3, true)
 
-func set_disconnected():
-	$AnimationPlayer.stop()
-	$AnimationPlayer.seek(0, true)
+	$OutputPlayer.play("OutputAnimation")
+	$OutputPlayer.stop()
+	$OutputPlayer.seek(0.3, true)
 
-func hold_call():
-	$AnimationPlayer.stop(true)
-	$AnimationPlayer.play("Red indicator")
+func set_light_off():
+	$InputPlayer.stop()
+	$InputPlayer.seek(0, true)
+
+	$OutputPlayer.stop()
+	$OutputPlayer.seek(0, true)
+
+func set_light_blink():
+	$InputPlayer.stop(true)
+	$InputPlayer.play("InputAnimation")
+
+	$OutputPlayer.stop(true)
+	$OutputPlayer.play("OutputAnimation")
 
 func _on_jack_area_entered(area):
 	$OnOverSfx.play()

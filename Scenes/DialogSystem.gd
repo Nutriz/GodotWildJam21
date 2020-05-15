@@ -6,6 +6,8 @@ var chapter_idx = 1
 var curr_dial = null
 var msg_index = 0
 
+var boss_monologue = false
+
 func _ready():
 	Events.connect("start_dialogue", self, "on_start_dialogue")
 	Events.connect("start_answer", self, "on_start_answer")
@@ -13,6 +15,20 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("skip") and curr_dial != null:
+
+		if boss_monologue:
+			if not $BossDialog.is_at_end_of_text():
+				$BossDialog.skip_to_end_of_text()
+			elif is_last_message():
+				boss_monologue = false
+				curr_dial = null
+				get_tree().paused = false
+				$BossDialog.queue_free()
+			else:
+				msg_index += 1
+				$BossDialog.display_msg(curr_dial[msg_index])
+			return
+
 		if get_curr_message().pos == "caller":
 			if not $CallerDialog.is_at_end_of_text():
 				$CallerDialog.skip_to_end_of_text()
@@ -85,3 +101,8 @@ func get_curr_message():
 
 func is_last_message():
 	return msg_index == curr_dial.size() - 1
+
+func start_boss_monologue():
+	boss_monologue = true
+	curr_dial = Global.boss_dialogue
+	$BossDialog.display_msg(curr_dial[0])

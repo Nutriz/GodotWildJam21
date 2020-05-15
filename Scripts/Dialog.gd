@@ -2,9 +2,6 @@ extends Panel
 
 var msg
 
-func _ready():
-	pass
-
 func display_msg(msg):
 	self.msg = msg
 	visible = true

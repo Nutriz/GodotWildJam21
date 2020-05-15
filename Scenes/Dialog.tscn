@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/grey_arrowDownGrey.png" type="Texture" id=2]
@@ -9,8 +9,23 @@
 [ext_resource path="res://Assets/Sounds/voices/voice_man_mid_2.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/voices/voice_man_short_2.ogg" type="AudioStream" id=8]
 
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0.937255 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.0745098, 0.0705882, 0.0666667, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 6
+
 [sub_resource type="DynamicFont" id=1]
-size = 25
+size = 22
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=2]
@@ -31,9 +46,10 @@ tracks/0/keys = {
 }
 
 [node name="Dialog" type="Panel"]
-modulate = Color( 1, 1, 1, 0.854902 )
-margin_right = 369.0
+margin_left = 0.193726
+margin_right = 369.194
 margin_bottom = 131.0
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -45,12 +61,13 @@ margin_top = 12.0
 margin_right = 354.0
 margin_bottom = 99.0
 custom_fonts/normal_font = SubResource( 1 )
+meta_underlined = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NextIndicator" type="TextureRect" parent="."]
-visible = false
+modulate = Color( 0.552941, 0.494118, 0.494118, 1 )
 margin_left = 339.392
 margin_top = 101.259
 margin_right = 354.392

@@ -8,14 +8,22 @@ var language = "fr"
 
 onready var dials = load_dialogue("res://Assets/Dialogues/dialogues.json.gd")
 var introduction
+var boss_dialogue
 onready var main_story = dials["main_story"]
 onready var secondary_stories = dials["secondary_stories"]
 
 func _ready():
-	if language == "fr":
-		introduction = dials["story_introduction_fr"]
-	else:
-		introduction = dials["story_introduction_en"]
+	load_language()
+
+func load_language():
+	introduction = dials["story_introduction_" + language]
+	boss_dialogue = dials["boss_dialogue_" + language]
+
+func start_introduction():
+	get_tree().change_scene("res://Scenes/Introduction.tscn")
+
+func start_game():
+	get_tree().change_scene("res://Game.tscn")
 
 func load_dialogue(file_path):
 	var file = File.new()

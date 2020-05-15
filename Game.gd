@@ -4,11 +4,14 @@ var connectionA
 var connectionB
 
 func _ready():
+	get_tree().paused = true
 	Events.connect("jack_connected", self, "on_jack_connected")
 	Events.connect("jack_disconnected", self, "on_jack_disconnected")
 	Events.connect("dialogue_finished", self, "on_dialogue_finished")
 	Events.connect("can_be_holded", self, "on_can_be_holded")
 	Global.switch_button = $HoldSwitch
+
+	$DialogSystem.start_boss_monologue()
 
 func _process(delta):
 
@@ -24,10 +27,10 @@ func _process(delta):
 
 func on_jack_connected(jack_name, jack_input):
 	print(str(jack_name) + " connected to " + str(jack_input.get_index_num()))
-	jack_input.set_connected()
+	jack_input.set_light_on()
 	$SFX/Ringing.stop()
 	if jack_name.ends_with("A"):
-		jack_input.set_connected()
+		jack_input.set_light_on()
 		if jack_input.is_ringing:
 			connectionA = jack_input
 			Events.emit_signal("start_dialogue")
@@ -36,12 +39,13 @@ func on_jack_connected(jack_name, jack_input):
 			$SFX/Noise1.play()
 	elif connectionA != null and not $HoldSwitch.disabled:
 		connectionB = jack_input
-		jack_input.hold_call()
+		jack_input.set_light_blink()
+		connectionB.set_light_blink()
 
 func on_jack_disconnected(jack_name, connected_input):
 	print(jack_name + " disconnected from " + str(connected_input))
 	$SFX/Noise1.stop()
-	connected_input.set_disconnected()
+	connected_input.set_light_off()
 
 func on_dialogue_finished():
 	print("reset")
@@ -49,6 +53,8 @@ func on_dialogue_finished():
 	$JackB.reset_position()
 	$HoldSwitch.pressed = false
 	$HoldSwitch.disabled = true
+	connectionA.set_light_off()
+	connectionB.set_light_off()
 	randomize()
 	$CallTimer.wait_time = rand_range(2, 10)
 	$CallTimer.start()
@@ -56,11 +62,13 @@ func on_dialogue_finished():
 
 func _on_holding_toggled(button_pressed):
 	if button_pressed and connectionA != null:
-		connectionA.hold_call()
+		connectionA.set_light_blink()
 		$SFX/HoldingNoise.play()
 		Events.emit_signal("holding_input")
 	else:
 		Events.emit_signal("start_answer", connectionB)
+		connectionA.set_light_on()
+		connectionB.set_light_on()
 		$SFX/HoldingNoise.stop()
 
 func on_can_be_holded(input):
