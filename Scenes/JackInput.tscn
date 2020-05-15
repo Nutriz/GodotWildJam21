@@ -51,31 +51,32 @@ script = ExtResource( 3 )
 
 [node name="InputIndicator" type="Sprite" parent="."]
 modulate = Color( 0.705882, 0.701961, 0.196078, 0.439216 )
-position = Vector2( 11.514, 11.319 )
+position = Vector2( 0.275442, -31.2513 )
 scale = Vector2( 0.948157, 0.948157 )
 texture = ExtResource( 4 )
 
 [node name="OutputIndicator" type="Sprite" parent="."]
 visible = false
 modulate = Color( 0.705882, 0.701961, 0.196078, 0.439216 )
-position = Vector2( 90.412, 43.1307 )
+position = Vector2( 79.1734, 0.219849 )
 scale = Vector2( 5.58293, 0.711488 )
 texture = ExtResource( 4 )
 
 [node name="Input" type="Sprite" parent="."]
-position = Vector2( 11.4482, 27.2818 )
+position = Vector2( 0.209644, -15.2885 )
 scale = Vector2( 0.211082, 0.211082 )
 skew = 4.37114e-08
 texture = ExtResource( 2 )
 
 [node name="Output" type="Sprite" parent="."]
 visible = false
-position = Vector2( 67.9732, 43.0693 )
+position = Vector2( 56.7346, 0.158451 )
 scale = Vector2( 0.152969, 0.152969 )
 skew = 4.37114e-08
 texture = ExtResource( 6 )
 
 [node name="InputArea" type="Area2D" parent="."]
+position = Vector2( -11.2386, -42.5703 )
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea"]
@@ -83,10 +84,10 @@ position = Vector2( 11.2943, 42.7358 )
 shape = SubResource( 1 )
 
 [node name="LabelInput" type="Label" parent="."]
-margin_left = -4.01152
-margin_top = -11.6499
-margin_right = 27.9885
-margin_bottom = 34.3501
+margin_left = -15.2501
+margin_top = -54.2202
+margin_right = 16.7499
+margin_bottom = -8.22019
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
@@ -98,10 +99,10 @@ __meta__ = {
 
 [node name="LabelOutput" type="Label" parent="."]
 visible = false
-margin_left = 54.5247
-margin_top = 17.066
-margin_right = 86.5247
-margin_bottom = 63.066
+margin_left = 27.2797
+margin_top = -22.4392
+margin_right = 59.2797
+margin_bottom = 23.5608
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"

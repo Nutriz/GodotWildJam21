@@ -96,7 +96,7 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Finir les input B
   * ✔️Encadré de dialogue en vectoriel
   * ✔️Nouveau jack (rouge et bleu) en vectoriel
-  * Scale en Y du jack pour simuler l'effet d'angle
+  * ✔️Scale en Y du jack pour simuler l'effet d'angle
   * Faire le bouton de switch en vectoriel
   * Faire la lumière pour le bouton de switch
   * Faire un câble de Jack plus réaliste.

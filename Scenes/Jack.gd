@@ -52,11 +52,15 @@ func reset_position():
 func connected_set(new_value):
 	if new_value != null:
 		position = new_value.global_position
+		$Sprite.visible = false
+		$SpritePlugged.visible = true
 		$JackIn.play()
 		yield(get_tree().create_timer(0.7), "timeout")
 		Events.emit_signal("jack_connected", name, new_value)
 		connected_input = new_value
 	elif connected_input != null:
+		$Sprite.visible = true
+		$SpritePlugged.visible = false
 		Events.emit_signal("jack_disconnected", name, connected_input)
 		connected_input = new_value
 

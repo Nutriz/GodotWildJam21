@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/board.png" type="Texture" id=2]
@@ -14,6 +14,23 @@
 [ext_resource path="res://Assets/Sprites/switch_button_off.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sounds/noise2.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Assets/Font/JetBrainsMono-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=15]
+
+[sub_resource type="Animation" id=2]
+resource_name = "StartGame"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("OldFilm:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.705882 ) ]
+}
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 14 )
@@ -71,107 +88,107 @@ pause_mode = 1
 position = Vector2( 346.343, 214.487 )
 
 [node name="A1" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 51.582, 54.4324 )
+position = Vector2( 62.582, 97.4324 )
 skew = 4.37114e-08
 
 [node name="A2" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 87.8956, 54.1536 )
+position = Vector2( 98.8956, 97.1536 )
 skew = 4.37114e-08
 
 [node name="A3" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 124.209, 53.7861 )
+position = Vector2( 135.209, 96.7861 )
 skew = 4.37114e-08
 
 [node name="A4" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 157.729, 54.6546 )
+position = Vector2( 168.729, 97.6546 )
 skew = 4.37114e-08
 
 [node name="A5" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 191.25, 53.8737 )
+position = Vector2( 202.25, 96.8737 )
 skew = 4.37114e-08
 
 [node name="A6" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 51.582, 117.432 )
+position = Vector2( 62.582, 160.432 )
 skew = 4.37114e-08
 
 [node name="A7" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 87.8956, 117.154 )
+position = Vector2( 98.8956, 160.154 )
 skew = 4.37114e-08
 
 [node name="A8" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 124.209, 116.786 )
+position = Vector2( 135.209, 159.786 )
 skew = 4.37114e-08
 
 [node name="A9" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 157.729, 117.655 )
+position = Vector2( 168.729, 160.655 )
 skew = 4.37114e-08
 
 [node name="A10" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 191.25, 116.874 )
+position = Vector2( 202.25, 159.874 )
 skew = 4.37114e-08
 
 [node name="A11" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 51.582, 183.432 )
+position = Vector2( 62.582, 226.432 )
 skew = 4.37114e-08
 
 [node name="A12" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 87.8956, 183.154 )
+position = Vector2( 98.8956, 226.154 )
 skew = 4.37114e-08
 
 [node name="A13" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 124.209, 182.786 )
+position = Vector2( 135.209, 225.786 )
 skew = 4.37114e-08
 
 [node name="A14" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 157.729, 183.655 )
+position = Vector2( 168.729, 226.655 )
 skew = 4.37114e-08
 
 [node name="A15" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 191.25, 182.874 )
+position = Vector2( 202.25, 225.874 )
 skew = 4.37114e-08
 
 [node name="A16" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 51.582, 245.432 )
+position = Vector2( 62.582, 288.432 )
 skew = 4.37114e-08
 
 [node name="A17" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 87.8956, 245.154 )
+position = Vector2( 98.8956, 288.154 )
 skew = 4.37114e-08
 
 [node name="A18" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 124.209, 244.786 )
+position = Vector2( 135.209, 287.786 )
 skew = 4.37114e-08
 
 [node name="A19" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 157.729, 245.655 )
+position = Vector2( 168.729, 288.655 )
 skew = 4.37114e-08
 
 [node name="A20" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 191.25, 244.874 )
+position = Vector2( 202.25, 287.874 )
 skew = 4.37114e-08
 
 [node name="B21" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 372.931, 75.3693 )
+position = Vector2( 383.931, 118.369 )
 skew = 4.37114e-08
 
 [node name="B22" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 372.931, 106.407 )
+position = Vector2( 383.931, 149.407 )
 skew = 4.37114e-08
 
 [node name="B23" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 372.931, 139.364 )
+position = Vector2( 383.931, 182.364 )
 skew = 4.37114e-08
 
 [node name="B24" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 372.931, 172.463 )
+position = Vector2( 383.931, 215.463 )
 skew = 4.37114e-08
 
 [node name="B25" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 372.931, 204.086 )
+position = Vector2( 383.931, 247.086 )
 skew = 4.37114e-08
 
 [node name="B26" parent="Inputs" instance=ExtResource( 3 )]
-position = Vector2( 372.931, 235.086 )
+position = Vector2( 383.931, 278.086 )
 skew = 4.37114e-08
 
 [node name="JackA" parent="." instance=ExtResource( 6 )]
@@ -223,6 +240,18 @@ volume_db = -5.0
 stream = ExtResource( 13 )
 volume_db = -24.0
 pitch_scale = 0.81
+
+[node name="OldFilm" parent="." instance=ExtResource( 15 )]
+modulate = Color( 1, 1, 1, 0.352941 )
+margin_left = 0.0
+margin_right = 1288.0
+margin_bottom = 728.0
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+autoplay = "StartGame"
+anims/StartGame = SubResource( 2 )
 
 [node name="Debug" type="Panel" parent="."]
 visible = false

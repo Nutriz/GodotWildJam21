@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Sprites/Jack.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Jack.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sounds/jack-in.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Sounds/noise_before_plug.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sprites/Jack_plugged.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.13362
@@ -13,7 +14,7 @@ height = 28.8558
 script = ExtResource( 2 )
 
 [node name="Area" type="Area2D" parent="."]
-position = Vector2( 1.14157, -0.546944 )
+position = Vector2( 1.14157, -11.5469 )
 priority = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
@@ -21,16 +22,24 @@ position = Vector2( -1.06074, 11.5385 )
 shape = SubResource( 1 )
 
 [node name="Cable" type="Line2D" parent="."]
-position = Vector2( 0.291992, 32.7906 )
-width = 8.0
+position = Vector2( 0.291992, 21.7906 )
+width = 6.0
 joint_mode = 2
 antialiased = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.907861, 12.2974 )
+position = Vector2( -0.907861, 1.2974 )
 scale = Vector2( 0.177804, 0.164127 )
 skew = 4.37114e-08
 texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 50, 120 )
+
+[node name="SpritePlugged" type="Sprite" parent="."]
+visible = false
+position = Vector2( -0.907861, 1.2974 )
+scale = Vector2( 0.177804, 0.164127 )
+skew = 4.37114e-08
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 50, 120 )
 
 [node name="JackIn" type="AudioStreamPlayer" parent="."]
