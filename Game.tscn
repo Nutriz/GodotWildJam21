@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/board.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Sprites/switch_disabled_2.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/switch_hover.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sounds/ambiant.ogg" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "StartGame"
@@ -233,18 +234,25 @@ autostart = true
 
 [node name="Noise1" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 8 )
+volume_db = -5.0
 
 [node name="JackOver" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 9 )
 
 [node name="Ringing" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 10 )
-volume_db = -5.0
+volume_db = -9.0
 
 [node name="HoldingNoise" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 13 )
-volume_db = -24.0
+volume_db = -30.0
 pitch_scale = 0.81
+
+[node name="Ambiant" type="AudioStreamPlayer" parent="SFX"]
+pause_mode = 2
+stream = ExtResource( 18 )
+volume_db = -14.0
+autoplay = true
 
 [node name="OldFilm" parent="." instance=ExtResource( 15 )]
 margin_left = 0.0

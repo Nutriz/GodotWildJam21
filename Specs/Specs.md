@@ -99,11 +99,10 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Scale en Y du jack pour simuler l'effet d'angle
   * ✔️Shader effect année 20
   * ✔️Faire le bouton de switch en vectoriel
-  * Faire la lumière pour le bouton de switch
   * Faire un câble de Jack plus réaliste.
 
 * Sons
-  * Faire la "musique" d'environnement, broua de télécomunication
+  * ✔️Faire la "musique" d'environnement, broua de télécomunication
   * Refaire les voix "yaourt"
 
 * Bugs

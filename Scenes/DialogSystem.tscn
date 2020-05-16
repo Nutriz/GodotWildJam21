@@ -62,17 +62,17 @@ margin_bottom = 449.921
 
 [node name="CallerDialog" parent="." instance=ExtResource( 2 )]
 visible = false
-margin_left = 50.1054
-margin_top = 31.7335
-margin_right = 419.105
-margin_bottom = 162.733
+margin_left = 42.1054
+margin_top = 35.7335
+margin_right = 411.105
+margin_bottom = 166.733
 
 [node name="CalledDialog" parent="." instance=ExtResource( 2 )]
 visible = false
-margin_left = 847.655
-margin_top = 37.6215
-margin_right = 1216.66
-margin_bottom = 168.622
+margin_left = 863.655
+margin_top = 34.6215
+margin_right = 1232.66
+margin_bottom = 165.622
 
 [node name="BossDialog" type="Panel" parent="."]
 margin_left = 14.0
@@ -114,23 +114,23 @@ anims/Indicator = SubResource( 3 )
 [node name="NextCharacter" type="Timer" parent="BossDialog"]
 wait_time = 0.04
 
-[node name="VoiceSystem" type="AudioStreamPlayer" parent="BossDialog"]
+[node name="VoiceSystem" type="AudioStreamPlayer" parent="."]
 
-[node name="ManShort1" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+[node name="ManShort1" type="AudioStreamPlayer" parent="VoiceSystem"]
 stream = ExtResource( 6 )
 
-[node name="ManShort2" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+[node name="ManShort2" type="AudioStreamPlayer" parent="VoiceSystem"]
 stream = ExtResource( 8 )
 
-[node name="ManMid1" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+[node name="ManMid1" type="AudioStreamPlayer" parent="VoiceSystem"]
 stream = ExtResource( 7 )
 
-[node name="ManMid2" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+[node name="ManMid2" type="AudioStreamPlayer" parent="VoiceSystem"]
 stream = ExtResource( 7 )
 
-[node name="ManLong1" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+[node name="ManLong1" type="AudioStreamPlayer" parent="VoiceSystem"]
 stream = ExtResource( 4 )
 
-[node name="ManLong2" type="AudioStreamPlayer" parent="BossDialog/VoiceSystem"]
+[node name="ManLong2" type="AudioStreamPlayer" parent="VoiceSystem"]
 stream = ExtResource( 9 )
 [connection signal="timeout" from="BossDialog/NextCharacter" to="BossDialog" method="_on_next_character_timeout"]

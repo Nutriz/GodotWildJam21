@@ -47,4 +47,5 @@ stream = ExtResource( 3 )
 
 [node name="JackBeforePlug" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -6.0
 [connection signal="input_event" from="Area" to="." method="_on_PickArea_input_event"]

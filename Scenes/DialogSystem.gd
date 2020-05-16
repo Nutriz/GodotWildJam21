@@ -1,6 +1,5 @@
 extends Control
 
-var chapter_idx = 1
 var curr_dial = null
 var msg_index = 0
 
@@ -73,13 +72,22 @@ func on_start_dialogue():
 func on_start_answer(input):
 	msg_index = 0
 
-	var bindined = binding["X" + str(input.get_index_num() - 20)]
-	printt(input.name, "binded to", bindined)
-	var binded_index = bindined[1]
+
+
+	var binded = binding["X" + str(input.get_index_num() - 20)]
+	printt(input.name, "binded to", binded)
+	var binded_index = binded[1]
+
+	if curr_dial[0].name == "Henri":
+		if binded != "B1":
+			print("Not Henir, no next story")
+			Global.story_index -= 1
+		else:
+			print("Henir, story will continue")
 
 	var dial_length = curr_dial.size() - 1
-	if curr_dial[dial_length].has(bindined):
-		curr_dial = curr_dial[dial_length][bindined]
+	if curr_dial[dial_length].has(binded):
+		curr_dial = curr_dial[dial_length][binded]
 	else:
 		print("no entry, default answer")
 
@@ -87,16 +95,16 @@ func on_start_answer(input):
 
 func start_new_dialog():
 	randomize()
-#	if randi() % 2 == 0:
-	Global.story_index += 1
-	print("start new story dialogue, index: " + str(Global.story_index))
-	curr_dial = Global.main_story["dial" + str(Global.story_index)]
-#	else:
-#		var max_index = Global.secondary_stories.size()
-#		var index = (randi() % max_index) + 1
-#		assert(index > 0)
-#		print("start new secondary story dialogue, index: " + str(index))
-#		curr_dial = Global.secondary_stories["dial" + str(index)]
+	if randi() % 3 == 0:
+		Global.story_index += 1
+		print("start new story dialogue, index: " + str(Global.story_index))
+		curr_dial = Global.main_story["dial" + str(Global.story_index)]
+	else:
+		var max_index = Global.secondary_stories.size()
+		var index = (randi() % max_index) + 1
+		assert(index > 0)
+		print("start new secondary story dialogue, index: " + str(index))
+		curr_dial = Global.secondary_stories["dial" + str(index)]
 
 func on_holding():
 	$CallerDialog.hide()

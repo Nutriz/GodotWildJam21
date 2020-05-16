@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Sprites/filmgrain.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Shaders/old_film.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Sprites/white.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/indicator_fx.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -25,3 +25,6 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
