@@ -1,69 +1,57 @@
 {
 	"output_characters": {
-		"B1": "Josiane",
-		"B2": "na",
-		"B3": "na",
-		"B4": "na",
-		"B5": "na",
-		"B6": "pompier"
+		"B1": "Joséphine",
+		"B2": "Perroquet Rocco",
+		"B3": "Le vieil ivrogne",
+		"B4": "La servante de la princesse Margaret",
+		"B5": "Bip Bip //pas réponse",
+		"B6": "Le pompier"
+	},
+	"____story_introduction_original": {
+		"text_fr": "Tu es Marie, tu as 20 ans, ton nouveau job est Standardiste en 1922. Tu vas devoir relier les appels entrants à leur bon correspondant. Tu es inexpérimentée mais tu te dis que cela ne doit pas être si compliqué. Allez ton boss t’attend ! Bonne Chance...",
+		"text_en": "TODO, demoiselle du téléphone = Switchboard operator"
 	},
 	"story_introduction": {
-		"text_fr": "Vous ête Bernadette, une jeune femme de 20 ans qui vient de trouver un emploi dans les telecommunications. Vous allez relier relier les correspondants appellant aux destinataire. Ce qui en 1922 est un assez bon job. Ceci est votre premier jour et vous êtes inexpérimentée, mais après tout, ça ne doit pas être bien compliqué comme job",
+		"text_fr": "Vous êtes Marie, une jeune femme de 20 ans qui vient de trouver un emploi dans les télécommunications. Nous sommes le 22 février 1922 et c'est votre premier jour en tant que demoiselle du téléphone. Vous allez devoir *connecter* les correspondants entre eux. Inexpérimentée mais optimiste, vous vous dites que cela ne doit pas être bien compliqué comme job. Votre chef d'équipe vous attends ! Bonne Chance...",
 		"text_en": "TODO"
 	},
+	"____boss_dialogue_original": [
+		"Bonjour Marie,",
+		"Bienvenue sur votre poste de travail.",
+		"Je suis désolé de ne pas pouvoir vous accueillir et vous aider.",
+		"Attention un techniciens de maintenance va intervenir aujourd’hui.",
+		"Faites au mieux pour satisfaire les usagés.",
+		"Je compte sur vous ! J.R The Boss"
+	],
 	"boss_dialogue": [
 		{
 			"name": "Boss",
 			"pos": "boss",
-			"text_fr": "Bonjour Bernadette, heureux de vous avoir dans notre équipe, au sein de La Gaule Connectée.",
+			"text_fr": "Bonjour Marie, bienvenue sur votre poste de travail.",
 			"text_en": ""
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
-			"text_fr": "J'espère que votre premier jour de travail se passera bien.",
+			"text_fr": "Je suis désolé de ne pas pouvoir vous accueillir et vous aider.",
 			"text_en": ""
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
-			"text_fr": "Votre travail consiste à prendre le jack rouge et le brancher dans une des entrée quand il y a un appel.",
+			"text_fr": "Attention un techniciens de maintenance va intervenir aujourd’hui.",
 			"text_en": ""
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
-			"text_fr": "Après avoir écoute la personne, il faut la mettre en attente avec le bouton du milieu",
+			"text_fr": "Faites au mieux pour satisfaire les usagés.",
 			"text_en": ""
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
-			"text_fr": "Ensuite vous devez connecter le jack bleu à l'interlocuteur souhaité",
-			"text_en": ""
-		},
-		{
-			"name": "Boss",
-			"pos": "boss",
-			"text_fr": "Pour finir, il ne vous reste plus qu'à désactiver la mise en attente",
-			"text_en": ""
-		},
-		{
-			"name": "Boss",
-			"pos": "boss",
-			"text_fr": "La conversation défile sous vos yeux, mais vous n'avez pas le droit de la lire, La Gaule Connectée respect les conversations privées",
-			"text_en": ""
-		},
-		{
-			"name": "Boss",
-			"pos": "boss",
-			"text_fr": "Oups j'ai une urgence à régler, essayer de faire au mieux en attendant",
-			"text_en": ""
-		},
-		{
-			"name": "Boss",
-			"pos": "boss",
-			"text_fr": "Bonne chance",
+			"text_fr": "Il y a notamment une personne nommée Henri, qui est un de nos actionnaire, il cherche à joindre une femme, aidez-le.",
 			"text_en": ""
 		},
 		{
@@ -73,27 +61,56 @@
 			"text_en": ""
 		}
 	],
+	"tuto": [
+		{
+			"name": "Guide",
+			"pos": "Guide",
+			"text_fr": "Votre travail consiste à prendre le jack rouge et le brancher dans une des entrée quand il y a un appel.",
+			"text_en": ""
+		},
+		{
+			"name": "Guide",
+			"pos": "Guide",
+			"text_fr": "Après avoir écoute le client, il faut le mettre en attente avec le bouton entre les jacks",
+			"text_en": ""
+		},
+		{
+			"name": "Guide",
+			"pos": "Guide",
+			"text_fr": "Ensuite vous devez connecter le jack bleu à l'interlocuteur souhaité",
+			"text_en": ""
+		},
+		{
+			"name": "Guide",
+			"pos": "Guide",
+			"text_fr": "Pour finir, il ne vous reste plus qu'à désactiver la mise en attente avec le bouton entre les jacks",
+			"text_en": ""
+		},
+		{
+			"name": "Guide",
+			"pos": "Guide",
+			"text_fr": "La conversation défile sous vos yeux, évidemment vous n'avez pas le droit de la lire, c'est privé.",
+			"text_en": ""
+		}
+	],
 	"tech_man": [
 		{
 			"name": "Tech man",
 			"pos": "Tech man",
 			"text_fr": "Oulala je crois que je me suis encore trompé. Ah non ouf, c'est bon, tout roule !",
-			"text_en": "TODO",
-			"change_count": 0
+			"text_en": "TODO"
 		},
 		{
 			"name": "Tech man",
 			"pos": "Tech man",
-			"text_fr": "euh, désolé Bernadette, mais il y a eu un problème, j'ai du échanger l'entrée $A avec l'entrée $B",
-			"text_en": "TODO",
-			"change_count": 1
+			"text_fr": "Euh, désolé mademoiselle, mais il y a eu un problème, j'ai du échanger l'entrée $A avec l'entrée $B",
+			"text_en": "TODO"
 		},
 		{
 			"name": "Tech man",
 			"pos": "Tech man",
 			"text_fr": "Oups, dans ma tête c'était pas claire, l'entrée $A échangé avec l'entrée $B. Et $C échangé avec l'entrée $D",
-			"text_en": "TODO",
-			"change_count": 2
+			"text_en": "TODO"
 		}
 	],
 	"main_story": {
@@ -101,7 +118,7 @@
 			{
 				"name": "Henri",
 				"pos": "caller",
-				"text_fr": "Bonjour, je dois absolument parler à Josiane, c'est très important.",
+				"text_fr": "Je cherche à joindre Joséphine c’est assez urgent ! ",
 				"text_en": ""
 			},
 			{
@@ -114,127 +131,21 @@
 			{
 				"B1": [
 					{
-						"name": "Josiane",
+						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Allo ?",
+						"text_fr": "Allo...",
 						"text_en": ""
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Bonjour Josiane, c'est Henri. Nous nous sommes rencontrés à montmartre la semaine dernière !",
+						"text_fr": "Joséphine, Bonjour c’est Henri.",
 						"text_en": ""
 					},
 					{
-						"name": "Josiane",
+						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Ah oui Henri. Bonjour.",
-						"text_en": ""
-					},
-					{
-						"name": "Josiane",
-						"pos": "called",
-						"text_fr": "Attendez il faut que je vous laissez, rappelez-moi.",
-						"text_en": ""
-					}
-				],
-				"B2": [
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Oui ?",
-						"text_en": ""
-					},
-					{
-						"name": "Henri",
-						"pos": "caller",
-						"text_fr": "Bonjour Josiane, c'est Henri.",
-						"text_en": ""
-					},
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Vous faites erreur, moi c'est B2",
-						"text_en": ""
-					}
-				],
-				"B3": [
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Oui ?",
-						"text_en": ""
-					},
-					{
-						"name": "Henri",
-						"pos": "caller",
-						"text_fr": "Bonjour Josiane, c'est Henri.",
-						"text_en": ""
-					},
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Vous faites erreur, moi c'est B2",
-						"text_en": ""
-					}
-				],
-				"B4": [
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Oui ?",
-						"text_en": ""
-					},
-					{
-						"name": "Henri",
-						"pos": "caller",
-						"text_fr": "Bonjour Josiane, c'est Henri.",
-						"text_en": ""
-					},
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Vous faites erreur, moi c'est B2",
-						"text_en": ""
-					}
-				],
-				"B5": [
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Oui ?",
-						"text_en": ""
-					},
-					{
-						"name": "Henri",
-						"pos": "caller",
-						"text_fr": "Bonjour Josiane, c'est Henri.",
-						"text_en": ""
-					},
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Vous faites erreur, moi c'est B2",
-						"text_en": ""
-					}
-				],
-				"B6": [
-					{
-						"name": "Pompier",
-						"pos": "called",
-						"text_fr": "Oui ?",
-						"text_en": ""
-					},
-					{
-						"name": "Henri",
-						"pos": "caller",
-						"text_fr": "Bonjour Josiane, c'est Henri.",
-						"text_en": ""
-					},
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Vous faites erreur, moi c'est B2",
+						"text_fr": "Oh Bonj … PFFF  Hen...i PFFFF .",
 						"text_en": ""
 					}
 				]
@@ -244,166 +155,317 @@
 			{
 				"name": "Henri",
 				"pos": "caller",
-				"text_fr": "Il faut ABSOLUMENT que je reparle à Josiane",
-				"text_en": "",
-				"holding": true
+				"text_fr": "Ca a coupé, j'aimerai joindre à nouveau Joséphine ! ",
+				"text_en": ""
 			},
 			{
 				"B1": [
 					{
-						"name": "Josiane",
+						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Bonjour.",
+						"text_fr": "Henri Henri... enfin...",
 						"text_en": ""
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Bonjour Josiane, enfin !",
-						"text_en": ""
-					}
-				],
-				"B2": [
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Vous êtes qui ?",
+						"text_fr": "Oui enfin je vous ai au téléphone...",
 						"text_en": ""
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Je suis Henri",
+						"text_fr": "Je dois vous voir vous êtes pré sélectionner pour le casting final",
 						"text_en": ""
 					},
 					{
-						"name": "B2",
+						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Je ne connais pas de Henri, bye.",
+						"text_fr": "Ohh I’m so very happy",
+						"text_en": ""
+					},
+					{
+						"name": "Joséphine",
+						"pos": "called",
+						"text_fr": "Quelle est la suite de la démarche ?",
+						"text_en": ""
+					},
+					{
+						"name": "Henri",
+						"pos": "caller",
+						"text_fr": "C'est très simple Joséphine, il suffit de BRRRR à 14h le BRRRR avr...PFFFFF",
 						"text_en": ""
 					}
 				]
 			}
 		]
 	},
-	"secondary_stories": {
-		"dial1": [
+	"secondary_stories": [
+		[
 			{
-				"name": "Barman",
+				"name": "Roi",
 				"pos": "caller",
-				"text_fr": "Bonjour, c'est pour une commande de bières",
+				"text_fr": "Je voudrais parler à mon fils le Prince Albert du Royame d’Agobert",
 				"text_en": "",
 				"holding": true
-			},
-			{
-				"B1": [
-					{
-						"name": "Josiane",
-						"pos": "called",
-						"text_fr": "J'adoreeee la météooooore",
-						"text_en": ""
-					}
-				],
-				"B2": [
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Désolé monsieur je ne suis pas la personne qu'il vous faut",
-						"text_en": ""
-					}
-				],
-				"B3": [
-					{
-						"name": "George",
-						"pos": "called",
-						"text_fr": "... ... ... ......",
-						"text_en": ""
-					}
-				],
-				"B4": [
-					{
-						"name": "Alphonse",
-						"pos": "called",
-						"text_fr": "Hip...je dis ouip !",
-						"text_en": ""
-					}
-				],
-				"B5": [
-					{
-						"name": "Chef",
-						"pos": "called",
-						"text_fr": "Moi je fais le manger, pas le boisson",
-						"text_en": ""
-					}
-				],
-				"B6": [
-					{
-						"name": "Pompier",
-						"pos": "called",
-						"text_fr": "Moi je fais le manger, pas le boisson",
-						"text_en": ""
-					}
-				]
 			}
 		],
-		"dial2": [
+		[
 			{
-				"name": "Tintin",
+				"name": "Dr Tamalou",
 				"pos": "caller",
-				"text_fr": "On va sur la lune !!!",
+				"text_fr": "Je suis Docteur Tamalou, je désire parler à madame Martine",
 				"text_en": "",
 				"holding": true
+			}
+		],
+		[
+			{
+				"name": "Vendeur",
+				"pos": "caller",
+				"text_fr": "Le magasin de chaussures Belle Paire voudrait confirmer la commande des sœurs MillePatte",
+				"text_en": "",
+				"holding": true
+			}
+		],
+		[
+			{
+				"name": "Gaston",
+				"pos": "caller",
+				"text_fr": "Allo les pompiers il y a le feu a la grange de Monsieur Épouvantail vite vite svp",
+				"text_en": "",
+				"holding": true
+			}
+		],
+		[
+			{
+				"name": "Joke",
+				"pos": "caller",
+				"text_fr": "allo dites vous connaissez monsieur Bipbip ?",
+				"text_en": "",
+				"holding": true
+			}
+		],
+		[
+			{
+				"name": "Testeuse",
+				"pos": "caller",
+				"text_fr": "Oui bonjour j’attends un appel je voulais juste voir si ça marche",
+				"text_en": "",
+				"holding": true
+			}
+		],
+		[
+			{
+				"name": "Testeuse",
+				"pos": "caller",
+				"text_fr": "Blouuuuuuups hic elle est là Miss Pig glouglou ahhhhh ZzZZ",
+				"text_en": "",
+				"holding": true
+			}
+		],
+		[
+			{
+				"name": "Canu",
+				"pos": "caller",
+				"text_fr": "...",
+				"text_en": "...",
+				"holding": true
+			}
+		],
+		[
+			{
+				"name": "Josette",
+				"pos": "caller",
+				"text_fr": " Ca marche m’dame ? Mon téléphone ne sonne plus, besoin d’un réparateur svp",
+				"text_en": "...",
+				"holding": true
+			}
+		]
+	],
+	"other_dest_people": {
+		"Josephine": [
+			[
+				{
+					"name": "Joséphine",
+					"pos": "called",
+					"text_fr": "Je ne vous connais pas",
+					"text_en": ""
+				}
+			],
+			[
+				{
+					"name": "Joséphine",
+					"pos": "called",
+					"text_fr": "Bonj..PFFFF GRRRR",
+					"text_en": ""
+				}
+			],
+			[
+				{
+					"name": "Joséphine",
+					"pos": "called",
+					"text_fr": "Allo ?",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Je n'ai pas demandé une femme, il y a erreur",
+					"text_en": ""
+				},
+				{
+					"name": "Joséphine",
+					"pos": "called",
+					"text_fr": "Vous n'aimez pas les femmes ?",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "...au revoir",
+					"text_en": ""
+				}
+			]
+		],
+		"Ivrogne": [
+			{
+				"name": "Ivrogne",
+				"pos": "called",
+				"text_fr": "ZzZz Bloups",
+				"text_en": ""
 			},
 			{
-				"B1": [
-					{
-						"name": "B1",
-						"pos": "called",
-						"text_fr": "Tonnerre de Brest  !",
-						"text_en": ""
-					}
-				],
-				"B2": [
-					{
-						"name": "B2",
-						"pos": "called",
-						"text_fr": "Tonnerre de Brest  !",
-						"text_en": ""
-					}
-				],
-				"B3": [
-					{
-						"name": "B3",
-						"pos": "called",
-						"text_fr": "Tonnerre de Brest  !",
-						"text_en": ""
-					}
-				],
-				"B4": [
-					{
-						"name": "B4",
-						"pos": "called",
-						"text_fr": "Tonnerre de Brest  !",
-						"text_en": ""
-					}
-				],
-				"B5": [
-					{
-						"name": "B5",
-						"pos": "called",
-						"text_fr": "Tonnerre de Brest  !",
-						"text_en": ""
-					}
-				],
-				"B6": [
-					{
-						"name": "Pompier",
-						"pos": "called",
-						"text_fr": "Tonnerre de Brest  !",
-						"text_en": ""
-					}
-				]
+				"name": "",
+				"pos": "caller",
+				"text_fr": "Allo ?",
+				"text_en": ""
+			},
+			{
+				"name": "Ivrogne",
+				"pos": "called",
+				"text_fr": "Hic José...",
+				"text_en": ""
+			},
+			{
+				"name": "",
+				"pos": "caller",
+				"text_fr": "Qui êtes vous ?",
+				"text_en": ""
+			},
+			{
+				"name": "Ivrogne",
+				"pos": "called",
+				"text_fr": "Bébere le roi de la bière ! t’en veux une ?",
+				"text_en": ""
 			}
+		],
+		"Perroquet": [
+			{
+				"name": "Perroquet",
+				"pos": "called",
+				"text_fr": "Allooo...",
+				"text_en": ""
+			},
+			{
+				"name": "",
+				"pos": "caller",
+				"text_fr": "Vous avez une drôle de voix ?!",
+				"text_en": ""
+			},
+			{
+				"name": "Perroquet",
+				"pos": "called",
+				"text_fr": "Droooooole de voix Roccoooo Roccoooo…",
+				"text_en": ""
+			},
+			{
+				"name": "",
+				"pos": "caller",
+				"text_fr": "Qui etes vous ? ",
+				"text_en": ""
+			},
+			{
+				"name": "Perroquet",
+				"pos": "called",
+				"text_fr": "Rocco un sacrééééééé cocooooooo !",
+				"text_en": ""
+			}
+		],
+		"Servante": [],
+		"BipBip": [
+			{
+				"name": "",
+				"pos": "called",
+				"text_fr": "...",
+				"text_en": ""
+			},
+			{
+				"name": "",
+				"pos": "caller",
+				"text_fr": "...?",
+				"text_en": ""
+			},
+			{
+				"name": "",
+				"pos": "called",
+				"text_fr": "...!",
+				"text_en": ""
+			}
+		],
+		"Pompier": [
+			[
+				{
+					"name": "Pompier",
+					"pos": "called",
+					"text_fr": "Les pompiers je vous écoute ?",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Ohhh pardon c’est une erreur … ",
+					"text_en": ""
+				},
+				{
+					"name": "Pompier",
+					"pos": "called",
+					"text_fr": " D’accord !",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Au revoir",
+					"text_en": ""
+				}
+			],
+			[
+				{
+					"name": "",
+					"pos": "called",
+					"text_fr": "Les pompiers je vous écoute ?",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Ahhhh pardon pardon c’est une erreur",
+					"text_en": ""
+				},
+				{
+					"name": "Pompier",
+					"pos": "called",
+					"text_fr": "On ne s’amuse pas avec cette ligne sous peine que je vous signale COMPRIS ?!",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Oui oui pardon ...",
+					"text_en": ""
+				}
+			]
 		]
 	}
 }
