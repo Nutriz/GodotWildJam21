@@ -59,7 +59,7 @@ func on_dialogue_finished():
 	$CallTimer.start()
 	print("started new call timer with: " + str($CallTimer.wait_time))
 
-	if Global.story_index % 3 == 0:
+	if Global.story_index > 0:
 		randomize()
 		$DialogSystem.start_tech_man_dialog(randi() % 2 + 1)
 
@@ -79,6 +79,6 @@ func on_can_be_holded(input):
 
 func _on_call_timer_timeout():
 	randomize()
-	var index = randi() % 20
+	var index = randi() % 3
 	$Inputs.get_children()[index].start_ringing()
 	$SFX/Ringing.play()

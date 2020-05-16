@@ -10,14 +10,13 @@ func _ready():
 	else:
 		modulate = Color("#437ec9")
 
-
 func _process(delta):
 	if name.ends_with("A"):
 		$Cable.default_color = Color("#e1635a")
 	else:
 		$Cable.default_color = Color("#437ec9")
 
-	if picked:
+	if picked and connected_input == null:
 		position = get_global_mouse_position()
 	refresh_cable_position()
 
@@ -25,11 +24,6 @@ func refresh_cable_position():
 	$Cable.clear_points()
 	$Cable.add_point(to_local(initial_position))
 	$Cable.add_point(Vector2(0, 0))
-
-#	var dist
-#	for i in range(1, $Cable.get_point_count() - 1):
-#		dist = Vector2((end_point.x / 10) * i, 0)
-#		$Cable.set_point_position(i, dist)
 
 func _on_PickArea_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:

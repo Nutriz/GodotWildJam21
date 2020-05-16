@@ -90,7 +90,6 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Pouvoir connecter les sorties et les mélanger
   * ✔️Pouvoir afficher dialogue du technicien et recâbler
   * ✔️TOOLS: debug en jeu affiche si longueur de phrase trop long
-  * Afficher tag de fin à la place du next indicator
 
 * Graphismes
   * ✔️Finir les input B
@@ -105,9 +104,13 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Faire la "musique" d'environnement, broua de télécomunication
   * Refaire les voix "yaourt"
 
-* Bugs
+* A finir + Bugs
   * ✔️Next indicator du boss au mauvais endroit
+  * Mécanisme fin du jeu, bonne fin et mauvaise fin
   * Tester si les actions sont bien verrouillées quand dialogue (switch on puis off avant fin de conv)
+    * jack A peut être changer quand holding
+  * Quand dial, 2ème click enlève fin du dernier mot
+  * Technicien double entrée doublon
 
 ### Etape 3: Polish
 

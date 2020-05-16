@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Sounds/click2.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sounds/ringing.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Sprites/switch_on.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/path863.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/switch_off.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sounds/noise2.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Assets/Font/JetBrainsMono-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=15]
@@ -205,6 +205,7 @@ position = Vector2( 706.242, 620.259 )
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
 
 [node name="HoldSwitch" type="TextureButton" parent="."]
+pause_mode = 2
 margin_left = 608.0
 margin_top = 600.0
 margin_right = 666.0
@@ -226,7 +227,6 @@ __meta__ = {
 
 [node name="CallTimer" type="Timer" parent="."]
 pause_mode = 1
-wait_time = 3.0
 one_shot = true
 autostart = true
 

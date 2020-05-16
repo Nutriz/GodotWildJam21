@@ -14,6 +14,7 @@ onready var boss_dialogue = dials["boss_dialogue"]
 onready var techman_dialogue = dials["tech_man"]
 onready var main_story = dials["main_story"]
 onready var secondary_stories = dials["secondary_stories"]
+onready var other_dest_people = dials["other_dest_people"]
 
 func start_introduction():
 	get_tree().change_scene("res://Scenes/Introduction.tscn")

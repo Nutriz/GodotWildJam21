@@ -129,7 +129,7 @@
 				"holding": true
 			},
 			{
-				"B1": [
+				"Josephine": [
 					{
 						"name": "Joséphine",
 						"pos": "called",
@@ -155,11 +155,61 @@
 			{
 				"name": "Henri",
 				"pos": "caller",
-				"text_fr": "Ca a coupé, j'aimerai joindre à nouveau Joséphine ! ",
+				"text_fr": "Je cherche à recontacter Joséphine ! ",
 				"text_en": ""
 			},
 			{
-				"B1": [
+				"name": "Henri",
+				"pos": "caller",
+				"text_fr": "Pouvez-vous me mettre en relation avec elle ?",
+				"text_en": "",
+				"holding": true
+			},
+			{
+				"Josephine": [
+					{
+						"name": "Joséphine",
+						"pos": "called",
+						"text_fr": "Oui ?",
+						"text_en": ""
+					},
+					{
+						"name": "Henri",
+						"pos": "caller",
+						"text_fr": "Joséphine, c’est Henri zzzz a été coupzzzé , Il faut...",
+						"text_en": ""
+					},
+					{
+						"name": "Joséphine",
+						"pos": "called",
+						"text_fr": "Je vous entend très mal !",
+						"text_en": ""
+					},
+					{
+						"name": "Henri",
+						"pos": "caller",
+						"text_fr": "Bzzz bzzzzz bzzzzzzzzzzzzzzzzzz",
+						"text_en": ""
+					},
+					{
+						"name": "Joséphine",
+						"pos": "called",
+						"text_fr": "Allo ? Allo ? Allo ?",
+						"text_en": ""
+					}
+				]
+			}
+		],
+		"dial3": [
+			{
+				"name": "Henri",
+				"pos": "caller",
+				"text_fr": "Ca a coupé, j'aimerai joindre à nouveau Joséphine ! ",
+				"text_en": "",
+				"holding": true
+			},
+			{
+				"Josephine": [
 					{
 						"name": "Joséphine",
 						"pos": "called",
@@ -257,7 +307,7 @@
 		],
 		[
 			{
-				"name": "Testeuse",
+				"name": "Alcoolique",
 				"pos": "caller",
 				"text_fr": "Blouuuuuuups hic elle est là Miss Pig glouglou ahhhhh ZzZZ",
 				"text_en": "",
@@ -266,7 +316,7 @@
 		],
 		[
 			{
-				"name": "Canu",
+				"name": "Gamin",
 				"pos": "caller",
 				"text_fr": "...",
 				"text_en": "...",
@@ -284,7 +334,7 @@
 		]
 	],
 	"other_dest_people": {
-		"Josephine": [
+		"B1": [
 			[
 				{
 					"name": "Joséphine",
@@ -328,92 +378,143 @@
 				}
 			]
 		],
-		"Ivrogne": [
-			{
-				"name": "Ivrogne",
-				"pos": "called",
-				"text_fr": "ZzZz Bloups",
-				"text_en": ""
-			},
-			{
-				"name": "",
-				"pos": "caller",
-				"text_fr": "Allo ?",
-				"text_en": ""
-			},
-			{
-				"name": "Ivrogne",
-				"pos": "called",
-				"text_fr": "Hic José...",
-				"text_en": ""
-			},
-			{
-				"name": "",
-				"pos": "caller",
-				"text_fr": "Qui êtes vous ?",
-				"text_en": ""
-			},
-			{
-				"name": "Ivrogne",
-				"pos": "called",
-				"text_fr": "Bébere le roi de la bière ! t’en veux une ?",
-				"text_en": ""
-			}
+		"B2": [
+			[
+				{
+					"name": "Ivrogne",
+					"pos": "called",
+					"text_fr": "ZzZz Bloups",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Allo ?",
+					"text_en": ""
+				},
+				{
+					"name": "Ivrogne",
+					"pos": "called",
+					"text_fr": "Hic José...",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Qui êtes vous ?",
+					"text_en": ""
+				},
+				{
+					"name": "Ivrogne",
+					"pos": "called",
+					"text_fr": "Bébere le roi de la bière ! t’en veux une ?",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Non merci, il est 10h du matin !",
+					"text_en": ""
+				}
+			]
 		],
-		"Perroquet": [
-			{
-				"name": "Perroquet",
-				"pos": "called",
-				"text_fr": "Allooo...",
-				"text_en": ""
-			},
-			{
-				"name": "",
-				"pos": "caller",
-				"text_fr": "Vous avez une drôle de voix ?!",
-				"text_en": ""
-			},
-			{
-				"name": "Perroquet",
-				"pos": "called",
-				"text_fr": "Droooooole de voix Roccoooo Roccoooo…",
-				"text_en": ""
-			},
-			{
-				"name": "",
-				"pos": "caller",
-				"text_fr": "Qui etes vous ? ",
-				"text_en": ""
-			},
-			{
-				"name": "Perroquet",
-				"pos": "called",
-				"text_fr": "Rocco un sacrééééééé cocooooooo !",
-				"text_en": ""
-			}
+		"B3": [
+			[
+				{
+					"name": "Perroquet",
+					"pos": "called",
+					"text_fr": "Allooo...",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Vous avez une drôle de voix ?!",
+					"text_en": ""
+				},
+				{
+					"name": "Perroquet",
+					"pos": "called",
+					"text_fr": "Droooooole de voix Roccoooo Roccoooo…",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Qui etes vous ? ",
+					"text_en": ""
+				},
+				{
+					"name": "Perroquet",
+					"pos": "called",
+					"text_fr": "Rocco un sacrééééééé cocooooooo !",
+					"text_en": ""
+				}
+			]
 		],
-		"Servante": [],
-		"BipBip": [
-			{
-				"name": "",
-				"pos": "called",
-				"text_fr": "...",
-				"text_en": ""
-			},
-			{
-				"name": "",
-				"pos": "caller",
-				"text_fr": "...?",
-				"text_en": ""
-			},
-			{
-				"name": "",
-				"pos": "called",
-				"text_fr": "...!",
-				"text_en": ""
-			}
+		"B4": [
+			[
+				{
+					"name": "Servante",
+					"pos": "called",
+					"text_fr": "Le château des...",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Pourrais je parler à...",
+					"text_en": ""
+				},
+				{
+					"name": "Servante",
+					"pos": "called",
+					"text_fr": "Monsieur mais madame la Princesse Margaret est partie avec le prince...",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "La princesse Margaret...? Non mais ce n'est pas elle qui m'intéresse, où est Louise ?",
+					"text_en": ""
+				},
+				{
+					"name": "Servante",
+					"pos": "called",
+					"text_fr": "Louise mais il y a personne de ce prénom ici",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "Pardonnez moi...je suis confus... au revoir madame !",
+					"text_en": ""
+				}
+			]
 		],
-		"Pompier": [
+		"B5": [
+			[
+				{
+					"name": "zzz",
+					"pos": "called",
+					"text_fr": "...",
+					"text_en": ""
+				},
+				{
+					"name": "",
+					"pos": "caller",
+					"text_fr": "... ?",
+					"text_en": ""
+				},
+				{
+					"name": "zzz",
+					"pos": "called",
+					"text_fr": "... !",
+					"text_en": ""
+				}
+			]
+		],
+		"B6": [
 			[
 				{
 					"name": "Pompier",
@@ -442,7 +543,7 @@
 			],
 			[
 				{
-					"name": "",
+					"name": "Pompier",
 					"pos": "called",
 					"text_fr": "Les pompiers je vous écoute ?",
 					"text_en": ""

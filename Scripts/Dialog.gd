@@ -2,8 +2,12 @@ extends Panel
 
 var msg
 
-func display_msg(msg):
-	self.msg = msg
+func display_msg(msg_var, forced_caller_name):
+	msg = msg_var.duplicate()
+
+	if forced_caller_name != null and msg.name == "":
+		self.msg.name = forced_caller_name
+
 	visible = true
 	display_indicator(false)
 
@@ -19,7 +23,7 @@ func is_at_end_of_text():
 	return $NextIndicator.visible
 
 func skip_to_end_of_text():
-	$Text.visible_characters = msg.name.length() + Global.get_translated_text(msg).length()
+	$Text.visible_characters = msg.name.length() + Global.get_translated_text(msg).length() + 2
 
 func display_indicator(must_display):
 	$NextIndicator.visible = must_display

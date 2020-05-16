@@ -2,6 +2,7 @@ extends Control
 
 var curr_dial = null
 var msg_index = 0
+var caller_name
 
 var boss_monologue = false
 var techman_dial = false
@@ -26,7 +27,7 @@ func _process(delta):
 				$BossDialog.queue_free()
 			else:
 				msg_index += 1
-				$BossDialog.display_msg(curr_dial[msg_index])
+				$BossDialog.display_msg(curr_dial[msg_index], null)
 			return
 
 		elif techman_dial:
@@ -63,6 +64,7 @@ func finish_and_close():
 	$CallerDialog.hide()
 	$CalledDialog.hide()
 	Events.emit_signal("dialogue_finished")
+	get_tree().paused = false
 
 func on_start_dialogue():
 	msg_index = 0
@@ -70,54 +72,66 @@ func on_start_dialogue():
 	display_next_message()
 
 func on_start_answer(input):
+
+	get_tree().paused = true
+
 	msg_index = 0
-
-
+	caller_name = curr_dial[0].name
 
 	var binded = binding["X" + str(input.get_index_num() - 20)]
 	printt(input.name, "binded to", binded)
 	var binded_index = binded[1]
 
-	if curr_dial[0].name == "Henri":
-		if binded != "B1":
-			print("Not Henir, no next story")
-			Global.story_index -= 1
-		else:
-			print("Henir, story will continue")
-
 	var dial_length = curr_dial.size() - 1
-	if curr_dial[dial_length].has(binded):
-		curr_dial = curr_dial[dial_length][binded]
+	if caller_name == "Henri":
+		print("it's Henri")
+		if binded == "B1": # Henri to Joséphine
+			print("It's Henri, story will continue")
+			curr_dial = curr_dial[dial_length]["Josephine"]
+		else:
+			print("Not Joséphine")
+			Global.story_index -= 1
+			msg_index = 0
+			var other_perso_dial = Global.other_dest_people[binded]
+			var other_index = randi() % other_perso_dial.size()
+			printt("size", other_perso_dial.size(), "other_index", other_index)
+			curr_dial = other_perso_dial[other_index]
 	else:
-		print("no entry, default answer")
+		print("Caller is not Henri")
+		msg_index = 0
+		var other_perso_dial = Global.other_dest_people[binded]
+		var other_index = randi() % other_perso_dial.size()
+		printt("size", other_perso_dial.size(), "other_index", other_index)
+		curr_dial = other_perso_dial[other_index]
 
 	display_next_message()
 
 func start_new_dialog():
+	get_tree().paused = true
 	randomize()
-	if randi() % 3 == 0:
+	if randi() % 2 == 0:
 		Global.story_index += 1
 		print("start new story dialogue, index: " + str(Global.story_index))
 		curr_dial = Global.main_story["dial" + str(Global.story_index)]
 	else:
 		var max_index = Global.secondary_stories.size()
-		var index = (randi() % max_index) + 1
-		assert(index > 0)
+		var index = (randi() % max_index)
 		print("start new secondary story dialogue, index: " + str(index))
-		curr_dial = Global.secondary_stories["dial" + str(index)]
+		curr_dial = Global.secondary_stories[index]
 
 func on_holding():
+	get_tree().paused = false
 	$CallerDialog.hide()
 	$CalledDialog.hide()
 
 func display_next_message():
 	var msg = get_curr_message()
 	if msg.pos == "caller":
-		$CallerDialog.display_msg(msg)
+		$CallerDialog.display_msg(msg, caller_name)
 		$CalledDialog.hide()
 	else:
 		$CallerDialog.hide()
-		$CalledDialog.display_msg(msg)
+		$CalledDialog.display_msg(msg, null)
 
 func get_curr_message():
 	return curr_dial[msg_index]
@@ -129,7 +143,7 @@ func start_boss_monologue():
 	msg_index = 0
 	boss_monologue = true
 	curr_dial = Global.boss_dialogue
-	$BossDialog.display_msg(curr_dial[0])
+	$BossDialog.display_msg(curr_dial[0], null)
 
 func start_tech_man_dialog(count):
 	msg_index = 0
@@ -140,7 +154,7 @@ func start_tech_man_dialog(count):
 	curr_dial = Global.techman_dialogue[count].duplicate()
 	replace_placeholder(curr_dial, new_binding)
 
-	$TechManDialog.display_msg(curr_dial)
+	$TechManDialog.display_msg(curr_dial, null)
 
 
 func replace_placeholder(curr_dial, new_binding):
