@@ -27,7 +27,7 @@ func _process(delta):
 
 func on_jack_connected(jack_name, jack_input):
 	print(str(jack_name) + " connected to " + str(jack_input.get_index_num()))
-	jack_input.set_light_on()
+
 	$SFX/Ringing.stop()
 	if jack_name.ends_with("A"):
 		jack_input.set_light_on()
@@ -40,7 +40,6 @@ func on_jack_connected(jack_name, jack_input):
 	elif connectionA != null and not $HoldSwitch.disabled:
 		connectionB = jack_input
 		jack_input.set_light_blink()
-		connectionB.set_light_blink()
 
 func on_jack_disconnected(jack_name, connected_input):
 	print(jack_name + " disconnected from " + str(connected_input))

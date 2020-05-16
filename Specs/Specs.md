@@ -113,6 +113,8 @@ Le système de jeu, tables de loi qui régissent le jeu
 ### Etape 3: Polish
 
 * ✔️Faire un menu
+* Être sûr que les instructions de tuto soient OK
+* Que faire avec les shaders ?
 * ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
 * Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
 * Ajouter mini mouvement de caméra quand on manipule les jacks

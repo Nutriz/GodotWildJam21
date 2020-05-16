@@ -15,7 +15,7 @@
 [ext_resource path="res://Assets/Sounds/noise2.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Assets/Font/JetBrainsMono-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Sprites/switch_disabled.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/switch_disabled_2.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/switch_hover.png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=1]
@@ -247,8 +247,6 @@ volume_db = -24.0
 pitch_scale = 0.81
 
 [node name="OldFilm" parent="." instance=ExtResource( 15 )]
-visible = false
-modulate = Color( 1, 1, 1, 0.352941 )
 margin_left = 0.0
 margin_right = 1288.0
 margin_bottom = 728.0

@@ -1,4 +1,4 @@
-extends Node2D
+extends Light2D
 
 var is_ringing = false
 
@@ -17,37 +17,35 @@ func _ready():
 		$Output.visible = true
 		$OutputIndicator.visible = true
 		$LabelOutput.visible = true
+		enabled = false
 
 func start_ringing():
 	is_ringing = true
 	$InputPlayer.play("InputAnimation")
 
 func set_light_on():
-	$InputPlayer.play("InputAnimation")
-	$InputPlayer.stop()
-	$InputPlayer.seek(0.3, true)
-
-	$OutputPlayer.play("OutputAnimation")
-	$OutputPlayer.stop()
-	$OutputPlayer.seek(0.3, true)
+	if get_index_num() <= 20:
+		$InputPlayer.play("InputAnimation")
+		$InputPlayer.stop()
+		$InputPlayer.seek(0.3, true)
+	else:
+		$LongLight.visible = true
+		$LongLight.enabled = true
 
 func set_light_off():
-	$InputPlayer.stop()
-	$InputPlayer.seek(0, true)
-
-	$OutputPlayer.stop()
-	$OutputPlayer.seek(0, true)
+	if get_index_num() <= 20:
+		$InputPlayer.stop()
+		$InputPlayer.seek(0, true)
+	else:
+		$LongLight.visible = false
+		$LongLight.enabled = false
 
 func set_light_blink():
 	$InputPlayer.stop(true)
 	$InputPlayer.play("InputAnimation")
 
-	$OutputPlayer.stop(true)
-	$OutputPlayer.play("OutputAnimation")
-
 func _on_jack_area_entered(area):
 	$OnOverSfx.play()
-
 
 func _on_InputArea_input_event(viewport, event, shape_idx):
 	print("callback input")
