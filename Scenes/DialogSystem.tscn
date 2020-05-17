@@ -76,9 +76,9 @@ margin_bottom = 165.622
 
 [node name="BossDialog" type="Panel" parent="."]
 margin_left = 14.0
-margin_top = 293.0
+margin_top = 210.0
 margin_right = 310.0
-margin_bottom = 504.0
+margin_bottom = 421.0
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 5 )
 __meta__ = {

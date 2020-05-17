@@ -42,6 +42,7 @@ func _on_PickArea_input_event(viewport, event, shape_idx):
 func reset_position():
 	position = initial_position
 	self.connected_input = null
+	can_move()
 
 func connected_set(new_value):
 	if new_value != null:
@@ -50,13 +51,20 @@ func connected_set(new_value):
 		$SpritePlugged.visible = true
 		$JackIn.play()
 		yield(get_tree().create_timer(0.7), "timeout")
-		Events.emit_signal("jack_connected", name, new_value)
+		Events.emit_signal("jack_connected", self, new_value)
 		connected_input = new_value
 	elif connected_input != null:
 		$Sprite.visible = true
 		$SpritePlugged.visible = false
-		Events.emit_signal("jack_disconnected", name, connected_input)
+		Events.emit_signal("jack_disconnected", self, connected_input)
 		connected_input = new_value
+
+func dont_move():
+	$Area/CollisionShape2D.disabled = true
+
+func can_move():
+	$Area/CollisionShape2D.disabled = false
+
 
 func picked_set(new_value):
 	picked = new_value

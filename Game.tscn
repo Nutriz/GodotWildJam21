@@ -87,6 +87,27 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( -7.09937, -11.8413, 170.16, 178.529 )
 
+[node name="HoldSwitch" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 608.0
+margin_top = 600.0
+margin_right = 666.0
+margin_bottom = 648.0
+rect_clip_content = true
+focus_mode = 0
+disabled = true
+toggle_mode = true
+enabled_focus_mode = 0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 17 )
+texture_disabled = ExtResource( 16 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Inputs" type="Node2D" parent="."]
 pause_mode = 1
 position = Vector2( 346.343, 214.487 )
@@ -205,27 +226,6 @@ position = Vector2( 706.242, 620.259 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 7 )]
 
-[node name="HoldSwitch" type="TextureButton" parent="."]
-pause_mode = 2
-margin_left = 608.0
-margin_top = 600.0
-margin_right = 666.0
-margin_bottom = 648.0
-rect_clip_content = true
-focus_mode = 0
-disabled = true
-toggle_mode = true
-enabled_focus_mode = 0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 17 )
-texture_disabled = ExtResource( 16 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CallTimer" type="Timer" parent="."]
 pause_mode = 1
 one_shot = true
@@ -255,6 +255,13 @@ stream = ExtResource( 18 )
 volume_db = -14.0
 autoplay = true
 
+[node name="ScoreDebug" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="OldFilm" parent="." instance=ExtResource( 15 )]
 margin_left = 0.0
 margin_right = 1288.0
@@ -283,9 +290,12 @@ focus_mode = 2
 custom_fonts/normal_font = SubResource( 2 )
 selection_enabled = true
 
-[node name="ScoreDebug" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="BlockingEvent" type="TextureButton" parent="."]
+visible = false
+margin_left = 599.0
+margin_top = 544.0
+margin_right = 674.0
+margin_bottom = 688.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
