@@ -1,96 +1,74 @@
 {
-	"output_characters": {
-		"B1": "Joséphine",
-		"B2": "Perroquet Rocco",
-		"B3": "Le vieil ivrogne",
-		"B4": "La servante de la princesse Margaret",
-		"B5": "Bip Bip //pas réponse",
-		"B6": "Le pompier"
-	},
-	"____story_introduction_original": {
-		"text_fr": "Tu es Marie, tu as 20 ans, ton nouveau job est Standardiste en 1922. Tu vas devoir relier les appels entrants à leur bon correspondant. Tu es inexpérimentée mais tu te dis que cela ne doit pas être si compliqué. Allez ton boss t’attend ! Bonne Chance...",
-		"text_en": "TODO, demoiselle du téléphone = Switchboard operator"
-	},
 	"story_introduction": {
-		"text_fr": "Vous êtes Marie, une jeune femme de 20 ans qui vient de trouver un emploi dans les télécommunications. Nous sommes le 22 février 1922 et c'est votre premier jour en tant que demoiselle du téléphone. Vous allez devoir *connecter* les correspondants entre eux. Inexpérimentée mais optimiste, vous vous dites que cela ne doit pas être bien compliqué comme job. Votre chef d'équipe vous attends ! Bonne Chance...",
-		"text_en": "TODO"
+		"text_fr": "Vous êtes Marie, une jeune femme de 20 ans qui vient de trouver un emploi dans les télécommunications. Nous sommes le 22 février 1922 et c'est votre premier jour en tant que demoiselle du téléphone. Vous allez devoir *connecter* les correspondants entre eux. Vous êtes inexpérimentée mais optimiste. Votre chef d'équipe vous attends ! Bonne Chance...",
+		"text_en": "You are Marie, a young woman of 20 who has just found a job in telecommunications. It's 22 February 1922, it's your first day as a switchboard operator. You will have to *connect* the parts between them. You are inexperienced but optimistic. Your team leader is waiting for you! Good luck..."
 	},
-	"____boss_dialogue_original": [
-		"Bonjour Marie,",
-		"Bienvenue sur votre poste de travail.",
-		"Je suis désolé de ne pas pouvoir vous accueillir et vous aider.",
-		"Attention un techniciens de maintenance va intervenir aujourd’hui.",
-		"Faites au mieux pour satisfaire les usagés.",
-		"Je compte sur vous ! J.R The Boss"
-	],
 	"boss_dialogue": [
 		{
 			"name": "Boss",
 			"pos": "boss",
 			"text_fr": "Bonjour Marie, bienvenue sur votre poste de travail.",
-			"text_en": ""
+			"text_en": "Hello Marie, welcome to your workstation."
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
 			"text_fr": "Je suis désolé de ne pas pouvoir vous accueillir et vous aider.",
-			"text_en": ""
+			"text_en": "I am sorry that I cannot welcome you and help you."
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
 			"text_fr": "Attention un techniciens de maintenance va intervenir aujourd’hui.",
-			"text_en": ""
+			"text_en": "Attention a maintenance technicians will intervene today."
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
 			"text_fr": "Faites au mieux pour satisfaire les usagés.",
-			"text_en": ""
+			"text_en": "Do your best to satisfy the users."
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
 			"text_fr": "Il y a notamment une personne nommée Henri, qui est un de nos actionnaire, il cherche à joindre une femme, aidez-le.",
-			"text_en": ""
+			"text_en": "There is in particular a person named Henri, who is one of our shareholders, he seeks to reach a woman, help him."
 		},
 		{
 			"name": "Boss",
 			"pos": "boss",
 			"text_fr": "A oui j'oubliai, parfois le technicien fait des bourdes...",
-			"text_en": ""
-		}
-	],
-	"tuto": [
+			"text_en": "Yes, I forgot, sometimes the technician makes mistakes ..."
+		},
 		{
-			"name": "Guide",
+			"name": "Manuel du terminal JS-22",
 			"pos": "Guide",
 			"text_fr": "Votre travail consiste à prendre le jack rouge et le brancher dans une des entrée quand il y a un appel.",
-			"text_en": ""
+			"text_en": "Your job is to take the red jack and plug it into one of the inputs when there is a call."
 		},
 		{
-			"name": "Guide",
+			"name": "Manuel du terminal JS-22",
 			"pos": "Guide",
-			"text_fr": "Après avoir écoute le client, il faut le mettre en attente avec le bouton entre les jacks",
-			"text_en": ""
+			"text_fr": "Après avoir écouté la demande de l'usagé, vus devez le mettre en attente avec l'interrupteur situer entre les deux jacks",
+			"text_en": "After listening to the user's request, you must put it on hold with the switch located between the two jacks"
 		},
 		{
-			"name": "Guide",
+			"name": "Manuel du terminal JS-22",
 			"pos": "Guide",
 			"text_fr": "Ensuite vous devez connecter le jack bleu à l'interlocuteur souhaité",
-			"text_en": ""
+			"text_en": "Then you must connect the blue jack to the desired contact"
 		},
 		{
-			"name": "Guide",
+			"name": "Manuel du terminal JS-22",
 			"pos": "Guide",
-			"text_fr": "Pour finir, il ne vous reste plus qu'à désactiver la mise en attente avec le bouton entre les jacks",
-			"text_en": ""
+			"text_fr": "Pour finir, il ne vous reste plus qu'à désactiver la mise en attente avec l'interrupteur situer entre les deux jacks",
+			"text_en": "Finally, all you have to do is deactivate the hold with the switch located between the two jacks"
 		},
 		{
-			"name": "Guide",
+			"name": "Manuel du terminal JS-22",
 			"pos": "Guide",
-			"text_fr": "La conversation défile sous vos yeux, évidemment vous n'avez pas le droit de la lire, c'est privé.",
-			"text_en": ""
+			"text_fr": "La conversation défile sous vos yeux, évidemment vous n'avez pas le droit de la lire, c'est est conversation privée.",
+			"text_en": "The conversation is scrolling before your eyes, obviously you don't have the right to read it, it's a private conversation."
 		}
 	],
 	"tech_man": [
@@ -98,19 +76,19 @@
 			"name": "Tech man",
 			"pos": "Tech man",
 			"text_fr": "Oulala je crois que je me suis encore trompé. Ah non ouf, c'est bon, tout roule !",
-			"text_en": "TODO"
+			"text_en": "Outch I think I was wrong again. Ah no phew, it's good, everything is rolling!"
 		},
 		{
 			"name": "Tech man",
 			"pos": "Tech man",
 			"text_fr": "Euh, désolé mademoiselle, mais il y a eu un problème, j'ai du échanger la sortie $A avec la sortie $B",
-			"text_en": "TODO"
+			"text_en": "Uh, sorry miss, but there was a problem, I had to exchange the output $ A with the output $ B"
 		},
 		{
 			"name": "Tech man",
 			"pos": "Tech man",
 			"text_fr": "Oups, dans ma tête c'était pas claire, la sortie $A échangé avec la sortie $B. Et $C avec $D",
-			"text_en": "TODO"
+			"text_en": "Oops, it was not clear in my head, the output $A exchanged with the output. $B and $C with $D"
 		}
 	],
 	"main_story": {
@@ -118,14 +96,14 @@
 			{
 				"name": "Henri",
 				"pos": "caller",
-				"text_fr": "Je cherche à joindre Joséphine c’est assez urgent ! ",
-				"text_en": ""
+				"text_fr": "Je cherche à joindre Joséphine c’est assez urgent !",
+				"text_en": "I'm looking to contact Joséphine, it's quite urgent!"
 			},
 			{
 				"name": "Henri",
 				"pos": "caller",
 				"text_fr": "Pouvez-vous me mettre en relation avec elle ?",
-				"text_en": "",
+				"text_en": "Can you put me in touch with her?",
 				"holding": true
 			},
 			{
@@ -140,13 +118,13 @@
 						"name": "Henri",
 						"pos": "caller",
 						"text_fr": "Joséphine, Bonjour c’est Henri.",
-						"text_en": ""
+						"text_en": "Joséphine, Hello, this is Henri."
 					},
 					{
 						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Oh Bonj … PFFF  Hen...i PFFFF .",
-						"text_en": ""
+						"text_fr": "Oh Bonj... PFFF  Hen...iii PFFFF zzzzzzz...",
+						"text_en": "Oh Hell ... PFFF Hen...iii PFFFF zzzzzzz ..."
 					}
 				]
 			}
@@ -155,14 +133,14 @@
 			{
 				"name": "Henri",
 				"pos": "caller",
-				"text_fr": "Je cherche à recontacter Joséphine ! ",
-				"text_en": ""
+				"text_fr": "Je cherche à recontacter Joséphine !",
+				"text_en": "I'm looking to contact Joséphine!"
 			},
 			{
 				"name": "Henri",
 				"pos": "caller",
 				"text_fr": "Pouvez-vous me mettre en relation avec elle ?",
-				"text_en": "",
+				"text_en": "Can you put me in touch with her?",
 				"holding": true
 			},
 			{
@@ -171,31 +149,31 @@
 						"name": "Joséphine",
 						"pos": "called",
 						"text_fr": "Oui ?",
-						"text_en": ""
+						"text_en": "Yes ?"
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
 						"text_fr": "Joséphine, c’est Henri zzzz a été coupzzzé , Il faut...",
-						"text_en": ""
+						"text_en": "Joséphine, it's Henri zzzz was cutzzzed, You have to ..."
 					},
 					{
 						"name": "Joséphine",
 						"pos": "called",
 						"text_fr": "Je vous entend très mal !",
-						"text_en": ""
+						"text_en": "I can't hear you very well!"
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
 						"text_fr": "Bzzz bzzzzz bzzzzzzzzzzzzzzzzzz",
-						"text_en": ""
+						"text_en": "Bzzz bzzzzz bzzzzzzzzzzzzzzzzzz"
 					},
 					{
 						"name": "Joséphine",
 						"pos": "called",
 						"text_fr": "Allo ? Allo ? Allo ?",
-						"text_en": ""
+						"text_en": "Hello? Hello? Hello?"
 					}
 				]
 			}
@@ -204,8 +182,8 @@
 			{
 				"name": "Henri",
 				"pos": "caller",
-				"text_fr": "Ca a coupé, j'aimerai joindre à nouveau Joséphine ! ",
-				"text_en": "",
+				"text_fr": "Ca a coupé, j'aimerai joindre à nouveau Joséphine !",
+				"text_en": "It has cut, I would like to join Josephine again!",
 				"holding": true
 			},
 			{
@@ -214,37 +192,37 @@
 						"name": "Joséphine",
 						"pos": "called",
 						"text_fr": "Henri Henri... enfin...",
-						"text_en": ""
+						"text_en": "Henri Henri ... finally ..."
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
 						"text_fr": "Oui enfin je vous ai au téléphone...",
-						"text_en": ""
+						"text_en": "Yes finally I have you on the line..."
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Je dois vous voir vous êtes pré sélectionner pour le casting final",
-						"text_en": ""
+						"text_fr": "Je dois vous voir, vous êtes pré-sélectionnée pour le casting final",
+						"text_en": "I have to see you, you are pre-selected for the final casting"
 					},
 					{
 						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Ohh I’m so very happy",
-						"text_en": ""
+						"text_fr": "Ohh je suis vraiment heureusement, wahou !!!",
+						"text_en": "Ohh I’m so very happy"
 					},
 					{
 						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Quelle est la suite de la démarche ?",
-						"text_en": ""
+						"text_fr": "C'est où ? Quand ? Comment ?!!!",
+						"text_en": "Where ? When ? How ?!!!"
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "C'est très simple Joséphine, il suffit de BRRRR à 14h le BRRRR avr...PFFFFF",
-						"text_en": ""
+						"text_fr": "C'est très simple Joséphine, il suffit de BRRRR à 14h le BRRRR avril...PFFFFF zzzzz...",
+						"text_en": "It's very simple Joséphine, just BRRRR at 2 p.m. on April BRRRR ... PFFFFF zzzzz ..."
 					}
 				]
 			}
@@ -253,8 +231,15 @@
 			{
 				"name": "Henri",
 				"pos": "caller",
-				"text_fr": "J'aimerai ENCORE joindre Joséphine ! ",
-				"text_en": "",
+				"text_fr": "J'ai ENCORE été coupé, ça commence à être agaçant, j'aimerai ENCORE joindre Joséphine !",
+				"text_en": "I've STILL been cut, it's starting to be annoying, I would still like to join Joséphine!",
+				"holding": true
+			},
+			{
+				"name": "Henri",
+				"pos": "caller",
+				"text_fr": "Ben dis donc ça aurait été plus rapide de faire un télégramme !",
+				"text_en": "So say it would have been faster to make a telegram!",
 				"holding": true
 			},
 			{
@@ -262,38 +247,32 @@
 					{
 						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Henri il y a vraiment des problèmes de communication",
-						"text_en": ""
+						"text_fr": "Henri, il y a vraiment des problèmes de communication.",
+						"text_en": "Henri, there are really communication problems."
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Oui, je vais être bref",
-						"text_en": ""
+						"text_fr": "Oui, je vais être bref.",
+						"text_en": "Yes, I will be brief."
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Rendez-vous à 14h le 22 avril, au conservatoire",
-						"text_en": ""
+						"text_fr": "Rendez-vous à 14h le 22 avril, au conservatoire !",
+						"text_en": "Meet at 2 p.m. on April 22 at the conservatory!"
 					},
 					{
 						"name": "Joséphine",
 						"pos": "called",
-						"text_fr": "Ohh I’m so very happy",
-						"text_en": ""
-					},
-					{
-						"name": "Joséphine",
-						"pos": "called",
-						"text_fr": "J'y serai sans faute",
-						"text_en": ""
+						"text_fr": "D'accord Henri, merci j'y serai.",
+						"text_en": "Ok Henri, thank you, I'll be there."
 					},
 					{
 						"name": "Henri",
 						"pos": "caller",
-						"text_fr": "Super, je crois en vous !!!",
-						"text_en": "",
+						"text_fr": "Super, je crois en vous, à bientôt Joséphine",
+						"text_en": "Super, I believe in you, see you soon Josephine",
 						"end": "good"
 					}
 				]
@@ -303,10 +282,10 @@
 	"secondary_stories": [
 		[
 			{
-				"name": "Roi",
+				"name": "La Reine Dagobert",
 				"pos": "caller",
-				"text_fr": "Je voudrais parler à mon fils le Prince Albert du Royame d’Agobert",
-				"text_en": "",
+				"text_fr": "Je voudrais parler à mon fils le Prince Albert du Royaume Dagobert",
+				"text_en": "I would like to speak to my son Prince Albert of the Dagobert Kingdom",
 				"holding": true
 			}
 		],
@@ -315,16 +294,16 @@
 				"name": "Dr Tamalou",
 				"pos": "caller",
 				"text_fr": "Je suis Docteur Tamalou, je désire parler à madame Martine",
-				"text_en": "",
+				"text_en": "I am Doctor Tamalou, I wish to speak to Madame Martine",
 				"holding": true
 			}
 		],
 		[
 			{
-				"name": "Vendeur",
+				"name": "M. Sabot",
 				"pos": "caller",
 				"text_fr": "Le magasin de chaussures Belle Paire voudrait confirmer la commande des sœurs MillePatte",
-				"text_en": "",
+				"text_en": "Belle Paire shoe store would like to confirm order from MillePatte sisters",
 				"holding": true
 			}
 		],
@@ -333,40 +312,40 @@
 				"name": "Gaston",
 				"pos": "caller",
 				"text_fr": "Allo les pompiers il y a le feu a la grange de Monsieur Épouvantail vite vite svp",
-				"text_en": "",
+				"text_en": "Hello firefighters there is a fire at the barn of Mr. Scarecrow quickly quickly please",
 				"holding": true
 			}
 		],
 		[
 			{
-				"name": "Joke",
+				"name": "Le petite futé",
 				"pos": "caller",
-				"text_fr": "allo dites vous connaissez monsieur Bipbip ?",
-				"text_en": "",
+				"text_fr": "Allo dites vous connaissez monsieur Bipbip ?",
+				"text_en": "Hello, do you know Mr. Bipbip?",
 				"holding": true
 			}
 		],
 		[
 			{
-				"name": "Testeuse",
+				"name": "Madame GDTOC",
 				"pos": "caller",
 				"text_fr": "Oui bonjour j’attends un appel je voulais juste voir si ça marche",
-				"text_en": "",
+				"text_en": "Yes hello i'm waiting for a call i just wanted to see if it works",
 				"holding": true
 			}
 		],
 		[
 			{
-				"name": "Alcoolique",
+				"name": "M. Schnaps",
 				"pos": "caller",
 				"text_fr": "Blouuuuuuups hic elle est là Miss Pig glouglou ahhhhh ZzZZ",
-				"text_en": "",
+				"text_en": "Blouuuuuuups hic she is there Miss Pig glouglou ahhhhh ZzZZ",
 				"holding": true
 			}
 		],
 		[
 			{
-				"name": "Gamin",
+				"name": "Jéjé",
 				"pos": "caller",
 				"text_fr": "...",
 				"text_en": "...",
@@ -375,10 +354,10 @@
 		],
 		[
 			{
-				"name": "Josette",
+				"name": "Rose",
 				"pos": "caller",
-				"text_fr": " Ca marche m’dame ? Mon téléphone ne sonne plus, besoin d’un réparateur svp",
-				"text_en": "...",
+				"text_fr": " Allo ? Ca marche m’dame ? Mon téléphone ne sonne plus, besoin d’un réparateur svp",
+				"text_en": "Hello? Does it work ma'am? My phone doesn't ring anymore, need a repairman please",
 				"holding": true
 			}
 		]
@@ -389,42 +368,42 @@
 				{
 					"name": "Joséphine",
 					"pos": "called",
-					"text_fr": "Je ne vous connais pas",
-					"text_en": ""
+					"text_fr": "Ah non vous vous êtes trompés.",
+					"text_en": "Ah no you were mistaken."
 				}
 			],
 			[
 				{
 					"name": "Joséphine",
 					"pos": "called",
-					"text_fr": "Bonj..PFFFF GRRRR",
-					"text_en": ""
+					"text_fr": "Bonjou..PFFFF GRRRR zzzz",
+					"text_en": "Hell..PFFFF GRRRR zzzz"
 				}
 			],
 			[
 				{
 					"name": "Joséphine",
 					"pos": "called",
-					"text_fr": "Allo ?",
-					"text_en": ""
+					"text_fr": "Oui ? C'est Joséphine.",
+					"text_en": "Yes ? It's Josephine."
 				},
 				{
 					"name": "",
 					"pos": "caller",
-					"text_fr": "Je n'ai pas demandé une femme, il y a erreur",
-					"text_en": ""
+					"text_fr": "Ah, vous n'êtes pas la personne que je cherche à joindre.",
+					"text_en": "Ah, you are not the person I am trying to reach."
 				},
 				{
 					"name": "Joséphine",
 					"pos": "called",
-					"text_fr": "Vous n'aimez pas les femmes ?",
-					"text_en": ""
+					"text_fr": "Vous n'aimez pas les Joséphine *rire* ?",
+					"text_en": "You don't like Joséphine * laughs *?"
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "...au revoir",
-					"text_en": ""
+					"text_en": "...goodbye"
 				}
 			]
 		],
@@ -434,37 +413,37 @@
 					"name": "Ivrogne",
 					"pos": "called",
 					"text_fr": "ZzZz Bloups",
-					"text_en": ""
+					"text_en": "ZzZz Bloups"
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Allo ?",
-					"text_en": ""
+					"text_en": "Hello?"
 				},
 				{
 					"name": "Ivrogne",
 					"pos": "called",
 					"text_fr": "Hic José...",
-					"text_en": ""
+					"text_en": "Hic José ..."
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Qui êtes vous ?",
-					"text_en": ""
+					"text_en": "Who are you ?"
 				},
 				{
 					"name": "Ivrogne",
 					"pos": "called",
 					"text_fr": "Bébere le roi de la bière ! t’en veux une ?",
-					"text_en": ""
+					"text_en": "Bébere the king of beer! do you want one?"
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Non merci, il est 10h du matin !",
-					"text_en": ""
+					"text_en": "No thanks, it's 10am!"
 				}
 			]
 		],
@@ -474,31 +453,31 @@
 					"name": "Perroquet",
 					"pos": "called",
 					"text_fr": "Allooo...",
-					"text_en": ""
+					"text_en": "Hello ..."
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Vous avez une drôle de voix ?!",
-					"text_en": ""
+					"text_en": "Do you have a funny voice ?!"
 				},
 				{
 					"name": "Perroquet",
 					"pos": "called",
 					"text_fr": "Droooooole de voix Roccoooo Roccoooo…",
-					"text_en": ""
+					"text_en": "Roccoooo Roccoooo voice droooooole…"
 				},
 				{
 					"name": "",
 					"pos": "caller",
-					"text_fr": "Qui etes vous ? ",
-					"text_en": ""
+					"text_fr": "Qui êtes vous ? ",
+					"text_en": "Who are you ?"
 				},
 				{
 					"name": "Perroquet",
 					"pos": "called",
 					"text_fr": "Rocco un sacrééééééé cocooooooo !",
-					"text_en": ""
+					"text_en": "Rocco a sacred cocooooooo!"
 				}
 			]
 		],
@@ -508,59 +487,59 @@
 					"name": "Servante",
 					"pos": "called",
 					"text_fr": "Le château des...",
-					"text_en": ""
+					"text_en": "The castle of ..."
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Pourrais je parler à...",
-					"text_en": ""
+					"text_en": "May I speak to..."
 				},
 				{
 					"name": "Servante",
 					"pos": "called",
-					"text_fr": "Monsieur mais madame la Princesse Margaret est partie avec le prince...",
-					"text_en": ""
+					"text_fr": "Madame la Princesse Margaret est partie avec le prince...",
+					"text_en": "Princess Margaret left with the prince ..."
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "La princesse Margaret...? Non mais ce n'est pas elle qui m'intéresse, où est Louise ?",
-					"text_en": ""
+					"text_en": "Princess Margaret ...? No, but it is not she who interests me, where is Louise?"
 				},
 				{
 					"name": "Servante",
 					"pos": "called",
-					"text_fr": "Louise mais il y a personne de ce prénom ici",
-					"text_en": ""
+					"text_fr": "Louise, mais il y a personne de ce prénom ici",
+					"text_en": "Louise, but there is no one with this first name here"
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Pardonnez moi...je suis confus... au revoir madame !",
-					"text_en": ""
+					"text_en": "Forgive me ... I'm confused ... goodbye madam!"
 				}
 			]
 		],
 		"B5": [
 			[
 				{
-					"name": "zzz",
+					"name": "...",
 					"pos": "called",
 					"text_fr": "...",
-					"text_en": ""
+					"text_en": "..."
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "... ?",
-					"text_en": ""
+					"text_en": "... ?"
 				},
 				{
-					"name": "zzz",
+					"name": "...",
 					"pos": "called",
 					"text_fr": "... !",
-					"text_en": ""
+					"text_en": "... !"
 				}
 			]
 		],
@@ -570,25 +549,25 @@
 					"name": "Pompier",
 					"pos": "called",
 					"text_fr": "Les pompiers je vous écoute ?",
-					"text_en": ""
+					"text_en": "Firefighters, am I listening to you?"
 				},
 				{
 					"name": "",
 					"pos": "caller",
-					"text_fr": "Ohhh pardon c’est une erreur … ",
-					"text_en": ""
+					"text_fr": "Ohhh pardon c’est une erreur...",
+					"text_en": "Ohhh sorry this is a mistake ..."
 				},
 				{
 					"name": "Pompier",
 					"pos": "called",
-					"text_fr": " D’accord !",
-					"text_en": ""
+					"text_fr": "D’accord !",
+					"text_en": "Okay !"
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Au revoir",
-					"text_en": ""
+					"text_en": "Goodbye"
 				}
 			],
 			[
@@ -596,25 +575,25 @@
 					"name": "Pompier",
 					"pos": "called",
 					"text_fr": "Les pompiers je vous écoute ?",
-					"text_en": ""
+					"text_en": "Firefighters, am I listening to you?"
 				},
 				{
 					"name": "",
 					"pos": "caller",
 					"text_fr": "Ahhhh pardon pardon c’est une erreur",
-					"text_en": ""
+					"text_en": "Ahhhh sorry sorry this is a mistake"
 				},
 				{
 					"name": "Pompier",
 					"pos": "called",
 					"text_fr": "On ne s’amuse pas avec cette ligne sous peine que je vous signale COMPRIS ?!",
-					"text_en": ""
+					"text_en": "We do not have fun with this line under penalty that I tell you COMPRIS ?!"
 				},
 				{
 					"name": "",
 					"pos": "caller",
-					"text_fr": "Oui oui pardon ...",
-					"text_en": ""
+					"text_fr": "Oui oui pardon...",
+					"text_en": "Yes yes sorry ..."
 				}
 			]
 		]

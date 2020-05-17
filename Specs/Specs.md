@@ -112,16 +112,15 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Boutons plus jolies / old school pour le menu principal
   * ✔️Menu des crédits
   * ✔️Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
+  * ✔️Refaire les 3 boutons du Board
+  * ✔️Être sûr que les instructions de tuto soient OK
   * Refaire les voix "yaourt"
-  * Refaire les 3 boutons du Board
-  * Être sûr que les instructions de tuto soient OK
   * Faire un câble de Jack plus réaliste.
 
 ### Etape 3: Polish
 
 * ✔️Faire un menu
 * Que faire avec les shaders ?
-* ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
 * Ajouter mini mouvement de caméra quand on manipule les jacks
 * (bonus) Pour expliquer que les destinataires soient inconnus, en début de parti il y a un coup de vent qui fait s'envoler les post-it ayant les informations.
 * (bonus) Pour coller des post-it sur les destinations.

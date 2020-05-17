@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/board.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Assets/Sprites/switch_hover.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sprites/notes.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Sprites/soda.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/deco_button.png" type="Texture" id=20]
 
 [sub_resource type="Animation" id=1]
 resource_name = "StartGame"
@@ -64,14 +65,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sketch" type="Sprite" parent="."]
+[node name="Env" type="Node2D" parent="."]
+skew = 4.37114e-08
+
+[node name="Sketch" type="Sprite" parent="Env"]
 modulate = Color( 1, 1, 1, 0.792157 )
 position = Vector2( 147.563, -21.6414 )
 scale = Vector2( 0.535995, 0.535995 )
+skew = 4.37114e-08
 texture = ExtResource( 2 )
 centered = false
 
-[node name="BackgroundJackA" type="Sprite" parent="."]
+[node name="BackgroundJackA" type="Sprite" parent="Env"]
 position = Vector2( 567.352, 640.24 )
 scale = Vector2( 0.272038, 0.173442 )
 skew = 4.37114e-08
@@ -79,7 +84,7 @@ texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( -12.6784, 130.424, 133.896, 147.844 )
 
-[node name="BackgroundJackB" type="Sprite" parent="."]
+[node name="BackgroundJackB" type="Sprite" parent="Env"]
 position = Vector2( 705.706, 639.88 )
 rotation = -1.57079
 scale = Vector2( 0.116, 0.202 )
@@ -88,39 +93,52 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( -7.09937, -11.8413, 170.16, 178.529 )
 
-[node name="Notes" type="Sprite" parent="."]
+[node name="Notes" type="Sprite" parent="Env"]
 modulate = Color( 1, 1, 1, 0.831373 )
 position = Vector2( 1171, 318.787 )
 scale = Vector2( 0.316667, 0.316667 )
 skew = 4.37114e-08
 texture = ExtResource( 18 )
 
-[node name="Notes2" type="Sprite" parent="."]
+[node name="Notes2" type="Sprite" parent="Env"]
 modulate = Color( 1, 1, 1, 0.831373 )
 position = Vector2( 143, 312.307 )
-scale = Vector2( -0.352, 0.393 )
+rotation = -3.14159
+scale = Vector2( 0.352, -0.393 )
 skew = -0.0663225
 texture = ExtResource( 18 )
 
-[node name="Notes4" type="Sprite" parent="."]
+[node name="Notes4" type="Sprite" parent="Env"]
 modulate = Color( 1, 1, 1, 0.831373 )
 position = Vector2( 1165, 510 )
-scale = Vector2( -0.352, 0.393 )
+rotation = -3.14159
+scale = Vector2( 0.352, -0.393 )
 skew = -0.0663225
 texture = ExtResource( 18 )
 
-[node name="Notes3" type="Sprite" parent="."]
+[node name="Notes3" type="Sprite" parent="Env"]
 modulate = Color( 1, 1, 1, 0.831373 )
 position = Vector2( 1052, 223 )
-scale = Vector2( -0.317, 0.317 )
+rotation = -3.14159
+scale = Vector2( 0.317, -0.317 )
 skew = 4.37114e-08
 texture = ExtResource( 18 )
 
-[node name="soda" type="Sprite" parent="."]
+[node name="soda" type="Sprite" parent="Env"]
 position = Vector2( 914.255, 548.719 )
 scale = Vector2( 0.270169, 0.270169 )
 skew = 0.0628318
 texture = ExtResource( 19 )
+
+[node name="deco_button" type="Sprite" parent="Env"]
+position = Vector2( 839, 192 )
+scale = Vector2( 0.179658, 0.179658 )
+texture = ExtResource( 20 )
+
+[node name="deco_button2" type="Sprite" parent="Env"]
+position = Vector2( 455, 192 )
+scale = Vector2( -0.18, -0.18 )
+texture = ExtResource( 20 )
 
 [node name="HoldSwitch" type="TextureButton" parent="."]
 pause_mode = 2
@@ -277,7 +295,7 @@ stream = ExtResource( 9 )
 
 [node name="Ringing" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 10 )
-volume_db = -9.0
+volume_db = -13.0
 
 [node name="HoldingNoise" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 13 )
