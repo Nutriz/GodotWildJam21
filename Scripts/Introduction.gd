@@ -1,5 +1,7 @@
 extends Control
 
+var action_clicked = false
+
 func _ready():
 	$AnimationPlayer.play("Bg")
 
@@ -12,11 +14,12 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("skip"):
-
+	if Input.is_action_just_pressed("skip") and not action_clicked:
+		action_clicked = true
 		$AnimationPlayer.stop()
 		$AnimationPlayer2.play("Bg")
-		yield(get_tree().create_timer(1.4), "timeout")
+		print("start yield")
+		yield(get_tree().create_timer(1), "timeout")
 
 		if Global.end == "good" or Global.end == "bad":
 			Global.start_main_menu()

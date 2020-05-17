@@ -21,6 +21,14 @@ onready var other_dest_people = dials["other_dest_people"]
 onready var common_translations = dials["common_translations"]
 onready var epilogue = dials["epilogue"]
 
+func _ready():
+	var ambiant_sfx = AudioStreamPlayer.new()
+	ambiant_sfx.volume_db = -12
+	ambiant_sfx.stream = load("res://Assets/Sounds/ambiant.ogg")
+	add_child(ambiant_sfx)
+	ambiant_sfx.play()
+	ambiant_sfx.pause_mode = Node.PAUSE_MODE_PROCESS
+
 
 func start_main_menu():
 	story_index = 0
@@ -54,6 +62,12 @@ func get_translated_text(msg):
 
 func get_common_translated_text(key):
 	return common_translations[key][language]
+
+func get_credits_text():
+	if language == "fr":
+		return "This game was made by Jérôme Nutriz Gully and Pinky for the Godot Wild Jame #21.\n\nObvioussly it was made with the amazing open source Godot Engine (https://godotengine.org/)\n\nKeep in touch: https://twitter.com/JeromeGully\nSource Code: https://github.com/Nutriz/GodotWildJam21"
+	else:
+		return "This game was made by Jérôme Nutriz Gully and Pinky for the Godot Wild Jame #21.\n\nObvioussly it was made with the amazing open source Godot Engine (https://godotengine.org/)\n\nKeep in touch: https://twitter.com/JeromeGully\nSource Code: https://github.com/Nutriz/GodotWildJam21"
 
 func get_good_end():
 	return epilogue.good[language]

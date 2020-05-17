@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$Credits.text = Global.get_credits_text()
 	$Menu/Language.select(1)
 	load_language(1)
 
@@ -24,3 +25,9 @@ func _on_Quit_pressed():
 
 func _on_Start_pressed():
 	Global.start_introduction()
+
+func _on_Credits_toggled(button_pressed):
+	if button_pressed:
+		$CreditPlayer.play("Credits")
+	else:
+		$CreditPlayer.play_backwards("Credits")

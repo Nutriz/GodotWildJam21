@@ -17,7 +17,7 @@
 [ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Sprites/switch_disabled_2.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/switch_hover.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Sounds/ambiant.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Sprites/notes.png" type="Texture" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "StartGame"
@@ -249,18 +249,19 @@ stream = ExtResource( 13 )
 volume_db = -30.0
 pitch_scale = 0.81
 
-[node name="Ambiant" type="AudioStreamPlayer" parent="SFX"]
-pause_mode = 2
-stream = ExtResource( 18 )
-volume_db = -14.0
-autoplay = true
-
 [node name="ScoreDebug" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="notes" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.831373 )
+position = Vector2( 1127, 348.75 )
+scale = Vector2( 0.393333, 0.393333 )
+skew = 4.37114e-08
+texture = ExtResource( 18 )
 
 [node name="OldFilm" parent="." instance=ExtResource( 15 )]
 margin_left = 0.0

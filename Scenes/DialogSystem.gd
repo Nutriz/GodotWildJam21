@@ -215,7 +215,6 @@ func replace_placeholder(curr_dial, value_switched):
 		curr_dial.text_en = curr_dial.text_en.replace("$D", value_switched[3])
 
 func randomize_outputs():
-	printt("befor", binding)
 	randomize()
 
 	var list_to_pick = binding.duplicate()
@@ -228,10 +227,5 @@ func randomize_outputs():
 	var key_b = "X" + str(index.pop_front())
 	var value_b = list_to_pick[key_b]
 
-	printt(value_a, "<->", value_b)
-
 	binding[key_a] = value_b
 	binding[key_b] = value_a
-
-	printt("after", binding)
-	print("\n")

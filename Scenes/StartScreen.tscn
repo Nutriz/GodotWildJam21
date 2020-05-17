@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Font/SouciSansNF.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/fr.png" type="Texture" id=2]
@@ -7,10 +7,39 @@
 [ext_resource path="res://Assets/theme.tres" type="Theme" id=5]
 [ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Sprites/menu_background.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Font/JetBrainsMono-Regular.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.505882, 0.427451, 0.152941, 0.737255 )
+border_width_left = 8
+border_width_right = 8
+border_blend = true
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Credits"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 18.3792 ),
+"update": 0,
+"values": [ Vector2( 1286.79, 203.382 ), Vector2( 930, 203.382 ) ]
+}
 
 [node name="StartScreen" type="Control"]
 anchor_right = 1.0
@@ -30,12 +59,15 @@ texture = ExtResource( 7 )
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -312.0
-margin_right = -1.0
-margin_bottom = -258.0
+margin_left = 404.0
+margin_top = -295.0
+margin_right = -399.0
+margin_bottom = -203.0
+custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 4 )
 text = "Connect In People"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,9 +77,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 470.0
-margin_top = -161.0
+margin_top = -97.0
 margin_right = -464.0
-margin_bottom = 161.0
+margin_bottom = 225.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -65,6 +97,7 @@ margin_right = 346.0
 margin_bottom = 128.0
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
+toggle_mode = true
 text = "Credits"
 
 [node name="Quit" type="Button" parent="Menu"]
@@ -89,6 +122,26 @@ custom_fonts/font = SubResource( 1 )
 items = [ "English", ExtResource( 3 ), false, "French", ExtResource( 2 ), false ]
 auto_height = true
 icon_scale = 0.4
+
+[node name="OldFilm" parent="." instance=ExtResource( 8 )]
+modulate = Color( 1, 1, 1, 0.627451 )
+mouse_filter = 2
+
+[node name="Credits" type="RichTextLabel" parent="."]
+margin_left = 1286.79
+margin_top = 203.382
+margin_right = 1641.79
+margin_bottom = 552.382
+custom_fonts/normal_font = SubResource( 3 )
+meta_underlined = false
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditPlayer" type="AnimationPlayer" parent="."]
+anims/Credits = SubResource( 4 )
 [connection signal="pressed" from="Menu/Start" to="." method="_on_Start_pressed"]
+[connection signal="toggled" from="Menu/Credits" to="." method="_on_Credits_toggled"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="item_selected" from="Menu/Language" to="." method="_on_Language_item_selected"]

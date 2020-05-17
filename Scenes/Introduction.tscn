@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Introduction.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Font/MenuFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/Sprites/menu_background.png" type="Texture" id=6]
 
@@ -98,3 +99,9 @@ anims/Bg = SubResource( 1 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/Bg = SubResource( 2 )
+
+[node name="OldFilm" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.643137 )
+margin_left = -4.85059
+margin_right = 1.14941
+mouse_filter = 2
