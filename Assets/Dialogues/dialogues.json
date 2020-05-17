@@ -67,8 +67,8 @@
 		{
 			"name": "Manuel du terminal JS-22",
 			"pos": "Guide",
-			"text_fr": "La conversation défile sous vos yeux, évidemment vous n'avez pas le droit de la lire, c'est est conversation privée.",
-			"text_en": "The conversation is scrolling before your eyes, obviously you don't have the right to read it, it's a private conversation."
+			"text_fr": "La conversation défile sous vos yeux, évidemment vous n'avez pas le droit de les lire, cela reste des conversations privées.",
+			"text_en": "The conversation is scrolling before your eyes, obviously you don't have the right to read it, it's a private conversations."
 		}
 	],
 	"tech_man": [
@@ -279,6 +279,14 @@
 			}
 		]
 	},
+	"bad_end": [
+		{
+			"name": "Henri",
+			"pos": "caller",
+			"text_fr": "Pfff j'en ai marre, j'abnadonne, tant pis pour elle...je trouverai quelqu'un d'autre.",
+			"text_en": "Pfff I'm fed up, I give up, too bad for her... I will find someone else."
+		}
+	],
 	"secondary_stories": [
 		[
 			{
@@ -600,12 +608,12 @@
 	},
 	"epilogue": {
 		"good": {
-			"fr": "Vous avez gagné",
-			"en": ""
+			"fr": "Félicitations ! Vous avez gagné ! Je suis content de votre travail ! La JS TélécomConnexion vous remercie ! Henri a l’air très content de votre travail !",
+			"en": "Congratulations ! You have won ! I'm happy with the work ! The JS TélécomConnexion thanks you ! Henri looks very happy with your work!"
 		},
 		"bad": {
-			"fr": "Vous avez perdu",
-			"en": ""
+			"fr": "Oh mon dieu ! Vous avez perdu ! C’est quoi ce travail ? Vous voulez faire couler la JS TélécomConnexion ? Où est votre motivation ? Henri n’est pas du tout content de votre travail !",
+			"en": "Oh my God ! You lost ! What is work? Do you want to run the JS TélécomConnexion ? Where is your motivation ? Henri is not at all happy with your work !"
 		}
 	},
 	"common_translations": {

@@ -5,6 +5,9 @@ func _ready():
 	$Menu/Language.select(1)
 	load_language(1)
 
+	printt("abcd: Bonjour", "abcd: Bonjour".length())
+	printt("abcd:\nBonjour", "abcd:\nBonjour".length())
+
 func _on_Language_item_selected(index):
 	load_language(index)
 

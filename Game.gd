@@ -62,7 +62,7 @@ func on_dialogue_finished():
 	if Global.story_index == Global.main_story.size():
 		Global.end = "good"
 		Global.start_epilogue()
-	elif Global.henry_annoyed > 2:
+	elif Global.henry_annoyed > 3:
 		Global.end = "bad"
 		Global.start_epilogue()
 
@@ -74,7 +74,6 @@ func on_dialogue_finished():
 	$CallTimer.wait_time = rand_range(2, 10)
 	$CallTimer.start()
 	print("started new call timer with: " + str($CallTimer.wait_time))
-	printt("is paused ?", get_tree().paused)
 
 func _on_holding_toggled(button_pressed):
 	if button_pressed and connectionA != null:

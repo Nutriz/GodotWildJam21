@@ -116,6 +116,7 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Être sûr que les instructions de tuto soient OK
   * Refaire les voix "yaourt"
   * Faire un câble de Jack plus réaliste.
+  * Supprimer écran de debug
 
 ### Etape 3: Polish
 

@@ -11,7 +11,7 @@ func display_msg(msg_var, forced_caller_name):
 	visible = true
 	display_indicator(false)
 
-	$Text.text = msg.name + ": " + Global.get_translated_text(msg)
+	$Text.text = msg.name + ":\n" + Global.get_translated_text(msg)
 	$Text.visible_characters = msg.name.length() + 1
 	$NextCharacter.start()
 

@@ -10,7 +10,7 @@ func _ready():
 		var text = Global.get_common_translated_text("output")
 		$LabelOutput.text = text + str(((get_index_num()-1)%5)+1)
 		if name == "B26":
-			$LabelOutput.text = "Sortie 6"
+			$LabelOutput.text = Global.get_common_translated_text("output") + str("6")
 		$InputArea.add_to_group("inputsB")
 		$Input.visible = false
 		$InputIndicator.visible = false

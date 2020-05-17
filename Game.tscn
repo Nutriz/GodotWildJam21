@@ -281,6 +281,7 @@ position = Vector2( 706.242, 620.259 )
 
 [node name="CallTimer" type="Timer" parent="."]
 pause_mode = 1
+wait_time = 4.0
 one_shot = true
 autostart = true
 

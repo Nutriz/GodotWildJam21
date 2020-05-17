@@ -7,6 +7,8 @@ var caller_name
 var boss_monologue = false
 var techman_dial = false
 
+var first_dial = true
+
 var binding = {"X1": 1, "X2": 2, "X3": 3, "X4": 4, "X5": 5, "X6": 6}
 
 func _ready():
@@ -49,7 +51,11 @@ func _process(delta):
 			elif get_curr_message().has("holding"):
 				return
 			elif is_last_message():
-				finish_and_close()
+				if Global.henry_annoyed == 4 and caller_name == "Henri":
+					Global.henry_annoyed += 1
+					$CallerDialog.display_msg(Global.bad_end[0], null)
+				else:
+					finish_and_close()
 			else:
 				msg_index += 1
 				display_next_message()
@@ -57,7 +63,11 @@ func _process(delta):
 			if not $CalledDialog.is_at_end_of_text():
 				$CalledDialog.skip_to_end_of_text()
 			elif is_last_message():
-				finish_and_close()
+				if Global.henry_annoyed == 4 and caller_name == "Henri":
+					Global.henry_annoyed += 1
+					$CallerDialog.display_msg(Global.bad_end[0], null)
+				else:
+					finish_and_close()
 			else:
 				msg_index += 1
 				display_next_message()
@@ -113,7 +123,14 @@ func on_start_answer(input):
 func start_new_dialog():
 	get_tree().paused = true
 	randomize()
-	if randi() % 2 == 0:
+
+	if first_dial:
+		print("**** first dialogue")
+		first_dial = false
+		Global.story_index += 1
+		print("start new story dialogue, index: " + str(Global.story_index))
+		curr_dial = Global.main_story["dial" + str(Global.story_index)]
+	elif randi() % 2 == 0:
 		Global.story_index += 1
 		print("start new story dialogue, index: " + str(Global.story_index))
 		curr_dial = Global.main_story["dial" + str(Global.story_index)]
@@ -135,7 +152,7 @@ func display_next_message():
 		$CalledDialog.hide()
 	else:
 		$CallerDialog.hide()
-		$CalledDialog.display_msg(msg, null)
+		$CalledDialog.display_msg(msg, caller_name)
 
 func get_curr_message():
 	return curr_dial[msg_index]
@@ -147,7 +164,7 @@ func start_boss_monologue():
 	msg_index = 0
 	boss_monologue = true
 	curr_dial = Global.boss_dialogue
-	$BossDialog.display_msg(curr_dial[0], null)
+	$BossDialog.display_msg(curr_dial[0], caller_name)
 
 func start_tech_man_dialog(count):
 	msg_index = 0
@@ -159,7 +176,7 @@ func start_tech_man_dialog(count):
 		var value_switched = new_output_binding(count)
 		replace_placeholder(curr_dial, value_switched)
 
-	$TechManDialog.display_msg(curr_dial, null)
+	$TechManDialog.display_msg(curr_dial, caller_name)
 
 func new_output_binding(count):
 	randomize()
