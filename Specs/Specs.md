@@ -4,7 +4,7 @@
 
 ## L'histoire
 
-You are Bernadette, a young woman working in telecomunication. Your work is to connect jacks on a Telephone switchboard all the day long.
+You are Marie, a young woman working in telecomunication. Your work is to connect jacks on a Telephone switchboard all the day long.
 To pass time, you try to help customers to reconnect them together...
 
 ## Le jeu

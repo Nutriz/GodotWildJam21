@@ -124,21 +124,21 @@ func start_new_dialog():
 	get_tree().paused = true
 	randomize()
 
-	if first_dial:
-		print("**** first dialogue")
-		first_dial = false
-		Global.story_index += 1
-		print("start new story dialogue, index: " + str(Global.story_index))
-		curr_dial = Global.main_story["dial" + str(Global.story_index)]
-	elif randi() % 2 == 0:
-		Global.story_index += 1
-		print("start new story dialogue, index: " + str(Global.story_index))
-		curr_dial = Global.main_story["dial" + str(Global.story_index)]
-	else:
-		var max_index = Global.secondary_stories.size()
-		var index = (randi() % max_index)
-		print("start new secondary story dialogue, index: " + str(index))
-		curr_dial = Global.secondary_stories[index]
+#	if first_dial:
+#		print("**** first dialogue")
+#		first_dial = false
+#		Global.story_index += 1
+#		print("start new story dialogue, index: " + str(Global.story_index))
+#		curr_dial = Global.main_story["dial" + str(Global.story_index)]
+#	elif randi() % 2 == 0:
+	Global.story_index += 1
+	print("start new story dialogue, index: " + str(Global.story_index))
+	curr_dial = Global.main_story["dial" + str(Global.story_index)]
+#	else:
+#		var max_index = Global.secondary_stories.size()
+#		var index = (randi() % max_index)
+#		print("start new secondary story dialogue, index: " + str(index))
+#		curr_dial = Global.secondary_stories[index]
 
 func on_holding():
 	get_tree().paused = false

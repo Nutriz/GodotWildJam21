@@ -3,6 +3,9 @@ extends Node2D
 var connectionA
 var connectionB
 
+var story_index = 0
+var annoyed_index = 0
+
 func _ready():
 	get_tree().paused = true
 	Events.connect("jack_connected", self, "on_jack_connected")
@@ -20,9 +23,9 @@ func _process(delta):
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
 
-	if Input.is_action_just_pressed("debug"):
-		$Debug.visible = true
-		Global.display_debug($Debug/Text)
+#	if Input.is_action_just_pressed("debug"):
+#		$Debug.visible = true
+#		Global.display_debug($Debug/Text)
 
 	$ScoreDebug.text = "Story index: " + str(Global.story_index) + "\nHenry annoyed: " + str(Global.henry_annoyed) + "\nCurrent binding: " + str($DialogSystem.binding)
 
@@ -58,6 +61,15 @@ func on_dialogue_finished():
 	connectionA.set_light_off()
 	connectionB.set_light_off()
 	randomize()
+
+	if story_index < Global.story_index:
+		story_index = Global.story_index
+		$Points.text = Global.get_common_translated_text("story_point")
+		$PointsAnimation.play("Points")
+	elif annoyed_index < Global.henry_annoyed:
+		annoyed_index = Global.henry_annoyed
+		$Points.text = Global.get_common_translated_text("annoyed_point")
+		$PointsAnimation.play("Points")
 
 	if Global.story_index == Global.main_story.size():
 		Global.end = "good"

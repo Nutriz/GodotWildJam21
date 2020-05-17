@@ -37,7 +37,7 @@
 		{
 			"name": "Boss",
 			"pos": "boss",
-			"text_fr": "A oui j'oubliai, parfois le technicien fait des bourdes...",
+			"text_fr": "Ah oui j'oubliai, parfois le technicien fait des bourdes...",
 			"text_en": "Yes, I forgot, sometimes the technician makes mistakes ..."
 		},
 		{
@@ -49,7 +49,7 @@
 		{
 			"name": "Manuel du terminal JS-22",
 			"pos": "Guide",
-			"text_fr": "Après avoir écouté la demande de l'usagé, vus devez le mettre en attente avec l'interrupteur situer entre les deux jacks",
+			"text_fr": "Après avoir écouté la demande de l'usagé, vous devez le mettre en attente avec l'interrupteur situer entre les deux jacks",
 			"text_en": "After listening to the user's request, you must put it on hold with the switch located between the two jacks"
 		},
 		{
@@ -624,6 +624,14 @@
 		"output": {
 			"fr": "Sortie",
 			"en": "Output"
+		},
+		"story_point": {
+			"fr": "+1 point histoire",
+			"en": "+1 story point"
+		},
+		"annoyed_point": {
+			"fr": "-1 Henri est agacé",
+			"en": "-1 Henri is annoyed"
 		}
 	}
 }
