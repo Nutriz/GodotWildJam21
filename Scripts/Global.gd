@@ -7,6 +7,9 @@ var switch_button
 var language = "fr"
 
 var story_index = 0
+var henry_annoyed = 0
+
+var end = "introduction"
 
 onready var dials = load_dialogue("res://Assets/Dialogues/dialogues.json")
 onready var introduction = dials["story_introduction"]
@@ -16,12 +19,23 @@ onready var main_story = dials["main_story"]
 onready var secondary_stories = dials["secondary_stories"]
 onready var other_dest_people = dials["other_dest_people"]
 onready var common_translations = dials["common_translations"]
+onready var epilogue = dials["epilogue"]
+
+
+func start_main_menu():
+	story_index = 0
+	end = "introduction"
+	switch_button = null
+	get_tree().change_scene("res://Scenes/StartScreen.tscn")
 
 func start_introduction():
 	get_tree().change_scene("res://Scenes/Introduction.tscn")
 
 func start_game():
 	get_tree().change_scene("res://Game.tscn")
+
+func start_epilogue():
+	get_tree().change_scene("res://Scenes/Introduction.tscn")
 
 func load_dialogue(file_path):
 	var file = File.new()
@@ -39,12 +53,13 @@ func get_translated_text(msg):
 		return msg.text_en
 
 func get_common_translated_text(key):
-	if language == "fr":
-		return common_translations[key].fr
-	else:
-		return common_translations[key].en
+	return common_translations[key][language]
 
+func get_good_end():
+	return epilogue.good[language]
 
+func get_bad_end():
+	return epilogue.bad[language]
 
 func display_debug(debug_text):
 		debug_text.text += "***************************************\n"

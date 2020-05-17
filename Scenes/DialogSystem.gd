@@ -87,10 +87,12 @@ func on_start_answer(input):
 		print("it's Henri")
 		if binded == "B1": # Henri to Joséphine
 			print("It's Henri, story will continue")
+			Global.henry_annoyed = 0
 			curr_dial = curr_dial[dial_length]["Josephine"]
 		else:
 			print("Not Joséphine")
 			Global.story_index -= 1
+			Global.henry_annoyed += 1
 			msg_index = 0
 			var other_perso_dial = Global.other_dest_people[binded]
 			var other_index = randi() % other_perso_dial.size()

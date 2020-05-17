@@ -58,6 +58,13 @@ func on_dialogue_finished():
 	connectionB.set_light_off()
 	randomize()
 
+	if Global.story_index == Global.main_story.size():
+		Global.end = "good"
+		Global.start_epilogue()
+	elif Global.henry_annoyed > 2:
+		Global.end = "bad"
+		Global.start_epilogue()
+
 	if Global.story_index > 0:
 		randomize()
 		printt("start tech man")
