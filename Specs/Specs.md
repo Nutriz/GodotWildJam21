@@ -73,7 +73,7 @@ Le système de jeu, tables de loi qui régissent le jeu
 
 ### Etape 2: Production du jeu
 
-* Ajouter un technicien qui recable certaines sorties
+* ✔️Ajouter un technicien qui recable certaines sorties
 * ✔️Gérer la progression de l'histoire, faire des sections dans le JSON des dialogues.
 * ✔️Format des dialogues pour importation dans le jeu
 * ✔️Recevoir un appel entrant
@@ -98,27 +98,30 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Scale en Y du jack pour simuler l'effet d'angle
   * ✔️Shader effect année 20
   * ✔️Faire le bouton de switch en vectoriel
-  * Faire un câble de Jack plus réaliste.
 
 * Sons
   * ✔️Faire la "musique" d'environnement, broua de télécomunication
-  * Refaire les voix "yaourt"
 
 * A finir + Bugs
   * ✔️Next indicator du boss au mauvais endroit
+  * ✔️Quand dial, 2ème click enlève fin du dernier mot
   * Mécanisme fin du jeu, bonne fin et mauvaise fin
   * Tester si les actions sont bien verrouillées quand dialogue (switch on puis off avant fin de conv)
     * jack A peut être changer quand holding
-  * Quand dial, 2ème click enlève fin du dernier mot
   * Technicien double entrée doublon
+  * Refaire les voix "yaourt"
+  * Refaire les 3 boutons du Board
+  * Menu des crédits
+  * Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
+  * Être sûr que les instructions de tuto soient OK
+  * Faire un câble de Jack plus réaliste.
+  * Boutons plus jolies / old school pour le menu principal
 
 ### Etape 3: Polish
 
 * ✔️Faire un menu
-* Être sûr que les instructions de tuto soient OK
 * Que faire avec les shaders ?
 * ✔️Afficher une led rouge à côté du jack pour dire "en ligne"
-* Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
 * Ajouter mini mouvement de caméra quand on manipule les jacks
 * (bonus) Pour expliquer que les destinataires soient inconnus, en début de parti il y a un coup de vent qui fait s'envoler les post-it ayant les informations.
 * (bonus) Pour coller des post-it sur les destinations.

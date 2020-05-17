@@ -15,6 +15,7 @@ onready var techman_dialogue = dials["tech_man"]
 onready var main_story = dials["main_story"]
 onready var secondary_stories = dials["secondary_stories"]
 onready var other_dest_people = dials["other_dest_people"]
+onready var common_translations = dials["common_translations"]
 
 func start_introduction():
 	get_tree().change_scene("res://Scenes/Introduction.tscn")
@@ -36,6 +37,14 @@ func get_translated_text(msg):
 		return msg.text_fr
 	else:
 		return msg.text_en
+
+func get_common_translated_text(key):
+	if language == "fr":
+		return common_translations[key].fr
+	else:
+		return common_translations[key].en
+
+
 
 func display_debug(debug_text):
 		debug_text.text += "***************************************\n"

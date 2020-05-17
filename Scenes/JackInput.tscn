@@ -14,6 +14,7 @@ radius = 11.3416
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
+extra_spacing_char = 3
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=3]
@@ -57,8 +58,8 @@ texture = ExtResource( 4 )
 [node name="OutputIndicator" type="Sprite" parent="."]
 visible = false
 modulate = Color( 0.733333, 0.74902, 0.258824, 0.972549 )
-position = Vector2( 79.1734, 0.219849 )
-scale = Vector2( 5.58293, 0.711488 )
+position = Vector2( 79.1734, -0.102112 )
+scale = Vector2( 5.58293, 0.857833 )
 skew = 4.37114e-08
 texture = ExtResource( 4 )
 
@@ -100,10 +101,10 @@ __meta__ = {
 
 [node name="LabelOutput" type="Label" parent="."]
 visible = false
-margin_left = 27.2797
-margin_top = -22.4392
-margin_right = 59.2797
-margin_bottom = 23.5608
+margin_left = 35.0
+margin_top = -10.0
+margin_right = 124.0
+margin_bottom = 10.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"

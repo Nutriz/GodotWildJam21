@@ -24,6 +24,8 @@ func _process(delta):
 		$Debug.visible = true
 		Global.display_debug($Debug/Text)
 
+	printt("timer left", $CallTimer.time_left)
+
 
 func on_jack_connected(jack_name, jack_input):
 	print(str(jack_name) + " connected to " + str(jack_input.get_index_num()))
@@ -55,13 +57,18 @@ func on_dialogue_finished():
 	connectionA.set_light_off()
 	connectionB.set_light_off()
 	randomize()
-	$CallTimer.wait_time = rand_range(2, 10)
-	$CallTimer.start()
-	print("started new call timer with: " + str($CallTimer.wait_time))
 
 	if Global.story_index > 0:
 		randomize()
+		printt("start tech man")
 		$DialogSystem.start_tech_man_dialog(randi() % 2 + 1)
+
+	$CallTimer.wait_time = rand_range(2, 10)
+	$CallTimer.start()
+	print("started new call timer with: " + str($CallTimer.wait_time))
+	printt("is paused ?", get_tree().paused)
+
+
 
 func _on_holding_toggled(button_pressed):
 	if button_pressed and connectionA != null:

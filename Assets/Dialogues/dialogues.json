@@ -248,6 +248,56 @@
 					}
 				]
 			}
+		],
+		"dial4": [
+			{
+				"name": "Henri",
+				"pos": "caller",
+				"text_fr": "J'aimerai ENCORE joindre Joséphine ! ",
+				"text_en": "",
+				"holding": true
+			},
+			{
+				"Josephine": [
+					{
+						"name": "Joséphine",
+						"pos": "called",
+						"text_fr": "Henri il y a vraiment des problèmes de communication",
+						"text_en": ""
+					},
+					{
+						"name": "Henri",
+						"pos": "caller",
+						"text_fr": "Oui, je vais être bref",
+						"text_en": ""
+					},
+					{
+						"name": "Henri",
+						"pos": "caller",
+						"text_fr": "Rendez-vous à 14h le 22 avril, au conservatoire",
+						"text_en": ""
+					},
+					{
+						"name": "Joséphine",
+						"pos": "called",
+						"text_fr": "Ohh I’m so very happy",
+						"text_en": ""
+					},
+					{
+						"name": "Joséphine",
+						"pos": "called",
+						"text_fr": "J'y serai sans faute",
+						"text_en": ""
+					},
+					{
+						"name": "Henri",
+						"pos": "caller",
+						"text_fr": "Super, je crois en vous !!!",
+						"text_en": "",
+						"end": "good"
+					}
+				]
+			}
 		]
 	},
 	"secondary_stories": [
@@ -568,5 +618,25 @@
 				}
 			]
 		]
+	},
+	"epilogue": {
+		"good": {
+			"fr": "Vous avez gagné",
+			"en": ""
+		},
+		"bad": {
+			"fr": "Vous avez perdu",
+			"en": ""
+		}
+	},
+	"common_translations": {
+		"input": {
+			"fr": "Entrée",
+			"en": "Input"
+		},
+		"output": {
+			"fr": "Sortie",
+			"en": "Output"
+		}
 	}
 }
