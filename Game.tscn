@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/board.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Assets/Sprites/switch_disabled_2.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/switch_hover.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sprites/notes.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/soda.png" type="Texture" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "StartGame"
@@ -86,6 +87,40 @@ skew = 4.37114e-08
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( -7.09937, -11.8413, 170.16, 178.529 )
+
+[node name="Notes" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.831373 )
+position = Vector2( 1171, 318.787 )
+scale = Vector2( 0.316667, 0.316667 )
+skew = 4.37114e-08
+texture = ExtResource( 18 )
+
+[node name="Notes2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.831373 )
+position = Vector2( 143, 312.307 )
+scale = Vector2( -0.352, 0.393 )
+skew = -0.0663225
+texture = ExtResource( 18 )
+
+[node name="Notes4" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.831373 )
+position = Vector2( 1165, 510 )
+scale = Vector2( -0.352, 0.393 )
+skew = -0.0663225
+texture = ExtResource( 18 )
+
+[node name="Notes3" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.831373 )
+position = Vector2( 1052, 223 )
+scale = Vector2( -0.317, 0.317 )
+skew = 4.37114e-08
+texture = ExtResource( 18 )
+
+[node name="soda" type="Sprite" parent="."]
+position = Vector2( 914.255, 548.719 )
+scale = Vector2( 0.270169, 0.270169 )
+skew = 0.0628318
+texture = ExtResource( 19 )
 
 [node name="HoldSwitch" type="TextureButton" parent="."]
 pause_mode = 2
@@ -255,13 +290,6 @@ margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="notes" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.831373 )
-position = Vector2( 1127, 348.75 )
-scale = Vector2( 0.393333, 0.393333 )
-skew = 4.37114e-08
-texture = ExtResource( 18 )
 
 [node name="OldFilm" parent="." instance=ExtResource( 15 )]
 margin_left = 0.0

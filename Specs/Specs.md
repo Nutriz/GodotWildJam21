@@ -111,9 +111,9 @@ Le système de jeu, tables de loi qui régissent le jeu
   * ✔️Tester si les actions sont bien verrouillées quand dialogue (switch on puis off avant fin de conv)
   * ✔️Boutons plus jolies / old school pour le menu principal
   * ✔️Menu des crédits
+  * ✔️Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
   * Refaire les voix "yaourt"
   * Refaire les 3 boutons du Board
-  * Afficher un environnement de travail autour du standard téléphonique, posters, soda, affaires personnelles.
   * Être sûr que les instructions de tuto soient OK
   * Faire un câble de Jack plus réaliste.
 
