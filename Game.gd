@@ -27,7 +27,7 @@ func _process(delta):
 #		$Debug.visible = true
 #		Global.display_debug($Debug/Text)
 
-	$ScoreDebug.text = "Story index: " + str(Global.story_index) + "\nHenry annoyed: " + str(Global.henry_annoyed) + "\nCurrent binding: " + str($DialogSystem.binding)
+#	$ScoreDebug.text = "Story index: " + str(Global.story_index) + "\nHenry annoyed: " + str(Global.henry_annoyed) + "\nCurrent binding: " + str($DialogSystem.binding)
 
 func on_jack_connected(jack, jack_input):
 	print(jack.name + " connected to " + str(jack_input.get_index_num()))
@@ -60,6 +60,7 @@ func on_dialogue_finished():
 	$HoldSwitch.disabled = true
 	connectionA.set_light_off()
 	connectionB.set_light_off()
+	$BlockingEvent.visible = false
 	randomize()
 
 	if story_index < Global.story_index:
@@ -78,7 +79,7 @@ func on_dialogue_finished():
 		Global.end = "bad"
 		Global.start_epilogue()
 
-	if Global.story_index > 0 and randi() % 4 == 0:
+	if Global.story_index > 0 and randi() % 3 == 0:
 		randomize()
 		printt("start tech man")
 		$DialogSystem.start_tech_man_dialog(randi() % 3)
@@ -95,6 +96,7 @@ func _on_holding_toggled(button_pressed):
 		$BlockingEvent.visible = true
 	else:
 		Events.emit_signal("start_answer", connectionB)
+		$BlockingEvent.visible = true
 		connectionA.set_light_on()
 		connectionB.set_light_on()
 		$SFX/HoldingNoise.stop()
@@ -104,6 +106,6 @@ func on_can_be_holded(input):
 
 func _on_call_timer_timeout():
 	randomize()
-	var index = randi() % 3
+	var index = randi() % 20
 	$Inputs.get_children()[index].start_ringing()
 	$SFX/Ringing.play()

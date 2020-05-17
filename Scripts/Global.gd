@@ -66,9 +66,9 @@ func get_common_translated_text(key):
 
 func get_credits_text():
 	if language == "fr":
-		return "This game was made by Jérôme Nutriz Gully and Pinky for the Godot Wild Jame #21.\n\nObvioussly it was made with the amazing open source Godot Engine (https://godotengine.org/)\n\nKeep in touch: https://twitter.com/JeromeGully\nSource Code: https://github.com/Nutriz/GodotWildJam21"
+		return "Ce jeu a été fait par Nutriz et Pinky pour la Godot Wild Jam #21.\n\nEvidemment, il a été fait avec le moteur de jeu Godot Engine (https://godotengine.org/)\n\nContact: https://twitter.com/JeromeGully\nSource Code: https://github.com/Nutriz/GodotWildJam21"
 	else:
-		return "This game was made by Jérôme Nutriz Gully and Pinky for the Godot Wild Jame #21.\n\nObvioussly it was made with the amazing open source Godot Engine (https://godotengine.org/)\n\nKeep in touch: https://twitter.com/JeromeGully\nSource Code: https://github.com/Nutriz/GodotWildJam21"
+		return "This game was made by Nutriz and Pinky for the Godot Wild Jam #21.\n\nObvioussly it was made with the amazing open source Godot Engine (https://godotengine.org/)\n\nKeep in touch: https://twitter.com/JeromeGully\nSource Code: https://github.com/Nutriz/GodotWildJam21"
 
 func get_good_end():
 	return epilogue.good[language]

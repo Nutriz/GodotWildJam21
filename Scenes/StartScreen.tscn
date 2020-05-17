@@ -38,7 +38,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 18.3792 ),
 "update": 0,
-"values": [ Vector2( 1286.79, 203.382 ), Vector2( 930, 203.382 ) ]
+"values": [ Vector2( 1286.79, 203.382 ), Vector2( 925, 203.382 ) ]
 }
 
 [node name="StartScreen" type="Control"]
