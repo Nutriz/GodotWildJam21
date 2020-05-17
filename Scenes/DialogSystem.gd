@@ -7,12 +7,15 @@ var caller_name
 var boss_monologue = false
 var techman_dial = false
 
-var binding = {"X1": "B1", "X2": "B2", "X3": "B3", "X4": "B4", "X5": "B5", "X6": "B6"}
+var binding = {"X1": 1, "X2": 2, "X3": 3, "X4": 4, "X5": 5, "X6": 6}
 
 func _ready():
 	Events.connect("start_dialogue", self, "on_start_dialogue")
 	Events.connect("start_answer", self, "on_start_answer")
 	Events.connect("holding_input", self, "on_holding")
+
+	for i in range(10):
+		randomize_outputs()
 
 func _process(delta):
 	if Input.is_action_just_pressed("skip") and curr_dial != null:
@@ -78,14 +81,13 @@ func on_start_answer(input):
 	msg_index = 0
 	caller_name = curr_dial[0].name
 
-	var binded = binding["X" + str(input.get_index_num() - 20)]
-	printt(input.name, "binded to", binded)
-	var binded_index = binded[1]
+	var binded_index = binding["X" + str(input.get_index_num() - 20)]
+	printt(input.name, "binded to", binded_index)
 
 	var dial_length = curr_dial.size() - 1
 	if caller_name == "Henri":
 		print("it's Henri")
-		if binded == "B1": # Henri to Joséphine
+		if binded_index == 1: # Henri to Joséphine
 			print("It's Henri, story will continue")
 			Global.henry_annoyed = 0
 			curr_dial = curr_dial[dial_length]["Josephine"]
@@ -94,14 +96,14 @@ func on_start_answer(input):
 			Global.story_index -= 1
 			Global.henry_annoyed += 1
 			msg_index = 0
-			var other_perso_dial = Global.other_dest_people[binded]
+			var other_perso_dial = Global.other_dest_people["B" + str(binded_index)]
 			var other_index = randi() % other_perso_dial.size()
 			printt("size", other_perso_dial.size(), "other_index", other_index)
 			curr_dial = other_perso_dial[other_index]
 	else:
 		print("Caller is not Henri")
 		msg_index = 0
-		var other_perso_dial = Global.other_dest_people[binded]
+		var other_perso_dial = Global.other_dest_people["B" + str(binded_index)]
 		var other_index = randi() % other_perso_dial.size()
 		printt("size", other_perso_dial.size(), "other_index", other_index)
 		curr_dial = other_perso_dial[other_index]
@@ -152,55 +154,84 @@ func start_tech_man_dialog(count):
 	techman_dial = true
 	get_tree().paused = true
 
-	var new_binding = new_output_binding(count)
 	curr_dial = Global.techman_dialogue[count].duplicate()
-	replace_placeholder(curr_dial, new_binding)
+	if count > 0:
+		var value_switched = new_output_binding(count)
+		replace_placeholder(curr_dial, value_switched)
 
 	$TechManDialog.display_msg(curr_dial, null)
-
-
-func replace_placeholder(curr_dial, new_binding):
-	curr_dial.text_fr = curr_dial.text_fr.replace("$A", new_binding[0])
-	curr_dial.text_fr = curr_dial.text_fr.replace("$B", new_binding[1])
-	curr_dial.text_en = curr_dial.text_en.replace("$A", new_binding[0])
-	curr_dial.text_en = curr_dial.text_en.replace("$B", new_binding[1])
-
-	if new_binding.size() == 4:
-		curr_dial.text_fr = curr_dial.text_fr.replace("$C", new_binding[2])
-		curr_dial.text_fr = curr_dial.text_fr.replace("$D", new_binding[3])
-		curr_dial.text_en = curr_dial.text_en.replace("$C", new_binding[2])
-		curr_dial.text_en = curr_dial.text_en.replace("$D", new_binding[3])
 
 func new_output_binding(count):
 	randomize()
 
-	var list_to_pick = [1, 2, 3, 4, 5, 6]
+	var list_to_pick = binding.duplicate()
+	var index = [1, 2, 3, 4, 5, 6]
+	index.shuffle()
 
 	match count:
 		1:
-			var index_a = list_to_pick[randi() % 6]
-			list_to_pick.remove(index_a)
-			var index_b = list_to_pick[randi() % 5]
+			var key_a = "X" + str(index.pop_front())
+			var value_a = list_to_pick[key_a]
+			list_to_pick.erase(key_a)
+			var key_b = "X" + str(index.pop_front())
+			var value_b = list_to_pick[key_b]
 
-			printt("want to switch ", index_a, "with", index_b)
+			printt("want to switch ", value_a, "with", value_b)
 
-			binding["X" + str(index_a)] = "B" + str(index_b)
-			binding["X" + str(index_b)] = "B" + str(index_a)
-			return ["B" + str(index_a), "B" + str(index_b)]
+			binding[key_a] = value_b
+			binding[key_b] = value_a
+			return [value_a, value_b]
 		2:
-			var index_a = list_to_pick[randi() % 6]
-			list_to_pick.remove(index_a)
-			var index_b = list_to_pick[randi() % 5]
-			list_to_pick.remove(index_b)
-			var index_c = list_to_pick[randi() % 4]
-			list_to_pick.remove(index_c)
-			var index_d = list_to_pick[randi() % 3]
+			var key_a = "X" + str(index.pop_front())
+			var value_a = list_to_pick[key_a]
+			list_to_pick.erase(key_a)
+			var key_b = "X" + str(index.pop_front())
+			var value_b = list_to_pick[key_b]
+			var key_c = "X" + str(index.pop_front())
+			var value_c = list_to_pick[key_c]
+			list_to_pick.erase(key_c)
+			var key_d = "X" + str(index.pop_front())
+			var value_d = list_to_pick[key_d]
 
-			printt("want to switch ", index_a, "with", index_b)
-			printt("and want to switch ", index_c, "with", index_d)
+			printt("want to switch ", value_a, "with", value_b)
+			printt("and want to switch ", value_c, "with", value_d)
 
-			binding["X" + str(index_a)] = "B" + str(index_b)
-			binding["X" + str(index_b)] = "B" + str(index_a)
-			binding["X" + str(index_c)] = "B" + str(index_d)
-			binding["X" + str(index_d)] = "B" + str(index_c)
-			return ["B" + str(index_a), "B" + str(index_b),  "B" + str(index_c),  "B" + str(index_d)]
+			binding[key_a] = value_b
+			binding[key_b] = value_a
+			binding[key_c] = value_d
+			binding[key_d] = value_c
+			return [value_a, value_b, value_c, value_d]
+
+func replace_placeholder(curr_dial, value_switched):
+	curr_dial.text_fr = curr_dial.text_fr.replace("$A", value_switched[0])
+	curr_dial.text_fr = curr_dial.text_fr.replace("$B", value_switched[1])
+	curr_dial.text_en = curr_dial.text_en.replace("$A", value_switched[0])
+	curr_dial.text_en = curr_dial.text_en.replace("$B", value_switched[1])
+
+	if value_switched.size() == 4:
+		curr_dial.text_fr = curr_dial.text_fr.replace("$C", value_switched[2])
+		curr_dial.text_fr = curr_dial.text_fr.replace("$D", value_switched[3])
+		curr_dial.text_en = curr_dial.text_en.replace("$C", value_switched[2])
+		curr_dial.text_en = curr_dial.text_en.replace("$D", value_switched[3])
+
+func randomize_outputs():
+	printt("befor", binding)
+	randomize()
+
+	var list_to_pick = binding.duplicate()
+	var index = [1, 2, 3, 4, 5, 6]
+	index.shuffle()
+
+	var key_a = "X" + str(index.pop_front())
+	var value_a = list_to_pick[key_a]
+	list_to_pick.erase(key_a)
+	var key_b = "X" + str(index.pop_front())
+	var value_b = list_to_pick[key_b]
+
+	printt(value_a, "<->", value_b)
+
+	binding[key_a] = value_b
+	binding[key_b] = value_a
+
+	printt("after", binding)
+	print("\n")

@@ -282,5 +282,12 @@ margin_bottom = 709.0
 focus_mode = 2
 custom_fonts/normal_font = SubResource( 2 )
 selection_enabled = true
+
+[node name="ScoreDebug" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="toggled" from="HoldSwitch" to="." method="_on_holding_toggled"]
 [connection signal="timeout" from="CallTimer" to="." method="_on_call_timer_timeout"]

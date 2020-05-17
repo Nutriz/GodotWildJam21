@@ -105,10 +105,11 @@ Le système de jeu, tables de loi qui régissent le jeu
 * A finir + Bugs
   * ✔️Next indicator du boss au mauvais endroit
   * ✔️Quand dial, 2ème click enlève fin du dernier mot
-  * Mécanisme fin du jeu, bonne fin et mauvaise fin
+  * ✔️Mécanisme fin du jeu, bonne fin et mauvaise fin
   * Tester si les actions sont bien verrouillées quand dialogue (switch on puis off avant fin de conv)
     * jack A peut être changer quand holding
   * Technicien double entrée doublon
+  * Randomize des entrées au lancement du jeu
   * Refaire les voix "yaourt"
   * Refaire les 3 boutons du Board
   * Menu des crédits

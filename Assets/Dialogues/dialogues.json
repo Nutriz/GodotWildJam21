@@ -103,13 +103,13 @@
 		{
 			"name": "Tech man",
 			"pos": "Tech man",
-			"text_fr": "Euh, désolé mademoiselle, mais il y a eu un problème, j'ai du échanger l'entrée $A avec l'entrée $B",
+			"text_fr": "Euh, désolé mademoiselle, mais il y a eu un problème, j'ai du échanger la sortie $A avec la sortie $B",
 			"text_en": "TODO"
 		},
 		{
 			"name": "Tech man",
 			"pos": "Tech man",
-			"text_fr": "Oups, dans ma tête c'était pas claire, l'entrée $A échangé avec l'entrée $B. Et $C échangé avec l'entrée $D",
+			"text_fr": "Oups, dans ma tête c'était pas claire, la sortie $A échangé avec la sortie $B. Et $C avec $D",
 			"text_en": "TODO"
 		}
 	],
