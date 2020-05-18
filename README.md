@@ -6,6 +6,10 @@ A 5 minutes narrative game where you will connect people between them.
 
 This game was made by Nutriz and Pinky for the Godot Wild Jam #21. Obviously it was made with the amazing open source Godot Engine (https://godotengine.org/)
 
+## Play the game
+
+You can play in the browser here: https://nutr1z.itch.io/gwj21-connect-in-people
+
 ## Story
 
 You are Marie, a young woman of 20 who has just found a job in telecommunications. It's 22 February 1922, it's your first day as a switchboard operator. You will have to *connect* the parts between them. You are inexperienced but optimistic. Your team leader is waiting for you! Good luck...

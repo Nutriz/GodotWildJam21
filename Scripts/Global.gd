@@ -33,6 +33,7 @@ func _ready():
 
 func start_main_menu():
 	story_index = 0
+	henry_annoyed = 0
 	end = "introduction"
 	switch_button = null
 	get_tree().change_scene("res://Scenes/StartScreen.tscn")

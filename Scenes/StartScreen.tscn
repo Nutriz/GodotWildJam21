@@ -10,13 +10,13 @@
 [ext_resource path="res://Scenes/OldFilm.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Font/JetBrainsMono-Regular.ttf" type="DynamicFontData" id=9]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.505882, 0.427451, 0.152941, 0.737255 )
 border_width_left = 8
 border_width_right = 8
 border_blend = true
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 1 )
 
@@ -63,7 +63,7 @@ margin_left = 404.0
 margin_top = -295.0
 margin_right = -399.0
 margin_bottom = -203.0
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "Connect In People"
 align = 1
@@ -118,7 +118,7 @@ margin_top = 206.0
 margin_right = 346.0
 margin_bottom = 322.0
 theme = ExtResource( 5 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 items = [ "English", ExtResource( 3 ), false, "French", ExtResource( 2 ), false ]
 auto_height = true
 icon_scale = 0.4
